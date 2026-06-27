@@ -2490,8 +2490,14 @@ input[type=range]:focus::-ms-fill-upper {
             <div id="content">
                 <div id="logo"></div>
                 <form id="player" class="hide">
+<!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
                     <div class="partyLink" id="partyLinkContainer" style="display: none;">
                         <input tabindex="0" type="text" maxlength="32" data-translate-placeholder="work in progress fuck you">
+                        <a data-display-only="en,fr" href="#" class="big gold" style = "margin-top : -5px">
+                            <i class="sbg sbg-fw sbg-fly-mid"></i>
+                            <br/>
+                            <span data-translate="Join party">Join party</span>
+                        </a>
                     </div>
                     <div class="inputwrapper">
                         <div class="colorwrapper">
@@ -3211,7 +3217,7 @@ input[type=range]:focus::-ms-fill-upper {
         gdApi(t)
     }
     ,
-    this.l0O0l = function() {
+    this.SpringInterpolator = function() {
         function t(t) {
             this.value = t,
             this.speed = 0,
@@ -3282,12 +3288,12 @@ input[type=range]:focus::-ms-fill-upper {
     this.l10OO = function() {
         function t(t) {
             this.component = t,
-            this.IIIll = new l0O0l(1),
-            this.lI0IO = new l0O0l(1),
-            this.rotation = new l0O0l(0),
-            this.O1lIO = new l0O0l(0),
-            this.OIO0O = new l0O0l(0),
-            this.opacity = new l0O0l(1)
+            this.IIIll = new SpringInterpolator(1),
+            this.lI0IO = new SpringInterpolator(1),
+            this.rotation = new SpringInterpolator(0),
+            this.O1lIO = new SpringInterpolator(0),
+            this.OIO0O = new SpringInterpolator(0),
+            this.opacity = new SpringInterpolator(1)
         }
         return t.prototype.OO11l = function(t) {
             return this.IIIll.O0Il0 = t

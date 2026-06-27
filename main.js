@@ -34,7 +34,7 @@ const createWindow = () =>
     })
 
     win.webContents.openDevTools()
-    win.loadURL("https://starblast.io")
+    win.loadURL("https://starblast.io/")
 }
 
 app.on("ready", () => 
