@@ -1,5 +1,5 @@
 {
-  "name": "my-electron-app",
+  "name": "luma-client",
   "version": "1.0.8",
   "description": "",
   "license": "ISC",
@@ -20,7 +20,7 @@
   },
   "build": {
     "appId": "com.myapp.electron",
-    "productName": "MyElectronApp",
+    "productName": "Luma Client",
     "directories": {
       "output": "dist"
     },
@@ -40,7 +40,8 @@
       }
     ],
     "win": {
-      "target": "nsis"
+      "target": "nsis",
+      "icon": "images/icon.ico"
     }
   }
 }
