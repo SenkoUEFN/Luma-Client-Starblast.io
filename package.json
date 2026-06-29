@@ -1,6 +1,6 @@
 {
   "name": "luma-client",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "",
   "license": "ISC",
   "author": "",
@@ -9,7 +9,7 @@
   "scripts": {
     "start": "electron .",
     "dist": "electron-builder",
-    "publish": "electron-builder --publish always"
+    "publish": "electron-builder --win --publish always"
   },
   "dependencies": {
     "electron-updater": "^6.8.9"
