@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luma Client</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="launcher">
+    <header class="topbar">
+      <div class="brand">
+        <img src="images/logo.png" alt="" class="brand-logo" />
+        <h1>Luma Client</h1>
+      </div>
+
+      <div class="window-buttons">
+        <button class="window-btn minimize" title="Réduire">−</button>
+        <button class="window-btn fullscreen" title="Plein écran">
+          <span class="fullscreen-icon"></span>
+        </button>
+        <button class="window-btn close" title="Fermer">×</button>
+      </div>
+    </header>
+
+    <section class="content">
+      <div class="left">
+        <section class="big-box">
+          <button class="launch-button">Launch Game</button>
+        </section>
+
+        <section class="news">
+          <h2>Latest News <span>(10 Unread)</span></h2>
+
+          <div class="news-scroll">
+            <div class="news-grid">
+              <article class="news-card"><img src="images/news-1.png" alt="" /></article>
+              <article class="news-card"><img src="images/news-2.png" alt="" /></article>
+              <article class="news-card"><img src="images/news-3.png" alt="" /></article>
+              <article class="news-card"><img src="images/news-4.png" alt="" /></article>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <aside class="right">
+        <section class="side-box trailer-box">
+          <video autoplay muted loop playsinline>
+            <source src="videos/trailer.mp4" type="video/mp4" />
+          </video>
+          <h2>Client Trailer</h2>
+        </section>
+
+        <section class="side-box social-box">
+          <h2>Reseaux Sociaux</h2>
+
+          <div class="social-links">
+            <a href="https://discord.gg/ton-lien" target="_blank" class="social discord" title="Discord">D</a>
+            <a href="https://github.com/ton-compte" target="_blank" class="social github" title="GitHub">G</a>
+            <a href="https://twitter.com/ton-compte" target="_blank" class="social twitter" title="Twitter">X</a>
+            <a href="https://youtube.com/@ton-compte" target="_blank" class="social youtube" title="YouTube">▶</a>
+          </div>
+        </section>
+      </aside>
+    </section>
+  </main>
+  <script src = "launcher.js"></script>
+</body>
+</html>

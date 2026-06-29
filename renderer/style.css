@@ -1,0 +1,380 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #080808;
+  color: white;
+  font-family: "Luckiest Guy", cursive;
+  text-transform: uppercase;
+}
+
+.launcher {
+  width: 100vw;
+  height: 100vh;
+  padding: 36px 42px 34px;
+  position: relative;
+  overflow: hidden;
+  background: #080808;
+}
+
+.topbar {
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.brand-logo {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.window-buttons {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.window-btn {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+  transition: transform 0.18s ease, color 0.18s ease, opacity 0.18s ease;
+}
+
+.window-btn:hover {
+  transform: scale(1.15);
+  opacity: 0.85;
+}
+
+.window-btn:active {
+  transform: scale(0.92);
+}
+
+.window-btn.close:hover {
+  color: #ff4d4d;
+}
+
+.window-btn.fullscreen:hover {
+  color: #19e889;
+}
+
+.window-btn.minimize:hover {
+  color: #bdbdbd;
+}
+
+.fullscreen-icon {
+  width: 15px;
+  height: 15px;
+  border: 3px solid currentColor;
+  display: block;
+}
+
+.content {
+  position: absolute;
+  left: 42px;
+  right: 42px;
+  top: 122px;
+  bottom: 34px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 480px;
+  gap: 60px;
+  overflow: hidden;
+  background: transparent;
+}
+
+.left {
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  overflow: hidden;
+}
+
+.right {
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  overflow: hidden;
+}
+
+.big-box,
+.side-box,
+.news-card {
+  background: #111;
+  border: 4px solid #383838;
+  border-radius: 18px;
+}
+
+.big-box {
+  height: 250px;
+  min-height: 250px;
+  display: grid;
+  place-items: center;
+}
+
+.launch-button {
+  min-width: 270px;
+  min-height: 76px;
+  border: 5px solid #050505;
+  border-radius: 13px;
+  background: linear-gradient(#28ff99, #19e889, #0bbd6a);
+  color: white;
+  font: inherit;
+  font-size: 30px;
+  font-weight: 400;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 10px 0 #050505;
+  transition: transform 0.18s ease, filter 0.18s ease, box-shadow 0.18s ease;
+}
+
+.launch-button:hover {
+  transform: translateY(-6px) scale(1.04);
+  filter: brightness(1.12);
+  box-shadow: 0 16px 0 #050505;
+}
+
+.launch-button:active {
+  transform: translateY(7px) scale(0.97);
+  filter: brightness(0.95);
+  box-shadow: 0 3px 0 #050505;
+}
+
+.news {
+  min-height: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.news h2 {
+  margin: 0 0 18px;
+  font-size: 34px;
+  font-weight: 400;
+}
+
+.news h2 span {
+  font-size: 18px;
+  color: #b8b8b8;
+  text-shadow: none;
+}
+
+.news-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 14px;
+}
+
+.news-scroll::-webkit-scrollbar {
+  width: 10px;
+}
+
+.news-scroll::-webkit-scrollbar-track {
+  background: #151515;
+  border-radius: 10px;
+}
+
+.news-scroll::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 10px;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.news-card {
+  height: 190px;
+  overflow: hidden;
+}
+
+.news-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.side-box {
+  min-height: 0;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.trailer-box {
+  flex: 1;
+}
+
+.social-box {
+  height: 220px;
+  gap: 26px;
+}
+
+.side-box h2 {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 400;
+  position: relative;
+  z-index: 2;
+}
+
+.trailer-box video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.45;
+  object-fit: cover;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+
+.social {
+  width: 58px;
+  height: 58px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  color: white;
+  text-decoration: none;
+  font-size: 28px;
+  transition: transform 0.18s ease, filter 0.18s ease;
+}
+
+.social:hover {
+  transform: translateY(-5px) scale(1.08);
+  filter: brightness(1.12);
+}
+
+.social:active {
+  transform: translateY(2px) scale(0.95);
+}
+
+.discord {
+  background: #5865f2;
+}
+
+.github {
+  background: #24292f;
+}
+
+.twitter {
+  background: #1da1f2;
+}
+
+.youtube {
+  background: #ff0000;
+}
+
+.topbar h1,
+.news h2,
+.side-box h2,
+.launch-button {
+  text-shadow:
+    2px 0 0 #000,
+    -2px 0 0 #000,
+    0 2px 0 #000,
+    0 -2px 0 #000,
+    2px 2px 0 #000,
+    -2px 2px 0 #000,
+    2px -2px 0 #000,
+    -2px -2px 0 #000;
+}
+
+@media (max-width: 900px) {
+  body {
+    overflow: auto;
+  }
+
+  .launcher {
+    height: auto;
+    min-height: 100vh;
+    padding: 18px;
+  }
+
+  .content {
+    position: static;
+    margin-top: 28px;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    overflow: visible;
+  }
+
+  .news-scroll {
+    height: 360px;
+    flex: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .brand-logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .topbar h1 {
+    font-size: 22px;
+  }
+
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .launch-button {
+    min-width: 220px;
+    min-height: 68px;
+    font-size: 23px;
+  }
+}
