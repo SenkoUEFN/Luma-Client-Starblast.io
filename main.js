@@ -1,3 +1,4 @@
+const { autoUpdater } = require("electron-updater");
 const { app, BrowserWindow, ipcMain } = require('electron')
 const path = require('path')
 const fs = require('fs')
@@ -10,6 +11,7 @@ function createLauncherWindow()
         {
             width : 1280,
             height : 720,
+            frame: false,
             webPreferences : 
             {
                 preload : path.join(__dirname, "preload.js")
@@ -25,7 +27,7 @@ function createLauncherWindow()
             app.quit()
         }
     })
-    launcherWindow.webContents.openDevTools()
+    //launcherWindow.webContents.openDevTools()
 }
 
 ipcMain.handle("startGame",startGame)
@@ -62,7 +64,7 @@ function createGameWindow()
 
     gameWindow.webContents.on('did-finish-load', () => 
     {
-        const html = fs.readFileSync(path.join(__dirname, 'index.html'), 'utf8')
+        const html = fs.readFileSync(path.join(__dirname, "renderer", 'index.html'), 'utf8')
         const htmlContent = JSON.stringify(html)
         gameWindow.webContents.executeJavaScript(`
             document.open()
@@ -71,7 +73,7 @@ function createGameWindow()
         `)
     })
 
-    gameWindow.webContents.openDevTools()
+    //gameWindow.webContents.openDevTools()
     gameWindow.loadURL("https://starblast.io/")
 
     app.on("window-all-closed", () =>
@@ -87,7 +89,11 @@ function createGameWindow()
 async function onBegin()
 {
     createLauncherWindow()
-}
+    if (app.isPackaged)
+    {
+        autoUpdater.checkForUpdatesAndNotify()
+    }
 
+}
 
 app.on("ready", onBegin)

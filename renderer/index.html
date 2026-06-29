@@ -2958,7 +2958,7 @@ input[type=range]:focus::-ms-fill-upper {
     {
         console.log("a")
     }
-    var saveAs, OO0I1, extend, hasProp, lIl1l, lOIl1, BuyWeaponButton, HealingButton, RemoveWeaponButton, StoreCountDown, TransferButton, WeaponStoreBackground, WeaponStoreExitButton, WeaponStorePlaceholder, WeaponStoreShipView, WeaponStoreTitle, deepspaceworker, workerfunk, nebulasworker, Scene, l001I, ValueNoise, OO0OO, II000, BATTLE_SHIP_TYPES, WEAPON_TYPES, ALIEN_TYPES, I1OOO, IIl0I, OI01O, IO1O1, OlO1O, STATION_MODULES, ATTACK_POD_MODEL, DEFENCE_POD_MODEL, MINING_POD_MODEL, i, MISSILE_MODEL, ROCKET_MODEL, TORPEDO_MODEL, MINE2_MODEL, MINE_MODEL, j, k, l, m, expand, indexOf, bind, IFrameDetection, IlO01, base, OOI1O, BATTLE_SHIPS, arrayMult, ALIEN_MODELS, HALO_MODELS, GIFT_MODEL, PUMPKIN_MODEL, battle_finished, battle_started, IIII0, exportShipTree, game, gamesettings, Translations, t, texists, translations;
+    var saveAs, OO0I1, extend, hasProp, lIl1l, lOIl1, BuyWeaponButton, HealingButton, RemoveWeaponButton, StoreCountDown, TransferButton, WeaponStoreBackground, WeaponStoreExitButton, WeaponStorePlaceholder, WeaponStoreShipView, WeaponStoreTitle, deepspaceworker, workerfunk, nebulasworker, Scene, l001I, Ol0OI, OO0OO, II000, BATTLE_SHIP_TYPES, WEAPON_TYPES, ALIEN_TYPES, I1OOO, IIl0I, OI01O, IO1O1, OlO1O, STATION_MODULES, ATTACK_POD_MODEL, DEFENCE_POD_MODEL, MINING_POD_MODEL, i, MISSILE_MODEL, ROCKET_MODEL, TORPEDO_MODEL, MINE2_MODEL, MINE_MODEL, j, k, l, m, expand, indexOf, bind, IFrameDetection, IlO01, base, OOI1O, BATTLE_SHIPS, arrayMult, ALIEN_MODELS, HALO_MODELS, GIFT_MODEL, PUMPKIN_MODEL, battle_finished, battle_started, IIII0, exportShipTree, game, gamesettings, Translations, t, texists, translations;
     !function(t) {
         "use strict";
         var e = t.HTMLCanvasElement && t.HTMLCanvasElement.prototype
@@ -10752,7 +10752,7 @@ input[type=range]:focus::-ms-fill-upper {
             this.speed = new Float32Array(3 * this.size),
             this.Ol11I = new Float32Array(this.size),
             this.opac = new Float32Array(this.size),
-            this.I1lOI = new ValueNoise,
+            this.I1lOI = new Ol0OI,
             this.index = 0,
             this.worldStartTime = Date.now(),
             i = s = 0,
@@ -10794,7 +10794,7 @@ input[type=range]:focus::-ms-fill-upper {
                     a = 2 * Math.random() * (180 * THREE.Math.DEG2RAD),
                     m = Math.cos(a),
                     f = Math.sin(a),
-                    O = Math.pow(Math.random(), .5) * p * Math.pow(this.I1lOI.fractalNoise2D(u + 3 * m, 3 * f, 3), 2) * 2,
+                    O = Math.pow(Math.random(), .5) * p * Math.pow(this.I1lOI.OOOlI(u + 3 * m, 3 * f, 3), 2) * 2,
                     m *= O,
                     f *= O,
                     g = 5 * O * Math.random(),
@@ -10854,7 +10854,7 @@ input[type=range]:focus::-ms-fill-upper {
                     f = 0) : d < .6 ? (p = Math.pow(Math.random(), .01) * c * 2,
                     this.Ol11I[this.index] = (10 + 10 * Math.random()) * I,
                     f = 0) : (this.Ol11I[this.index] = (10 + 10 * Math.random()) * I,
-                    p = Math.pow(Math.random(), .5) * c * Math.pow(this.I1lOI.fractalNoise2D(r + 3 * O, 3 * m, 3), 2) * 2,
+                    p = Math.pow(Math.random(), .5) * c * Math.pow(this.I1lOI.OOOlI(r + 3 * O, 3 * m, 3), 2) * 2,
                     f = 5 * p * Math.random()),
                     O *= p,
                     m *= p,
@@ -10950,7 +10950,7 @@ input[type=range]:focus::-ms-fill-upper {
             t.width = 1024,
             t.height = 1024,
             e = t.getContext("2d"),
-            c = new ValueNoise,
+            c = new Ol0OI,
             s = e.getImageData(0, 0, 32, 32),
             O = h = 0; h <= 31; O = h += 1)
                 for (m = u = 0; u <= 31; m = u += 1) {
@@ -10959,7 +10959,7 @@ input[type=range]:focus::-ms-fill-upper {
                             l = (o - 15.5) / 15.5,
                             n = (r - 15.5) / 15.5,
                             i = Math.max(0, 1 - (l * l + n * n)),
-                            i = Math.pow(i, 2) * (1 - 1.2 * c.fractalNoise3D(10 * m + 2 * l, 2 * n, O / 32 * 4, 6)),
+                            i = Math.pow(i, 2) * (1 - 1.2 * c.O0IIO(10 * m + 2 * l, 2 * n, O / 32 * 4, 6)),
                             s.data[4 * (32 * r + o)] = 255,
                             s.data[4 * (32 * r + o) + 1] = 255,
                             s.data[4 * (32 * r + o) + 2] = 255,
@@ -11486,18 +11486,18 @@ input[type=range]:focus::-ms-fill-upper {
                 e = this.I00II.vertices[0].y - this.I00II.vertices[1].y,
                 i = this.I00II.vertices[0].z - this.I00II.vertices[1].z,
                 d = Math.sqrt(t * t + e * e + i * i),
-                a = new ValueNoise(100),
-                o = new ValueNoise(200),
-                r = new ValueNoise(300),
+                a = new Ol0OI(100),
+                o = new Ol0OI(200),
+                r = new Ol0OI(300),
                 p = 1 / d / 2,
                 c = 3 * d,
                 h = this.I00II.vertices,
                 s = 0,
                 l = h.length; s < l; s++)
                     I = h[s],
-                    O = a.fractalNoise3D(I.x * p, I.y * p, I.z * p) - .5,
-                    m = o.fractalNoise3D(I.x * p, I.y * p, I.z * p) - .5,
-                    f = r.fractalNoise3D(I.x * p, I.y * p, I.z * p) - .5,
+                    O = a.O0IIO(I.x * p, I.y * p, I.z * p) - .5,
+                    m = o.O0IIO(I.x * p, I.y * p, I.z * p) - .5,
+                    f = r.O0IIO(I.x * p, I.y * p, I.z * p) - .5,
                     I.x += O * c,
                     I.y += m * c,
                     I.z += f * c,
@@ -11509,7 +11509,7 @@ input[type=range]:focus::-ms-fill-upper {
         ,
         t.prototype.build2 = function() {
             var t, e, i, s, l, n, a, o, r, h, u, d, I, c, p, O, m, f, g, y, v, b, w, x, k, E, _, z;
-            switch (this.I1lOI = new ValueNoise(this.random.next()),
+            switch (this.I1lOI = new Ol0OI(this.random.next()),
             this.broken = this.random.next() < .01 && 0 === this.level,
             b = 2 + 10 * Math.pow(this.random.next(), 4),
             w = 2 + 10 * Math.pow(this.random.next(), 4),
@@ -11523,7 +11523,7 @@ input[type=range]:focus::-ms-fill-upper {
             case 0:
                 e = function(t) {
                     return function(e, i, s) {
-                        return t.I1lOI.fractalNoise3D(e, i, s)
+                        return t.I1lOI.O0IIO(e, i, s)
                     }
                 }(this);
                 break;
@@ -11550,15 +11550,15 @@ input[type=range]:focus::-ms-fill-upper {
                     E = this.I00II.vertices[this.I00II.faces[i].a],
                     _ = this.I00II.vertices[this.I00II.faces[i].b],
                     z = this.I00II.vertices[this.I00II.faces[i].c],
-                    c = Math.max(.3, Math.min(1, Math.pow(2.5 * this.I1lOI.fractalNoise3D(.5 * E.x, .5 * E.y, .5 * E.z, 6), 4))),
-                    p = Math.max(.3, Math.min(1, Math.pow(2.5 * this.I1lOI.fractalNoise3D(.5 * _.x, .5 * _.y, .5 * _.z, 6), 4))),
-                    O = Math.max(.3, Math.min(1, Math.pow(2.5 * this.I1lOI.fractalNoise3D(.5 * z.x, .5 * z.y, .5 * z.z, 6), 4))),
+                    c = Math.max(.3, Math.min(1, Math.pow(2.5 * this.I1lOI.O0IIO(.5 * E.x, .5 * E.y, .5 * E.z, 6), 4))),
+                    p = Math.max(.3, Math.min(1, Math.pow(2.5 * this.I1lOI.O0IIO(.5 * _.x, .5 * _.y, .5 * _.z, 6), 4))),
+                    O = Math.max(.3, Math.min(1, Math.pow(2.5 * this.I1lOI.O0IIO(.5 * z.x, .5 * z.y, .5 * z.z, 6), 4))),
                     this.I00II.faceVertexUvs[0][i] = [new THREE.Vector2(0,c), new THREE.Vector2(0,p), new THREE.Vector2(0,O)];
                 for (g = this.I00II.vertices,
                 n = 0,
                 o = g.length; n < o; n++)
                     k = g[n],
-                    I = Math.max(.3, Math.min(1, Math.pow(2.5 * this.I1lOI.fractalNoise3D(.5 * k.x, .5 * k.y, .5 * k.z, 6), 4))),
+                    I = Math.max(.3, Math.min(1, Math.pow(2.5 * this.I1lOI.O0IIO(.5 * k.x, .5 * k.y, .5 * k.z, 6), 4))),
                     k.x *= I,
                     k.y *= I,
                     k.z *= I
@@ -11593,7 +11593,7 @@ input[type=range]:focus::-ms-fill-upper {
             for (z = 1 + 10 * Math.pow(this.random.next(), 4),
             M = 1 + 10 * Math.pow(this.random.next(), 4),
             T = 1 + 10 * Math.pow(this.random.next(), 4),
-            this.I1lOI = new ValueNoise,
+            this.I1lOI = new Ol0OI,
             u = new Gradient,
             R = 0,
             _ = []; ; )
@@ -11606,7 +11606,7 @@ input[type=range]:focus::-ms-fill-upper {
             case 0:
                 h = function(t) {
                     return function(e, i, s) {
-                        return t.I1lOI.fractalNoise3D(e, i, s)
+                        return t.I1lOI.O0IIO(e, i, s)
                     }
                 }(this);
                 break;
@@ -12135,7 +12135,7 @@ input[type=range]:focus::-ms-fill-upper {
             r.add([.4, 255, 128, 32]),
             r.add([.7, 192, 224, 255]),
             r.add([1, 128, 192, 255]),
-            d = new ValueNoise(this.random.next()),
+            d = new Ol0OI(this.random.next()),
             h = u = 0,
             c = this.size - 1; u <= c; h = u += 1)
                 O = Math.pow(h / this.size, 1),
@@ -12153,9 +12153,9 @@ input[type=range]:focus::-ms-fill-upper {
                 this.vertices[3 * h] += n * l * (1 + 2 * Math.abs(O - .5)) * .5,
                 this.vertices[3 * h + 1] += a * l * (1 + 2 * Math.abs(O - .5)) * .5,
                 this.vertices[3 * h + 2] += o * l * 4 * Math.pow(1 - O, 2) * .5,
-                this.vertices[3 * h] += .2 * (d.fractalNoise3D(2 * this.vertices[3 * h], 2 * this.vertices[3 * h + 1], 2 * this.vertices[3 * h + 2], 5, .6) - .5),
-                this.vertices[3 * h + 1] += .2 * (d.fractalNoise3D(10 + 2 * this.vertices[3 * h], 2 * this.vertices[3 * h + 1], 2 * this.vertices[3 * h + 2], 5, .6) - .5),
-                this.vertices[3 * h + 2] += .2 * (d.fractalNoise3D(20 + 2 * this.vertices[3 * h], 2 * this.vertices[3 * h + 1], 2 * this.vertices[3 * h + 2], 5, .6) - .5),
+                this.vertices[3 * h] += .2 * (d.O0IIO(2 * this.vertices[3 * h], 2 * this.vertices[3 * h + 1], 2 * this.vertices[3 * h + 2], 5, .6) - .5),
+                this.vertices[3 * h + 1] += .2 * (d.O0IIO(10 + 2 * this.vertices[3 * h], 2 * this.vertices[3 * h + 1], 2 * this.vertices[3 * h + 2], 5, .6) - .5),
+                this.vertices[3 * h + 2] += .2 * (d.O0IIO(20 + 2 * this.vertices[3 * h], 2 * this.vertices[3 * h + 1], 2 * this.vertices[3 * h + 2], 5, .6) - .5),
                 s = r.get(O),
                 this.color[3 * h] = s[0] / 255,
                 this.color[3 * h + 1] = s[1] / 255,
@@ -12221,16 +12221,16 @@ input[type=range]:focus::-ms-fill-upper {
                 s.height = 128,
                 l = s.getContext("2d"),
                 n = l.getImageData(0, 0, s.width, s.height),
-                p = new ValueNoise,
+                p = new Ol0OI,
                 a = r = 0,
                 O = s.width - 1; 0 <= O ? r <= O : r >= O; a = 0 <= O ? ++r : --r)
                     for (o = h = 0,
                     m = s.height - 1; 0 <= m ? h <= m : h >= m; o = 0 <= m ? ++h : --h)
                         g = a / s.width * 16,
                         y = o / s.height * 16,
-                        d = 255 * p.periodicFractalNoise2D(g, y, 8),
-                        I = 255 * p.periodicFractalNoise2D(g + 5, y + 3, 8),
-                        c = 255 * p.periodicFractalNoise2D(g + 2, y + 7, 8),
+                        d = 255 * p.OIl01(g, y, 8),
+                        I = 255 * p.OIl01(g + 5, y + 3, 8),
+                        c = 255 * p.OIl01(g + 2, y + 7, 8),
                         n.data[4 * a + o * s.width * 4] = d,
                         n.data[4 * a + o * s.width * 4 + 1] = I,
                         n.data[4 * a + o * s.width * 4 + 2] = c,
@@ -12512,12 +12512,12 @@ input[type=range]:focus::-ms-fill-upper {
             l.height = 256 * this.details_level,
             a = l.getContext("2d"),
             h = a.getImageData(0, 0, l.width, 1),
-            P = new ValueNoise(this.random.next()),
-            M = new ValueNoise(this.random.next()),
-            T = new ValueNoise(this.random.next()),
-            S = new ValueNoise(this.random.next()),
-            R = new ValueNoise(this.random.next()),
-            A = new ValueNoise(this.random.next()),
+            P = new Ol0OI(this.random.next()),
+            M = new Ol0OI(this.random.next()),
+            T = new Ol0OI(this.random.next()),
+            S = new Ol0OI(this.random.next()),
+            R = new Ol0OI(this.random.next()),
+            A = new Ol0OI(this.random.next()),
             n = 4,
             r = h.data,
             s = ll0O1.OIIlI(this.random.next(), 1, 1),
@@ -12538,7 +12538,7 @@ input[type=range]:focus::-ms-fill-upper {
             ) : (w = 255,
             d = 11,
             p = function(t, e) {
-                return P.periodicFractalNoise2D(t / l.width * 10, e / l.height * 10, 10, d, .8)
+                return P.OIl01(t / l.width * 10, e / l.height * 10, 10, d, .8)
             }
             ),
             q = [],
@@ -12548,11 +12548,11 @@ input[type=range]:focus::-ms-fill-upper {
             Y = [],
             X = E = 0; E <= 10; X = E += 1)
                 for ($ = _ = 0; _ <= 10; $ = _ += 1)
-                    q[X + 11 * $] = c + 6 * M.periodicFractalNoise2D(100 + X / 10 * n, 200 + $ / 10 * n, n, 4, .6),
-                    v[X + 11 * $] = I + 6 * T.periodicFractalNoise2D(100 + X / 10 * n, 200 + $ / 10 * n, n, 4, .6),
-                    i[X + 11 * $] = u + 6 * S.periodicFractalNoise2D(100 + X / 10 * n, 200 + $ / 10 * n, n, 4, .6),
-                    W[X + 11 * $] = R.periodicFractalNoise2D(100 + X / 10 * 4, 200 + $ / 10 * 4, 4, 4, .6) * l.width / 5,
-                    Y[X + 11 * $] = A.periodicFractalNoise2D(100 + X / 10 * 4, 200 + $ / 10 * 4, 4, 4, .6) * l.height / 5;
+                    q[X + 11 * $] = c + 6 * M.OIl01(100 + X / 10 * n, 200 + $ / 10 * n, n, 4, .6),
+                    v[X + 11 * $] = I + 6 * T.OIl01(100 + X / 10 * n, 200 + $ / 10 * n, n, 4, .6),
+                    i[X + 11 * $] = u + 6 * S.OIl01(100 + X / 10 * n, 200 + $ / 10 * n, n, 4, .6),
+                    W[X + 11 * $] = R.OIl01(100 + X / 10 * 4, 200 + $ / 10 * 4, 4, 4, .6) * l.width / 5,
+                    Y[X + 11 * $] = A.OIl01(100 + X / 10 * 4, 200 + $ / 10 * 4, 4, 4, .6) * l.height / 5;
             for ($ = L = 0,
             F = l.height - 1; L <= F; $ = L += 1) {
                 for (tt = $ / l.width * 10,
@@ -12658,7 +12658,7 @@ input[type=range]:focus::-ms-fill-upper {
                     break;
                 r += .3 * this.random.next()
             }
-            for (p = new ValueNoise(this.random.next()),
+            for (p = new Ol0OI(this.random.next()),
             l = t.data,
             a = 2 + 3 * this.random.next(),
             d = .5 + .3 * this.random.next(),
@@ -12666,7 +12666,7 @@ input[type=range]:focus::-ms-fill-upper {
                 return p.turbulence2d(t, e, i, s)
             }
             : function(t, e, i, s) {
-                return p.fractalNoise2D(t, e, i, s)
+                return p.OOOlI(t, e, i, s)
             }
             ,
             v = u = 0,
@@ -12799,12 +12799,12 @@ input[type=range]:focus::-ms-fill-upper {
                 n = (n << 16) + (n << 8) + n,
                 this.nebulae_material.color.set(n)),
                 this.game.scene.world.survival)
-                    for (null == this.valuenoise && (this.valuenoise = new ValueNoise),
+                    for (null == this.valuenoise && (this.valuenoise = new Ol0OI),
                     I = Math.min(1, (this.game.scene.world.worldTime - this.game.scene.world.survival_start) / l001I.lIll1),
                     a = Date.now() % 1e7,
-                    k = Math.min(255, Math.floor(1024 * Math.pow(this.valuenoise.fractalNoise2D(.002 * a, 1, 2), 1.5))),
-                    r = Math.min(255, Math.floor(512 * Math.pow(this.valuenoise.fractalNoise2D(.0013 * a, 7, 2), 1.5))),
-                    s = Math.min(255, Math.floor(512 * Math.pow(this.valuenoise.fractalNoise2D(9e-4 * a, 13, 2), 1.5))),
+                    k = Math.min(255, Math.floor(1024 * Math.pow(this.valuenoise.OOOlI(.002 * a, 1, 2), 1.5))),
+                    r = Math.min(255, Math.floor(512 * Math.pow(this.valuenoise.OOOlI(.0013 * a, 7, 2), 1.5))),
+                    s = Math.min(255, Math.floor(512 * Math.pow(this.valuenoise.OOOlI(9e-4 * a, 13, 2), 1.5))),
                     k = Math.floor(k * I + 128 * (1 - I)),
                     r = Math.floor(r * I + 128 * (1 - I)),
                     s = Math.floor(s * I + 128 * (1 - I)),
@@ -12979,13 +12979,13 @@ input[type=range]:focus::-ms-fill-upper {
         for (Q = t.data.width,
         x = t.data.height,
         N = new OO0OO(t.data.seed),
-        j = new ValueNoise(N.next()),
-        R = new ValueNoise(N.next()),
-        A = new ValueNoise(N.next()),
-        P = new ValueNoise(N.next()),
-        H = new ValueNoise(N.next()),
-        D = new ValueNoise(N.next()),
-        C = new ValueNoise(N.next()),
+        j = new Ol0OI(N.next()),
+        R = new Ol0OI(N.next()),
+        A = new Ol0OI(N.next()),
+        P = new Ol0OI(N.next()),
+        H = new Ol0OI(N.next()),
+        D = new Ol0OI(N.next()),
+        C = new Ol0OI(N.next()),
         r = 4,
         W = [],
         o = ll0O1.OIIlI(N.next(), 1, 1),
@@ -13012,7 +13012,7 @@ input[type=range]:focus::-ms-fill-upper {
         I = 10,
         h = 4,
         O = function(t, e) {
-            return j.periodicFractalNoise2D(t / Q * 10, e / x * 10, 10, I, .8)
+            return j.OIl01(t / Q * 10, e / x * 10, 10, I, .8)
         }
         ),
         J = [],
@@ -13023,12 +13023,12 @@ input[type=range]:focus::-ms-fill-upper {
         i = [],
         et = k = 0; k <= 10; et = k += 1)
             for (st = M = 0; M <= 10; st = M += 1)
-                J[et + 11 * st] = p + R.periodicFractalNoise2D(100 + et / 10 * r, 200 + st / 10 * r, r, 4, .6) * h,
-                w[et + 11 * st] = c + A.periodicFractalNoise2D(100 + et / 10 * r, 200 + st / 10 * r, r, 4, .6) * h,
-                a[et + 11 * st] = d + P.periodicFractalNoise2D(100 + et / 10 * r, 200 + st / 10 * r, r, 4, .6) * h,
-                Z[et + 11 * st] = H.periodicFractalNoise2D(100 + et / 10 * 4, 200 + st / 10 * 4, 4, 4, .6) * Q / 5,
-                X[et + 11 * st] = D.periodicFractalNoise2D(100 + et / 10 * 4, 200 + st / 10 * 4, 4, 4, .6) * x / 5,
-                i[et + 11 * st] = Math.max(0, Math.min(1, 2 * C.periodicFractalNoise2D(100 + et / 10 * 6, 200 + st / 10 * 6, 6, 5, .6)));
+                J[et + 11 * st] = p + R.OIl01(100 + et / 10 * r, 200 + st / 10 * r, r, 4, .6) * h,
+                w[et + 11 * st] = c + A.OIl01(100 + et / 10 * r, 200 + st / 10 * r, r, 4, .6) * h,
+                a[et + 11 * st] = d + P.OIl01(100 + et / 10 * r, 200 + st / 10 * r, r, 4, .6) * h,
+                Z[et + 11 * st] = H.OIl01(100 + et / 10 * 4, 200 + st / 10 * 4, 4, 4, .6) * Q / 5,
+                X[et + 11 * st] = D.OIl01(100 + et / 10 * 4, 200 + st / 10 * 4, 4, 4, .6) * x / 5,
+                i[et + 11 * st] = Math.max(0, Math.min(1, 2 * C.OIl01(100 + et / 10 * 6, 200 + st / 10 * 6, 6, 5, .6)));
         for (st = T = 0,
         U = x - 1; T <= U; st = T += 1)
             for (lt = st / Q * 10,
@@ -13067,7 +13067,7 @@ input[type=range]:focus::-ms-fill-upper {
     }
     ,
     deepspaceworker = "self.onmessage = " + workerfunk + ";",
-    deepspaceworker += "var ll0O1 = (function() {\n  function ll0O1() {}\n\n  ll0O1.OIIlI = function(h, s, v, II0II) {\n    var b, f, g, i, p, q, r, t;\n    if (II0II == null) {\n      II0II = [];\n    }\n    i = Math.floor(h * 6);\n    f = h * 6 - i;\n    p = v * (1 - s);\n    q = v * (1 - f * s);\n    t = v * (1 - (1 - f) * s);\n    switch (i % 6) {\n      case 0:\n        r = v;\n        g = t;\n        b = p;\n        break;\n      case 1:\n        r = q;\n        g = v;\n        b = p;\n        break;\n      case 2:\n        r = p;\n        g = v;\n        b = t;\n        break;\n      case 3:\n        r = p;\n        g = q;\n        b = v;\n        break;\n      case 4:\n        r = t;\n        g = p;\n        b = v;\n        break;\n      case 5:\n        r = v;\n        g = p;\n        b = q;\n    }\n    II0II[0] = (r * 255) | 0;\n    II0II[1] = (g * 255) | 0;\n    II0II[2] = (b * 255) | 0;\n    return II0II;\n  };\n\n  ll0O1.hsvToRgbHex = function(h, s, v) {\n    var b, f, g, i, p, q, r, t;\n    i = Math.floor(h * 6);\n    f = h * 6 - i;\n    p = v * (1 - s);\n    q = v * (1 - f * s);\n    t = v * (1 - (1 - f) * s);\n    switch (i % 6) {\n      case 0:\n        r = v;\n        g = t;\n        b = p;\n        break;\n      case 1:\n        r = q;\n        g = v;\n        b = p;\n        break;\n      case 2:\n        r = p;\n        g = v;\n        b = t;\n        break;\n      case 3:\n        r = p;\n        g = q;\n        b = v;\n        break;\n      case 4:\n        r = t;\n        g = p;\n        b = v;\n        break;\n      case 5:\n        r = v;\n        g = p;\n        b = q;\n    }\n    return (((r * 255) | 0) << 16) | (((g * 255) | 0) << 8) | ((b * 255) | 0);\n  };\n\n  return ll0O1;\n\n})();\n\nvar OO0OO = (function() {\n  function OO0OO(seed) {\n    this.seed = seed != null ? seed : Math.random();\n    if (this.seed < 1) {\n      this.seed *= 1 << 30;\n    }\n    this.a = 13971;\n    this.b = 12345;\n    this.size = 1 << 30;\n    this.IOIOl = this.size - 1;\n    this.Il0OO = 1 / this.size;\n    this.OOIII();\n    this.OOIII();\n    this.OOIII();\n  }\n\n  OO0OO.prototype.next = function() {\n    this.seed = (this.seed * this.a + this.b) & this.IOIOl;\n    return this.seed * this.Il0OO;\n  };\n\n  OO0OO.prototype.OO00I = function(IIIIO, pow) {\n    if (pow != null) {\n      return Math.floor(Math.pow(this.next(), pow) * IIIIO);\n    } else {\n      return Math.floor(this.next() * IIIIO);\n    }\n  };\n\n  OO0OO.prototype.OOIII = function() {\n    return this.seed = (this.seed * this.a + this.b) & this.IOIOl;\n  };\n\n  OO0OO.prototype.feed = function(number) {\n    return this.seed = (this.seed * this.a * number + this.b) & this.IOIOl;\n  };\n\n  return OO0OO;\n\n})();\n\nvar ValueNoise = (function() {\n  function ValueNoise(I0Ill) {\n    var i, l, len, ref;\n    this.seed = I0Ill;\n    this.table = [670, 243, 963, 607, 432, 29, 624, 809, 254, 752, 691, 904, 275, 984, 586, 94, 1014, 614, 252, 178, 488, 954, 55, 836, 186, 858, 719, 562, 685, 898, 167, 844, 639, 505, 85, 386, 520, 988, 561, 889, 91, 329, 900, 847, 334, 531, 168, 57, 789, 529, 259, 323, 313, 72, 153, 606, 694, 442, 547, 922, 242, 983, 965, 876, 39, 728, 383, 109, 343, 810, 815, 144, 457, 434, 221, 279, 328, 136, 674, 556, 502, 896, 582, 250, 665, 370, 926, 912, 118, 543, 365, 467, 311, 700, 15, 297, 609, 731, 476, 634, 715, 777, 62, 1007, 525, 942, 310, 627, 630, 448, 437, 822, 300, 339, 924, 583, 92, 800, 698, 312, 542, 740, 271, 778, 895, 447, 175, 957, 17, 481, 347, 283, 366, 277, 843, 966, 927, 535, 503, 234, 746, 712, 1010, 544, 671, 295, 978, 729, 997, 287, 621, 782, 160, 433, 537, 121, 413, 304, 98, 657, 498, 946, 319, 595, 191, 341, 554, 523, 274, 209, 435, 644, 947, 979, 397, 261, 681, 786, 1006, 565, 472, 180, 318, 126, 874, 693, 526, 276, 340, 808, 884, 409, 486, 962, 960, 772, 901, 690, 359, 837, 129, 363, 509, 616, 88, 382, 730, 513, 623, 999, 504, 48, 4, 384, 281, 560, 417, 99, 773, 956, 943, 496, 558, 218, 170, 471, 536, 138, 19, 266, 6, 868, 845, 16, 985, 866, 601, 445, 458, 894, 950, 349, 1017, 125, 495, 723, 446, 647, 834, 880, 272, 475, 483, 227, 357, 750, 851, 139, 406, 336, 158, 284, 482, 324, 991, 632, 587, 663, 74, 256, 541, 120, 801, 831, 46, 522, 589, 1, 571, 368, 137, 761, 885, 968, 982, 948, 785, 391, 840, 932, 829, 117, 641, 466, 367, 688, 733, 229, 735, 14, 205, 31, 316, 333, 183, 521, 795, 58, 1021, 282, 794, 939, 40, 394, 793, 1002, 763, 212, 484, 133, 260, 465, 396, 769, 518, 955, 497, 377, 145, 508, 514, 224, 196, 454, 176, 975, 865, 1005, 1023, 986, 596, 426, 893, 551, 90, 130, 873, 22, 709, 686, 436, 236, 661, 579, 764, 362, 141, 112, 970, 987, 12, 317, 369, 26, 344, 66, 803, 493, 716, 9, 637, 945, 225, 703, 78, 346, 751, 123, 1009, 1016, 27, 52, 864, 902, 921, 292, 314, 599, 799, 263, 626, 338, 953, 491, 892, 353, 692, 917, 540, 882, 677, 744, 633, 821, 327, 60, 1020, 928, 788, 360, 414, 430, 462, 824, 820, 727, 398, 342, 273, 726, 981, 84, 82, 206, 388, 720, 806, 652, 550, 238, 159, 134, 732, 897, 500, 881, 805, 814, 701, 717, 566, 7, 211, 604, 816, 56, 658, 107, 61, 374, 320, 501, 13, 642, 863, 791, 438, 348, 97, 214, 86, 305, 875, 656, 24, 364, 767, 156, 879, 590, 734, 920, 655, 577, 83, 584, 660, 38, 100, 299, 580, 990, 636, 944, 463, 766, 996, 714, 8, 515, 87, 198, 280, 444, 131, 404, 108, 278, 487, 223, 598, 410, 395, 199, 268, 989, 75, 195, 760, 916, 977, 421, 11, 1000, 813, 216, 817, 823, 164, 668, 739, 572, 30, 707, 798, 291, 564, 77, 456, 478, 68, 643, 615, 172, 841, 672, 919, 1012, 613, 385, 980, 711, 771, 682, 232, 765, 143, 620, 631, 861, 468, 622, 201, 325, 424, 189, 608, 403, 775, 646, 673, 1013, 400, 859, 838, 345, 210, 860, 65, 63, 34, 755, 161, 479, 235, 783, 460, 826, 507, 854, 839, 666, 802, 441, 114, 443, 738, 770, 929, 857, 907, 741, 935, 949, 322, 995, 217, 667, 269, 184, 650, 1018, 506, 290, 787, 459, 721, 828, 567, 222, 494, 142, 743, 405, 76, 722, 588, 147, 899, 270, 695, 597, 337, 155, 569, 679, 853, 450, 21, 517, 197, 371, 257, 380, 244, 553, 952, 381, 827, 524, 877, 702, 306, 600, 1011, 431, 781, 594, 387, 1019, 411, 533, 659, 177, 725, 930, 933, 832, 41, 2, 687, 1008, 439, 307, 891, 871, 415, 651, 308, 298, 811, 0, 194, 592, 241, 918, 18, 973, 110, 654, 967, 490, 683, 914, 128, 992, 964, 122, 230, 149, 289, 392, 416, 852, 936, 262, 102, 938, 511, 255, 510, 165, 105, 419, 958, 294, 379, 49, 699, 330, 593, 539, 710, 106, 79, 440, 200, 704, 961, 326, 321, 759, 193, 890, 44, 549, 913, 776, 909, 552, 972, 132, 429, 748, 532, 115, 888, 635, 842, 649, 747, 807, 887, 856, 784, 148, 530, 116, 157, 372, 754, 28, 581, 67, 187, 202, 818, 181, 45, 959, 146, 124, 994, 872, 675, 706, 253, 247, 625, 570, 152, 423, 185, 361, 849, 971, 546, 412, 830, 1022, 188, 850, 140, 220, 451, 219, 768, 1015, 455, 780, 976, 449, 969, 848, 293, 249, 59, 390, 512, 538, 578, 906, 819, 862, 974, 33, 911, 135, 908, 248, 401, 951, 527, 169, 676, 640, 1003, 591, 103, 37, 285, 684, 104, 163, 753, 1004, 934, 645, 470, 774, 20, 489, 228, 461, 492, 469, 998, 296, 233, 869, 605, 315, 36, 5, 425, 878, 617, 886, 23, 355, 993, 93, 473, 555, 474, 464, 937, 925, 1001, 611, 35, 812, 174, 53, 286, 680, 267, 428, 335, 883, 653, 69, 718, 585, 749, 150, 408, 393, 915, 576, 664, 629, 756, 402, 638, 602, 245, 43, 545, 213, 303, 192, 70, 453, 910, 407, 742, 111, 548, 835, 452, 575, 903, 619, 376, 154, 302, 151, 804, 867, 574, 563, 239, 648, 179, 855, 378, 618, 264, 669, 427, 354, 399, 265, 50, 796, 166, 923, 825, 697, 534, 54, 173, 870, 792, 162, 713, 246, 89, 51, 350, 705, 251, 557, 237, 240, 736, 689, 203, 519, 73, 81, 628, 288, 331, 204, 528, 480, 389, 32, 418, 573, 757, 358, 215, 226, 42, 779, 231, 171, 190, 612, 301, 762, 708, 420, 846, 208, 485, 351, 790, 737, 10, 258, 309, 797, 127, 516, 559, 499, 352, 71, 758, 25, 568, 113, 3, 610, 101, 375, 96, 603, 745, 64, 80, 477, 332, 833, 940, 373, 905, 422, 182, 356, 941, 47, 119, 662, 931, 696, 95, 724, 678, 207];\n    len = this.table.length;\n    for (i = l = 0, ref = len - 1; 0 <= ref ? l <= ref : l >= ref; i = 0 <= ref ? ++l : --l) {\n      this.table.push(this.table[i]);\n    }\n    if (this.seed < 1) {\n      this.seed *= 1 << 30;\n    }\n    this.size = 1024;\n    this.normalize = 1 / 1023;\n    this.IOIOl = 1023;\n    this.l01l0 = this.seed & this.IOIOl;\n    this.IlIl0 = (this.seed >> 10) & this.IOIOl;\n    this.lIII0 = (this.seed >> 20) & this.IOIOl;\n    this.c2d = [];\n    this.lOllO = Math.cos(.3);\n    this.O0OO1 = Math.sin(.3);\n  }\n\n  ValueNoise.prototype.smoothstepLerp = function(x, y, a) {\n    var c;\n    c = (-2 * a + 3) * a * a;\n    return x * (1 - c) + y * c;\n  };\n\n  ValueNoise.prototype.lerp = function(x, y, a) {\n    return x * (1 - a) + y * a;\n  };\n\n  ValueNoise.prototype.noise2D = function(x, y) {\n    var lII1O, OlOOO, l010l, v2, O000l, O1lI1, I11O1, IlOOI;\n    I11O1 = Math.floor(x);\n    IlOOI = Math.floor(y);\n    lII1O = x - I11O1;\n    OlOOO = y - IlOOI;\n    I11O1 = I11O1 & this.IOIOl;\n    IlOOI = IlOOI & this.IOIOl;\n    l010l = this.table[this.l01l0 + this.table[I11O1 + this.table[IlOOI + this.IlIl0]]];\n    v2 = this.table[this.l01l0 + this.table[I11O1 + 1 + this.table[IlOOI + this.IlIl0]]];\n    O000l = this.table[this.l01l0 + this.table[I11O1 + this.table[IlOOI + 1 + this.IlIl0]]];\n    O1lI1 = this.table[this.l01l0 + this.table[I11O1 + 1 + this.table[IlOOI + 1 + this.IlIl0]]];\n    return this.smoothstepLerp(this.smoothstepLerp(l010l, v2, lII1O), this.smoothstepLerp(O000l, O1lI1, lII1O), OlOOO) * this.normalize;\n  };\n\n  ValueNoise.prototype.smoothNoise3D = function(x, y, z) {\n    var lII1O, OlOOO, az, l010l, v2, O000l, O1lI1, l0l00, IOlOl, IlI1I, lI1OI, O1OO0, lI1lI, I11O1, IlOOI, II0ll;\n    I11O1 = Math.floor(x);\n    IlOOI = Math.floor(y);\n    II0ll = Math.floor(z);\n    lII1O = x - I11O1;\n    OlOOO = y - IlOOI;\n    az = z - II0ll;\n    I11O1 = I11O1 & this.IOIOl;\n    IlOOI = IlOOI & this.IOIOl;\n    II0ll = II0ll & this.IOIOl;\n    l010l = this.table[this.l01l0 + this.table[I11O1 + this.table[IlOOI + this.table[this.IlIl0 + this.table[II0ll + this.lIII0]]]]];\n    v2 = this.table[this.l01l0 + this.table[I11O1 + 1 + this.table[IlOOI + this.table[this.IlIl0 + this.table[II0ll + this.lIII0]]]]];\n    O000l = this.table[this.l01l0 + this.table[I11O1 + this.table[IlOOI + 1 + this.table[this.IlIl0 + this.table[II0ll + this.lIII0]]]]];\n    O1lI1 = this.table[this.l01l0 + this.table[I11O1 + 1 + this.table[IlOOI + 1 + this.table[this.IlIl0 + this.table[II0ll + this.lIII0]]]]];\n    l0l00 = this.table[this.l01l0 + this.table[I11O1 + this.table[IlOOI + this.table[this.IlIl0 + this.table[II0ll + 1 + this.lIII0]]]]];\n    IOlOl = this.table[this.l01l0 + this.table[I11O1 + 1 + this.table[IlOOI + this.table[this.IlIl0 + this.table[II0ll + 1 + this.lIII0]]]]];\n    IlI1I = this.table[this.l01l0 + this.table[I11O1 + this.table[IlOOI + 1 + this.table[this.IlIl0 + this.table[II0ll + 1 + this.lIII0]]]]];\n    lI1OI = this.table[this.l01l0 + this.table[I11O1 + 1 + this.table[IlOOI + 1 + this.table[this.IlIl0 + this.table[II0ll + 1 + this.lIII0]]]]];\n    O1OO0 = this.smoothstepLerp(this.smoothstepLerp(l010l, v2, lII1O), this.smoothstepLerp(O000l, O1lI1, lII1O), OlOOO);\n    lI1lI = this.smoothstepLerp(this.smoothstepLerp(l0l00, IOlOl, lII1O), this.smoothstepLerp(IlI1I, lI1OI, lII1O), OlOOO);\n    return this.smoothstepLerp(O1OO0, lI1lI, az) * this.normalize;\n  };\n\n  ValueNoise.prototype.linearNoise3D = function(x, y, z) {\n    var lII1O, OlOOO, az, l010l, v2, O000l, O1lI1, l0l00, IOlOl, IlI1I, lI1OI, O1OO0, lI1lI, I11O1, IlOOI, II0ll;\n    I11O1 = Math.floor(x);\n    IlOOI = Math.floor(y);\n    II0ll = Math.floor(z);\n    lII1O = x - I11O1;\n    OlOOO = y - IlOOI;\n    az = z - II0ll;\n    I11O1 = I11O1 & this.IOIOl;\n    IlOOI = IlOOI & this.IOIOl;\n    II0ll = II0ll & this.IOIOl;\n    l010l = this.table[this.l01l0 + this.table[I11O1 + this.table[IlOOI + this.table[this.IlIl0 + this.table[II0ll + this.lIII0]]]]];\n    v2 = this.table[this.l01l0 + this.table[I11O1 + 1 + this.table[IlOOI + this.table[this.IlIl0 + this.table[II0ll + this.lIII0]]]]];\n    O000l = this.table[this.l01l0 + this.table[I11O1 + this.table[IlOOI + 1 + this.table[this.IlIl0 + this.table[II0ll + this.lIII0]]]]];\n    O1lI1 = this.table[this.l01l0 + this.table[I11O1 + 1 + this.table[IlOOI + 1 + this.table[this.IlIl0 + this.table[II0ll + this.lIII0]]]]];\n    l0l00 = this.table[this.l01l0 + this.table[I11O1 + this.table[IlOOI + this.table[this.IlIl0 + this.table[II0ll + 1 + this.lIII0]]]]];\n    IOlOl = this.table[this.l01l0 + this.table[I11O1 + 1 + this.table[IlOOI + this.table[this.IlIl0 + this.table[II0ll + 1 + this.lIII0]]]]];\n    IlI1I = this.table[this.l01l0 + this.table[I11O1 + this.table[IlOOI + 1 + this.table[this.IlIl0 + this.table[II0ll + 1 + this.lIII0]]]]];\n    lI1OI = this.table[this.l01l0 + this.table[I11O1 + 1 + this.table[IlOOI + 1 + this.table[this.IlIl0 + this.table[II0ll + 1 + this.lIII0]]]]];\n    O1OO0 = this.lerp(this.lerp(l010l, v2, lII1O), this.lerp(O000l, O1lI1, lII1O), OlOOO);\n    lI1lI = this.lerp(this.lerp(l0l00, IOlOl, lII1O), this.lerp(IlI1I, lI1OI, lII1O), OlOOO);\n    return this.lerp(O1OO0, lI1lI, az) * this.normalize;\n  };\n\n  ValueNoise.prototype.unused = function(IlI00, OI0Ol, iz) {};\n\n  ValueNoise.prototype.fractalNoise2D = function(x, y, l11l0, OI100, I1lOO, lO0OI, ts) {\n    var d, i, l, Il0OO, OIl00, l0O1l, ref, l1I10;\n    if (l11l0 == null) {\n      l11l0 = 5;\n    }\n    if (OI100 == null) {\n      OI100 = .5;\n    }\n    if (I1lOO == null) {\n      I1lOO = 1.9;\n    }\n    if (lO0OI == null) {\n      lO0OI = this.lOllO;\n    }\n    if (ts == null) {\n      ts = this.O0OO1;\n    }\n    l1I10 = 0;\n    d = 1;\n    Il0OO = 0;\n    for (i = l = 1, ref = l11l0; l <= ref; i = l += 1) {\n      l1I10 += this.noise2D(x, y) * d;\n      Il0OO += d;\n      d *= OI100;\n      OIl00 = I1lOO * (x * lO0OI + y * ts);\n      l0O1l = I1lOO * (y * lO0OI - x * ts);\n      x = OIl00;\n      y = l0O1l;\n    }\n    return l1I10 / Il0OO;\n  };\n\n  ValueNoise.prototype.fractalNoise3D = function(x, y, z, l11l0, OI100, I1lOO, lO0OI, ts) {\n    var d, i, l, Il0OO, OIl00, l0O1l, ref, l1I10;\n    if (l11l0 == null) {\n      l11l0 = 5;\n    }\n    if (OI100 == null) {\n      OI100 = .5;\n    }\n    if (I1lOO == null) {\n      I1lOO = 1.9;\n    }\n    if (lO0OI == null) {\n      lO0OI = this.lOllO;\n    }\n    if (ts == null) {\n      ts = this.O0OO1;\n    }\n    l1I10 = 0;\n    d = 1;\n    Il0OO = 0;\n    for (i = l = 1, ref = l11l0; l <= ref; i = l += 1) {\n      l1I10 += this.smoothNoise3D(x, y, z) * d;\n      Il0OO += d;\n      d *= OI100;\n      OIl00 = I1lOO * (x * lO0OI + y * ts);\n      l0O1l = I1lOO * (y * lO0OI - x * ts);\n      x = OIl00;\n      y = l0O1l;\n      z = I1lOO * z;\n    }\n    return l1I10 / Il0OO;\n  };\n\n  ValueNoise.prototype.periodicFractalNoise2D = function(x, y, O1l11, l11l0, OI100, I1lOO, lO0OI, ts) {\n    var lII1O, OlOOO, IlI00, OI0Ol, l010l, v2, O000l, O1lI1;\n    if (l11l0 == null) {\n      l11l0 = 5;\n    }\n    if (OI100 == null) {\n      OI100 = .5;\n    }\n    if (I1lOO == null) {\n      I1lOO = 1.9;\n    }\n    if (lO0OI == null) {\n      lO0OI = this.lOllO;\n    }\n    if (ts == null) {\n      ts = this.O0OO1;\n    }\n    IlI00 = Math.floor(x / O1l11);\n    OI0Ol = Math.floor(y / O1l11);\n    lII1O = x / O1l11 - IlI00;\n    OlOOO = y / O1l11 - OI0Ol;\n    l010l = this.fractalNoise2D(lII1O * O1l11, OlOOO * O1l11, l11l0, OI100, I1lOO, lO0OI, ts);\n    v2 = this.fractalNoise2D(lII1O * O1l11 + O1l11, OlOOO * O1l11, l11l0, OI100, I1lOO, lO0OI, ts);\n    O000l = this.fractalNoise2D(lII1O * O1l11, OlOOO * O1l11 + O1l11, l11l0, OI100, I1lOO, lO0OI, ts);\n    O1lI1 = this.fractalNoise2D(lII1O * O1l11 + O1l11, OlOOO * O1l11 + O1l11, l11l0, OI100, I1lOO, lO0OI, ts);\n    return this.smoothstepLerp(this.smoothstepLerp(l010l, v2, 1 - lII1O), this.smoothstepLerp(O000l, O1lI1, 1 - lII1O), 1 - OlOOO);\n  };\n\n  ValueNoise.prototype.turbulence2d = function(x, y, l11l0, OI100, I1lOO, lO0OI, ts) {\n    var d, i, l, Il0OO, OIl00, l0O1l, ref, l1I10;\n    if (l11l0 == null) {\n      l11l0 = 5;\n    }\n    if (OI100 == null) {\n      OI100 = .5;\n    }\n    if (I1lOO == null) {\n      I1lOO = 1.9;\n    }\n    if (lO0OI == null) {\n      lO0OI = this.lOllO;\n    }\n    if (ts == null) {\n      ts = this.O0OO1;\n    }\n    l1I10 = 0;\n    d = 1;\n    Il0OO = 0;\n    for (i = l = 1, ref = l11l0; l <= ref; i = l += 1) {\n      l1I10 += 2 * (.5 - Math.abs(.5 - this.noise2D(x, y))) * d;\n      Il0OO += d;\n      d *= OI100;\n      OIl00 = I1lOO * (x * lO0OI + y * ts);\n      l0O1l = I1lOO * (y * lO0OI - x * ts);\n      x = OIl00;\n      y = l0O1l;\n    }\n    return l1I10 / Il0OO;\n  };\n\n  ValueNoise.prototype.periodicTurbulence2d = function(x, y, O1l11, l11l0, OI100, I1lOO, lO0OI, ts) {\n    var lII1O, OlOOO, IlI00, OI0Ol, l010l, v2, O000l, O1lI1;\n    if (l11l0 == null) {\n      l11l0 = 5;\n    }\n    if (OI100 == null) {\n      OI100 = .5;\n    }\n    if (I1lOO == null) {\n      I1lOO = 1.9;\n    }\n    if (lO0OI == null) {\n      lO0OI = this.lOllO;\n    }\n    if (ts == null) {\n      ts = this.O0OO1;\n    }\n    IlI00 = Math.floor(x / O1l11);\n    OI0Ol = Math.floor(y / O1l11);\n    lII1O = x / O1l11 - IlI00;\n    OlOOO = y / O1l11 - OI0Ol;\n    l010l = this.turbulence2d(lII1O * O1l11, OlOOO * O1l11, l11l0, OI100, I1lOO, lO0OI, ts);\n    v2 = this.turbulence2d(lII1O * O1l11 + O1l11, OlOOO * O1l11, l11l0, OI100, I1lOO, lO0OI, ts);\n    O000l = this.turbulence2d(lII1O * O1l11, OlOOO * O1l11 + O1l11, l11l0, OI100, I1lOO, lO0OI, ts);\n    O1lI1 = this.turbulence2d(lII1O * O1l11 + O1l11, OlOOO * O1l11 + O1l11, l11l0, OI100, I1lOO, lO0OI, ts);\n    return this.smoothstepLerp(this.smoothstepLerp(l010l, v2, 1 - lII1O), this.smoothstepLerp(O000l, O1lI1, 1 - lII1O), 1 - OlOOO);\n  };\n\n  ValueNoise.prototype.IOl0l = function(x, y, l11l0, OI100, I1lOO, lO0OI, ts) {\n    var IIlIO, d, i, l, Il0OO, OIl00, l0O1l, ref, l1I10, v;\n    if (l11l0 == null) {\n      l11l0 = 5;\n    }\n    if (OI100 == null) {\n      OI100 = .5;\n    }\n    if (I1lOO == null) {\n      I1lOO = 1.9;\n    }\n    if (lO0OI == null) {\n      lO0OI = this.lOllO;\n    }\n    if (ts == null) {\n      ts = this.O0OO1;\n    }\n    l1I10 = 0;\n    IIlIO = 1;\n    d = 1;\n    Il0OO = 0;\n    for (i = l = 1, ref = l11l0; l <= ref; i = l += 1) {\n      v = this.noise2D(x, y) * 2;\n      if (v > 1) {\n        v = 2 - v;\n      }\n      v = Math.pow(v, 2);\n      l1I10 += IIlIO * d * v;\n      IIlIO = v;\n      Il0OO += d;\n      d *= OI100;\n      OIl00 = I1lOO * (x * lO0OI + y * ts);\n      l0O1l = I1lOO * (y * lO0OI - x * ts);\n      x = OIl00;\n      y = l0O1l;\n    }\n    return l1I10 / Il0OO;\n  };\n\n  ValueNoise.prototype.l111O = function(x, y, z, l11l0, OI100, I1lOO, lO0OI, ts) {\n    var IIlIO, d, i, l, OOOOl, Il0OO, OIl00, l0O1l, O0ll0, ref, l1I10, v;\n    if (l11l0 == null) {\n      l11l0 = 5;\n    }\n    if (OI100 == null) {\n      OI100 = .5;\n    }\n    if (I1lOO == null) {\n      I1lOO = 1.9;\n    }\n    if (lO0OI == null) {\n      lO0OI = this.lOllO;\n    }\n    if (ts == null) {\n      ts = this.O0OO1;\n    }\n    l1I10 = 0;\n    IIlIO = 1;\n    d = 1;\n    Il0OO = 0;\n    for (i = l = 1, ref = l11l0; l <= ref; i = l += 1) {\n      v = this.smoothNoise3D(x, y, z) * 2;\n      if (v > 1) {\n        v = 2 - v;\n      }\n      v = Math.pow(v, 2);\n      l1I10 += IIlIO * d * v;\n      IIlIO = v;\n      Il0OO += d;\n      d *= OI100;\n      OIl00 = x * lO0OI + y * ts;\n      l0O1l = y * lO0OI - x * ts;\n      OOOOl = l0O1l * lO0OI + z * ts;\n      O0ll0 = z * lO0OI - l0O1l * ts;\n      x = I1lOO * OIl00;\n      y = I1lOO * OOOOl;\n      z = I1lOO * O0ll0;\n    }\n    return l1I10 / Il0OO;\n  };\n\n  ValueNoise.prototype.I0111 = function(x, y, O1l11) {\n    var lII1O, OlOOO, O1010, lIO1O, IllOl, lOlO0, lO1lO, OlIOl, d, d1, d2, lO10I, II0O0, l11Il, OIIIO, IOIl0, Ol0OO, i, j, l, m, px, IO1Il, I11O1, l1OI1, IlOOI, O1O11;\n    I11O1 = Math.floor(x);\n    IlOOI = Math.floor(y);\n    lII1O = x - I11O1;\n    OlOOO = y - IlOOI;\n    O1010 = 100;\n    lIO1O = 0;\n    IllOl = 0;\n    lOlO0 = 100;\n    lO1lO = 0;\n    OlIOl = 0;\n    for (i = l = 0; l <= 2; i = l += 1) {\n      for (j = m = 0; m <= 2; j = m += 1) {\n        l1OI1 = (I11O1 - 1 + i) % O1l11;\n        O1O11 = (IlOOI - 1 + j) % O1l11;\n        px = -1 + i + this.table[this.l01l0 + this.table[l1OI1 + this.table[this.IlIl0 + O1O11]]] * this.normalize * .8 + .1;\n        IO1Il = -1 + j + this.table[this.l01l0 + this.table[l1OI1 + this.table[this.IlIl0 + this.table[O1O11 + 1]]]] * this.normalize * .8 + .1;\n        lO10I = lII1O - px;\n        OIIIO = OlOOO - IO1Il;\n        d = lO10I * lO10I + OIIIO * OIIIO;\n        if (d < O1010) {\n          lOlO0 = O1010;\n          lO1lO = lIO1O;\n          OlIOl = IllOl;\n          O1010 = d;\n          lIO1O = px;\n          IllOl = IO1Il;\n        } else if (d < lOlO0) {\n          lOlO0 = d;\n          lO1lO = px;\n          OlIOl = IO1Il;\n        }\n      }\n    }\n    II0O0 = lII1O - lIO1O;\n    IOIl0 = OlOOO - IllOl;\n    d1 = Math.sqrt(II0O0 * II0O0 + IOIl0 * IOIl0);\n    l11Il = lII1O - lO1lO;\n    Ol0OO = OlOOO - OlIOl;\n    d2 = Math.sqrt(l11Il * l11Il + Ol0OO * Ol0OO);\n    return Math.min(d1, d2) / Math.max(d1, d2);\n  };\n\n  ValueNoise.prototype.l01lO = function(x, y, O1l11) {\n    var lII1O, OlOOO, O1010, lIO1O, IllOl, O1lI0, d, lO10I, OIIIO, i, j, l, m, px, IO1Il, seed, I11O1, l1OI1, IlOOI, O1O11;\n    I11O1 = Math.floor(x);\n    IlOOI = Math.floor(y);\n    lII1O = x - I11O1;\n    OlOOO = y - IlOOI;\n    O1010 = 100;\n    lIO1O = 0;\n    IllOl = 0;\n    O1lI0 = 0;\n    for (i = l = 0; l <= 2; i = l += 1) {\n      for (j = m = 0; m <= 2; j = m += 1) {\n        l1OI1 = (I11O1 - 1 + i) % O1l11;\n        O1O11 = (IlOOI - 1 + j) % O1l11;\n        px = -1 + i + this.table[this.l01l0 + this.table[l1OI1 + this.table[this.IlIl0 + O1O11]]] * this.normalize * .8 + .1;\n        IO1Il = -1 + j + this.table[this.l01l0 + this.table[l1OI1 + this.table[this.IlIl0 + this.table[O1O11 + 1]]]] * this.normalize * .8 + .1;\n        seed = this.table[this.l01l0 + this.table[l1OI1 + this.table[this.IlIl0 + this.table[O1O11 + 17]]]];\n        lO10I = lII1O - px;\n        OIIIO = OlOOO - IO1Il;\n        d = lO10I * lO10I + OIIIO * OIIIO;\n        if (d < O1010) {\n          O1010 = d;\n          lIO1O = px;\n          IllOl = IO1Il;\n          O1lI0 = seed;\n        }\n      }\n    }\n    return O1lI0 * this.normalize;\n  };\n\n  ValueNoise.prototype.IOl10 = function(x, y, z, O1l11) {\n    var lII1O, OlOOO, az, O1010, lIO1O, IllOl, I1II1, lOlO0, lO1lO, OlIOl, l1l00, d, d1, d2, lO10I, II0O0, l11Il, OIIIO, IOIl0, Ol0OO, IIlOO, O1IIO, IlIOO, i, j, k, l, m, n, px, IO1Il, Il1O0, I11O1, l1OI1, IlOOI, O1O11, II0ll, IlO0O;\n    if (O1l11 == null) {\n      O1l11 = 100;\n    }\n    I11O1 = Math.floor(x);\n    IlOOI = Math.floor(y);\n    II0ll = Math.floor(z);\n    lII1O = x - I11O1;\n    OlOOO = y - IlOOI;\n    az = z - II0ll;\n    O1010 = 100;\n    lIO1O = 0;\n    IllOl = 0;\n    I1II1 = 0;\n    lOlO0 = 100;\n    lO1lO = 0;\n    OlIOl = 0;\n    l1l00 = 0;\n    for (i = l = 0; l <= 2; i = l += 1) {\n      for (j = m = 0; m <= 2; j = m += 1) {\n        for (k = n = 0; n <= 2; k = n += 1) {\n          l1OI1 = ((I11O1 - 1 + i) % O1l11) & this.IOIOl;\n          O1O11 = ((IlOOI - 1 + j) % O1l11) & this.IOIOl;\n          IlO0O = ((II0ll - 1 + k) % O1l11) & this.IOIOl;\n          px = -1 + i + this.table[this.l01l0 + this.table[l1OI1 + this.table[this.IlIl0 + this.table[IlO0O + O1O11]]]] * this.normalize;\n          IO1Il = -1 + j + this.table[this.l01l0 + this.table[l1OI1 + this.table[this.IlIl0 + this.table[this.table[O1O11 + IlO0O] + 1]]]] * this.normalize;\n          Il1O0 = -1 + k + this.table[this.l01l0 + this.table[l1OI1 + this.table[this.IlIl0 + this.table[this.table[O1O11 + IlO0O] + 37]]]] * this.normalize;\n        }\n        lO10I = lII1O - px;\n        OIIIO = OlOOO - IO1Il;\n        IIlOO = az - Il1O0;\n        d = lO10I * lO10I + OIIIO * OIIIO + IIlOO * IIlOO;\n        if (d < O1010) {\n          lOlO0 = O1010;\n          lO1lO = lIO1O;\n          OlIOl = IllOl;\n          l1l00 = I1II1;\n          O1010 = d;\n          lIO1O = px;\n          IllOl = IO1Il;\n          I1II1 = Il1O0;\n        } else if (d < lOlO0) {\n          lOlO0 = d;\n          lO1lO = px;\n          OlIOl = IO1Il;\n          l1l00 = Il1O0;\n        }\n      }\n    }\n    II0O0 = lII1O - lIO1O;\n    IOIl0 = OlOOO - IllOl;\n    O1IIO = az - I1II1;\n    d1 = Math.sqrt(II0O0 * II0O0 + IOIl0 * IOIl0 + O1IIO * O1IIO);\n    l11Il = lII1O - lO1lO;\n    Ol0OO = OlOOO - OlIOl;\n    IlIOO = az - l1l00;\n    d2 = Math.sqrt(l11Il * l11Il + Ol0OO * Ol0OO + IlIOO * IlIOO);\n    return Math.min(d1, d2) / Math.max(d1, d2);\n  };\n\n  ValueNoise.Il1l0 = function(size) {\n    var i, index, l, ref, t, v;\n    t = [];\n    for (i = l = 0, ref = size - 1; 0 <= ref ? l <= ref : l >= ref; i = 0 <= ref ? ++l : --l) {\n      t[i] = i;\n    }\n    v = [];\n    while (true) {\n      if (t.length === 0) {\n        break;\n      }\n      index = Math.floor(Math.random() * t.length);\n      v.push(t.splice(index, 1)[0]);\n    }\n    return v;\n  };\n\n  return ValueNoise;\n\n})();",
+    deepspaceworker += "var ll0O1 = (function() {\n  function ll0O1() {}\n\n  ll0O1.OIIlI = function(h, s, v, II0II) {\n    var b, f, g, i, p, q, r, t;\n    if (II0II == null) {\n      II0II = [];\n    }\n    i = Math.floor(h * 6);\n    f = h * 6 - i;\n    p = v * (1 - s);\n    q = v * (1 - f * s);\n    t = v * (1 - (1 - f) * s);\n    switch (i % 6) {\n      case 0:\n        r = v;\n        g = t;\n        b = p;\n        break;\n      case 1:\n        r = q;\n        g = v;\n        b = p;\n        break;\n      case 2:\n        r = p;\n        g = v;\n        b = t;\n        break;\n      case 3:\n        r = p;\n        g = q;\n        b = v;\n        break;\n      case 4:\n        r = t;\n        g = p;\n        b = v;\n        break;\n      case 5:\n        r = v;\n        g = p;\n        b = q;\n    }\n    II0II[0] = (r * 255) | 0;\n    II0II[1] = (g * 255) | 0;\n    II0II[2] = (b * 255) | 0;\n    return II0II;\n  };\n\n  ll0O1.hsvToRgbHex = function(h, s, v) {\n    var b, f, g, i, p, q, r, t;\n    i = Math.floor(h * 6);\n    f = h * 6 - i;\n    p = v * (1 - s);\n    q = v * (1 - f * s);\n    t = v * (1 - (1 - f) * s);\n    switch (i % 6) {\n      case 0:\n        r = v;\n        g = t;\n        b = p;\n        break;\n      case 1:\n        r = q;\n        g = v;\n        b = p;\n        break;\n      case 2:\n        r = p;\n        g = v;\n        b = t;\n        break;\n      case 3:\n        r = p;\n        g = q;\n        b = v;\n        break;\n      case 4:\n        r = t;\n        g = p;\n        b = v;\n        break;\n      case 5:\n        r = v;\n        g = p;\n        b = q;\n    }\n    return (((r * 255) | 0) << 16) | (((g * 255) | 0) << 8) | ((b * 255) | 0);\n  };\n\n  return ll0O1;\n\n})();\n\nvar OO0OO = (function() {\n  function OO0OO(seed) {\n    this.seed = seed != null ? seed : Math.random();\n    if (this.seed < 1) {\n      this.seed *= 1 << 30;\n    }\n    this.a = 13971;\n    this.b = 12345;\n    this.size = 1 << 30;\n    this.IOIOl = this.size - 1;\n    this.Il0OO = 1 / this.size;\n    this.OOIII();\n    this.OOIII();\n    this.OOIII();\n  }\n\n  OO0OO.prototype.next = function() {\n    this.seed = (this.seed * this.a + this.b) & this.IOIOl;\n    return this.seed * this.Il0OO;\n  };\n\n  OO0OO.prototype.OO00I = function(IIIIO, pow) {\n    if (pow != null) {\n      return Math.floor(Math.pow(this.next(), pow) * IIIIO);\n    } else {\n      return Math.floor(this.next() * IIIIO);\n    }\n  };\n\n  OO0OO.prototype.OOIII = function() {\n    return this.seed = (this.seed * this.a + this.b) & this.IOIOl;\n  };\n\n  OO0OO.prototype.feed = function(number) {\n    return this.seed = (this.seed * this.a * number + this.b) & this.IOIOl;\n  };\n\n  return OO0OO;\n\n})();\n\nvar Ol0OI = (function() {\n  function Ol0OI(I0Ill) {\n    var i, l, len, ref;\n    this.seed = I0Ill;\n    this.table = [670, 243, 963, 607, 432, 29, 624, 809, 254, 752, 691, 904, 275, 984, 586, 94, 1014, 614, 252, 178, 488, 954, 55, 836, 186, 858, 719, 562, 685, 898, 167, 844, 639, 505, 85, 386, 520, 988, 561, 889, 91, 329, 900, 847, 334, 531, 168, 57, 789, 529, 259, 323, 313, 72, 153, 606, 694, 442, 547, 922, 242, 983, 965, 876, 39, 728, 383, 109, 343, 810, 815, 144, 457, 434, 221, 279, 328, 136, 674, 556, 502, 896, 582, 250, 665, 370, 926, 912, 118, 543, 365, 467, 311, 700, 15, 297, 609, 731, 476, 634, 715, 777, 62, 1007, 525, 942, 310, 627, 630, 448, 437, 822, 300, 339, 924, 583, 92, 800, 698, 312, 542, 740, 271, 778, 895, 447, 175, 957, 17, 481, 347, 283, 366, 277, 843, 966, 927, 535, 503, 234, 746, 712, 1010, 544, 671, 295, 978, 729, 997, 287, 621, 782, 160, 433, 537, 121, 413, 304, 98, 657, 498, 946, 319, 595, 191, 341, 554, 523, 274, 209, 435, 644, 947, 979, 397, 261, 681, 786, 1006, 565, 472, 180, 318, 126, 874, 693, 526, 276, 340, 808, 884, 409, 486, 962, 960, 772, 901, 690, 359, 837, 129, 363, 509, 616, 88, 382, 730, 513, 623, 999, 504, 48, 4, 384, 281, 560, 417, 99, 773, 956, 943, 496, 558, 218, 170, 471, 536, 138, 19, 266, 6, 868, 845, 16, 985, 866, 601, 445, 458, 894, 950, 349, 1017, 125, 495, 723, 446, 647, 834, 880, 272, 475, 483, 227, 357, 750, 851, 139, 406, 336, 158, 284, 482, 324, 991, 632, 587, 663, 74, 256, 541, 120, 801, 831, 46, 522, 589, 1, 571, 368, 137, 761, 885, 968, 982, 948, 785, 391, 840, 932, 829, 117, 641, 466, 367, 688, 733, 229, 735, 14, 205, 31, 316, 333, 183, 521, 795, 58, 1021, 282, 794, 939, 40, 394, 793, 1002, 763, 212, 484, 133, 260, 465, 396, 769, 518, 955, 497, 377, 145, 508, 514, 224, 196, 454, 176, 975, 865, 1005, 1023, 986, 596, 426, 893, 551, 90, 130, 873, 22, 709, 686, 436, 236, 661, 579, 764, 362, 141, 112, 970, 987, 12, 317, 369, 26, 344, 66, 803, 493, 716, 9, 637, 945, 225, 703, 78, 346, 751, 123, 1009, 1016, 27, 52, 864, 902, 921, 292, 314, 599, 799, 263, 626, 338, 953, 491, 892, 353, 692, 917, 540, 882, 677, 744, 633, 821, 327, 60, 1020, 928, 788, 360, 414, 430, 462, 824, 820, 727, 398, 342, 273, 726, 981, 84, 82, 206, 388, 720, 806, 652, 550, 238, 159, 134, 732, 897, 500, 881, 805, 814, 701, 717, 566, 7, 211, 604, 816, 56, 658, 107, 61, 374, 320, 501, 13, 642, 863, 791, 438, 348, 97, 214, 86, 305, 875, 656, 24, 364, 767, 156, 879, 590, 734, 920, 655, 577, 83, 584, 660, 38, 100, 299, 580, 990, 636, 944, 463, 766, 996, 714, 8, 515, 87, 198, 280, 444, 131, 404, 108, 278, 487, 223, 598, 410, 395, 199, 268, 989, 75, 195, 760, 916, 977, 421, 11, 1000, 813, 216, 817, 823, 164, 668, 739, 572, 30, 707, 798, 291, 564, 77, 456, 478, 68, 643, 615, 172, 841, 672, 919, 1012, 613, 385, 980, 711, 771, 682, 232, 765, 143, 620, 631, 861, 468, 622, 201, 325, 424, 189, 608, 403, 775, 646, 673, 1013, 400, 859, 838, 345, 210, 860, 65, 63, 34, 755, 161, 479, 235, 783, 460, 826, 507, 854, 839, 666, 802, 441, 114, 443, 738, 770, 929, 857, 907, 741, 935, 949, 322, 995, 217, 667, 269, 184, 650, 1018, 506, 290, 787, 459, 721, 828, 567, 222, 494, 142, 743, 405, 76, 722, 588, 147, 899, 270, 695, 597, 337, 155, 569, 679, 853, 450, 21, 517, 197, 371, 257, 380, 244, 553, 952, 381, 827, 524, 877, 702, 306, 600, 1011, 431, 781, 594, 387, 1019, 411, 533, 659, 177, 725, 930, 933, 832, 41, 2, 687, 1008, 439, 307, 891, 871, 415, 651, 308, 298, 811, 0, 194, 592, 241, 918, 18, 973, 110, 654, 967, 490, 683, 914, 128, 992, 964, 122, 230, 149, 289, 392, 416, 852, 936, 262, 102, 938, 511, 255, 510, 165, 105, 419, 958, 294, 379, 49, 699, 330, 593, 539, 710, 106, 79, 440, 200, 704, 961, 326, 321, 759, 193, 890, 44, 549, 913, 776, 909, 552, 972, 132, 429, 748, 532, 115, 888, 635, 842, 649, 747, 807, 887, 856, 784, 148, 530, 116, 157, 372, 754, 28, 581, 67, 187, 202, 818, 181, 45, 959, 146, 124, 994, 872, 675, 706, 253, 247, 625, 570, 152, 423, 185, 361, 849, 971, 546, 412, 830, 1022, 188, 850, 140, 220, 451, 219, 768, 1015, 455, 780, 976, 449, 969, 848, 293, 249, 59, 390, 512, 538, 578, 906, 819, 862, 974, 33, 911, 135, 908, 248, 401, 951, 527, 169, 676, 640, 1003, 591, 103, 37, 285, 684, 104, 163, 753, 1004, 934, 645, 470, 774, 20, 489, 228, 461, 492, 469, 998, 296, 233, 869, 605, 315, 36, 5, 425, 878, 617, 886, 23, 355, 993, 93, 473, 555, 474, 464, 937, 925, 1001, 611, 35, 812, 174, 53, 286, 680, 267, 428, 335, 883, 653, 69, 718, 585, 749, 150, 408, 393, 915, 576, 664, 629, 756, 402, 638, 602, 245, 43, 545, 213, 303, 192, 70, 453, 910, 407, 742, 111, 548, 835, 452, 575, 903, 619, 376, 154, 302, 151, 804, 867, 574, 563, 239, 648, 179, 855, 378, 618, 264, 669, 427, 354, 399, 265, 50, 796, 166, 923, 825, 697, 534, 54, 173, 870, 792, 162, 713, 246, 89, 51, 350, 705, 251, 557, 237, 240, 736, 689, 203, 519, 73, 81, 628, 288, 331, 204, 528, 480, 389, 32, 418, 573, 757, 358, 215, 226, 42, 779, 231, 171, 190, 612, 301, 762, 708, 420, 846, 208, 485, 351, 790, 737, 10, 258, 309, 797, 127, 516, 559, 499, 352, 71, 758, 25, 568, 113, 3, 610, 101, 375, 96, 603, 745, 64, 80, 477, 332, 833, 940, 373, 905, 422, 182, 356, 941, 47, 119, 662, 931, 696, 95, 724, 678, 207];\n    len = this.table.length;\n    for (i = l = 0, ref = len - 1; 0 <= ref ? l <= ref : l >= ref; i = 0 <= ref ? ++l : --l) {\n      this.table.push(this.table[i]);\n    }\n    if (this.seed < 1) {\n      this.seed *= 1 << 30;\n    }\n    this.size = 1024;\n    this.normalize = 1 / 1023;\n    this.IOIOl = 1023;\n    this.l01l0 = this.seed & this.IOIOl;\n    this.IlIl0 = (this.seed >> 10) & this.IOIOl;\n    this.lIII0 = (this.seed >> 20) & this.IOIOl;\n    this.c2d = [];\n    this.lOllO = Math.cos(.3);\n    this.O0OO1 = Math.sin(.3);\n  }\n\n  Ol0OI.prototype.O00IO = function(x, y, a) {\n    var c;\n    c = (-2 * a + 3) * a * a;\n    return x * (1 - c) + y * c;\n  };\n\n  Ol0OI.prototype.I1OlI = function(x, y, a) {\n    return x * (1 - a) + y * a;\n  };\n\n  Ol0OI.prototype.lllll = function(x, y) {\n    var lII1O, OlOOO, l010l, v2, O000l, O1lI1, I11O1, IlOOI;\n    I11O1 = Math.floor(x);\n    IlOOI = Math.floor(y);\n    lII1O = x - I11O1;\n    OlOOO = y - IlOOI;\n    I11O1 = I11O1 & this.IOIOl;\n    IlOOI = IlOOI & this.IOIOl;\n    l010l = this.table[this.l01l0 + this.table[I11O1 + this.table[IlOOI + this.IlIl0]]];\n    v2 = this.table[this.l01l0 + this.table[I11O1 + 1 + this.table[IlOOI + this.IlIl0]]];\n    O000l = this.table[this.l01l0 + this.table[I11O1 + this.table[IlOOI + 1 + this.IlIl0]]];\n    O1lI1 = this.table[this.l01l0 + this.table[I11O1 + 1 + this.table[IlOOI + 1 + this.IlIl0]]];\n    return this.O00IO(this.O00IO(l010l, v2, lII1O), this.O00IO(O000l, O1lI1, lII1O), OlOOO) * this.normalize;\n  };\n\n  Ol0OI.prototype.OIOO1 = function(x, y, z) {\n    var lII1O, OlOOO, az, l010l, v2, O000l, O1lI1, l0l00, IOlOl, IlI1I, lI1OI, O1OO0, lI1lI, I11O1, IlOOI, II0ll;\n    I11O1 = Math.floor(x);\n    IlOOI = Math.floor(y);\n    II0ll = Math.floor(z);\n    lII1O = x - I11O1;\n    OlOOO = y - IlOOI;\n    az = z - II0ll;\n    I11O1 = I11O1 & this.IOIOl;\n    IlOOI = IlOOI & this.IOIOl;\n    II0ll = II0ll & this.IOIOl;\n    l010l = this.table[this.l01l0 + this.table[I11O1 + this.table[IlOOI + this.table[this.IlIl0 + this.table[II0ll + this.lIII0]]]]];\n    v2 = this.table[this.l01l0 + this.table[I11O1 + 1 + this.table[IlOOI + this.table[this.IlIl0 + this.table[II0ll + this.lIII0]]]]];\n    O000l = this.table[this.l01l0 + this.table[I11O1 + this.table[IlOOI + 1 + this.table[this.IlIl0 + this.table[II0ll + this.lIII0]]]]];\n    O1lI1 = this.table[this.l01l0 + this.table[I11O1 + 1 + this.table[IlOOI + 1 + this.table[this.IlIl0 + this.table[II0ll + this.lIII0]]]]];\n    l0l00 = this.table[this.l01l0 + this.table[I11O1 + this.table[IlOOI + this.table[this.IlIl0 + this.table[II0ll + 1 + this.lIII0]]]]];\n    IOlOl = this.table[this.l01l0 + this.table[I11O1 + 1 + this.table[IlOOI + this.table[this.IlIl0 + this.table[II0ll + 1 + this.lIII0]]]]];\n    IlI1I = this.table[this.l01l0 + this.table[I11O1 + this.table[IlOOI + 1 + this.table[this.IlIl0 + this.table[II0ll + 1 + this.lIII0]]]]];\n    lI1OI = this.table[this.l01l0 + this.table[I11O1 + 1 + this.table[IlOOI + 1 + this.table[this.IlIl0 + this.table[II0ll + 1 + this.lIII0]]]]];\n    O1OO0 = this.O00IO(this.O00IO(l010l, v2, lII1O), this.O00IO(O000l, O1lI1, lII1O), OlOOO);\n    lI1lI = this.O00IO(this.O00IO(l0l00, IOlOl, lII1O), this.O00IO(IlI1I, lI1OI, lII1O), OlOOO);\n    return this.O00IO(O1OO0, lI1lI, az) * this.normalize;\n  };\n\n  Ol0OI.prototype.IIIl0 = function(x, y, z) {\n    var lII1O, OlOOO, az, l010l, v2, O000l, O1lI1, l0l00, IOlOl, IlI1I, lI1OI, O1OO0, lI1lI, I11O1, IlOOI, II0ll;\n    I11O1 = Math.floor(x);\n    IlOOI = Math.floor(y);\n    II0ll = Math.floor(z);\n    lII1O = x - I11O1;\n    OlOOO = y - IlOOI;\n    az = z - II0ll;\n    I11O1 = I11O1 & this.IOIOl;\n    IlOOI = IlOOI & this.IOIOl;\n    II0ll = II0ll & this.IOIOl;\n    l010l = this.table[this.l01l0 + this.table[I11O1 + this.table[IlOOI + this.table[this.IlIl0 + this.table[II0ll + this.lIII0]]]]];\n    v2 = this.table[this.l01l0 + this.table[I11O1 + 1 + this.table[IlOOI + this.table[this.IlIl0 + this.table[II0ll + this.lIII0]]]]];\n    O000l = this.table[this.l01l0 + this.table[I11O1 + this.table[IlOOI + 1 + this.table[this.IlIl0 + this.table[II0ll + this.lIII0]]]]];\n    O1lI1 = this.table[this.l01l0 + this.table[I11O1 + 1 + this.table[IlOOI + 1 + this.table[this.IlIl0 + this.table[II0ll + this.lIII0]]]]];\n    l0l00 = this.table[this.l01l0 + this.table[I11O1 + this.table[IlOOI + this.table[this.IlIl0 + this.table[II0ll + 1 + this.lIII0]]]]];\n    IOlOl = this.table[this.l01l0 + this.table[I11O1 + 1 + this.table[IlOOI + this.table[this.IlIl0 + this.table[II0ll + 1 + this.lIII0]]]]];\n    IlI1I = this.table[this.l01l0 + this.table[I11O1 + this.table[IlOOI + 1 + this.table[this.IlIl0 + this.table[II0ll + 1 + this.lIII0]]]]];\n    lI1OI = this.table[this.l01l0 + this.table[I11O1 + 1 + this.table[IlOOI + 1 + this.table[this.IlIl0 + this.table[II0ll + 1 + this.lIII0]]]]];\n    O1OO0 = this.I1OlI(this.I1OlI(l010l, v2, lII1O), this.I1OlI(O000l, O1lI1, lII1O), OlOOO);\n    lI1lI = this.I1OlI(this.I1OlI(l0l00, IOlOl, lII1O), this.I1OlI(IlI1I, lI1OI, lII1O), OlOOO);\n    return this.I1OlI(O1OO0, lI1lI, az) * this.normalize;\n  };\n\n  Ol0OI.prototype.l10l0 = function(IlI00, OI0Ol, iz) {};\n\n  Ol0OI.prototype.OOOlI = function(x, y, l11l0, OI100, I1lOO, lO0OI, ts) {\n    var d, i, l, Il0OO, OIl00, l0O1l, ref, l1I10;\n    if (l11l0 == null) {\n      l11l0 = 5;\n    }\n    if (OI100 == null) {\n      OI100 = .5;\n    }\n    if (I1lOO == null) {\n      I1lOO = 1.9;\n    }\n    if (lO0OI == null) {\n      lO0OI = this.lOllO;\n    }\n    if (ts == null) {\n      ts = this.O0OO1;\n    }\n    l1I10 = 0;\n    d = 1;\n    Il0OO = 0;\n    for (i = l = 1, ref = l11l0; l <= ref; i = l += 1) {\n      l1I10 += this.lllll(x, y) * d;\n      Il0OO += d;\n      d *= OI100;\n      OIl00 = I1lOO * (x * lO0OI + y * ts);\n      l0O1l = I1lOO * (y * lO0OI - x * ts);\n      x = OIl00;\n      y = l0O1l;\n    }\n    return l1I10 / Il0OO;\n  };\n\n  Ol0OI.prototype.O0IIO = function(x, y, z, l11l0, OI100, I1lOO, lO0OI, ts) {\n    var d, i, l, Il0OO, OIl00, l0O1l, ref, l1I10;\n    if (l11l0 == null) {\n      l11l0 = 5;\n    }\n    if (OI100 == null) {\n      OI100 = .5;\n    }\n    if (I1lOO == null) {\n      I1lOO = 1.9;\n    }\n    if (lO0OI == null) {\n      lO0OI = this.lOllO;\n    }\n    if (ts == null) {\n      ts = this.O0OO1;\n    }\n    l1I10 = 0;\n    d = 1;\n    Il0OO = 0;\n    for (i = l = 1, ref = l11l0; l <= ref; i = l += 1) {\n      l1I10 += this.OIOO1(x, y, z) * d;\n      Il0OO += d;\n      d *= OI100;\n      OIl00 = I1lOO * (x * lO0OI + y * ts);\n      l0O1l = I1lOO * (y * lO0OI - x * ts);\n      x = OIl00;\n      y = l0O1l;\n      z = I1lOO * z;\n    }\n    return l1I10 / Il0OO;\n  };\n\n  Ol0OI.prototype.OIl01 = function(x, y, O1l11, l11l0, OI100, I1lOO, lO0OI, ts) {\n    var lII1O, OlOOO, IlI00, OI0Ol, l010l, v2, O000l, O1lI1;\n    if (l11l0 == null) {\n      l11l0 = 5;\n    }\n    if (OI100 == null) {\n      OI100 = .5;\n    }\n    if (I1lOO == null) {\n      I1lOO = 1.9;\n    }\n    if (lO0OI == null) {\n      lO0OI = this.lOllO;\n    }\n    if (ts == null) {\n      ts = this.O0OO1;\n    }\n    IlI00 = Math.floor(x / O1l11);\n    OI0Ol = Math.floor(y / O1l11);\n    lII1O = x / O1l11 - IlI00;\n    OlOOO = y / O1l11 - OI0Ol;\n    l010l = this.OOOlI(lII1O * O1l11, OlOOO * O1l11, l11l0, OI100, I1lOO, lO0OI, ts);\n    v2 = this.OOOlI(lII1O * O1l11 + O1l11, OlOOO * O1l11, l11l0, OI100, I1lOO, lO0OI, ts);\n    O000l = this.OOOlI(lII1O * O1l11, OlOOO * O1l11 + O1l11, l11l0, OI100, I1lOO, lO0OI, ts);\n    O1lI1 = this.OOOlI(lII1O * O1l11 + O1l11, OlOOO * O1l11 + O1l11, l11l0, OI100, I1lOO, lO0OI, ts);\n    return this.O00IO(this.O00IO(l010l, v2, 1 - lII1O), this.O00IO(O000l, O1lI1, 1 - lII1O), 1 - OlOOO);\n  };\n\n  Ol0OI.prototype.turbulence2d = function(x, y, l11l0, OI100, I1lOO, lO0OI, ts) {\n    var d, i, l, Il0OO, OIl00, l0O1l, ref, l1I10;\n    if (l11l0 == null) {\n      l11l0 = 5;\n    }\n    if (OI100 == null) {\n      OI100 = .5;\n    }\n    if (I1lOO == null) {\n      I1lOO = 1.9;\n    }\n    if (lO0OI == null) {\n      lO0OI = this.lOllO;\n    }\n    if (ts == null) {\n      ts = this.O0OO1;\n    }\n    l1I10 = 0;\n    d = 1;\n    Il0OO = 0;\n    for (i = l = 1, ref = l11l0; l <= ref; i = l += 1) {\n      l1I10 += 2 * (.5 - Math.abs(.5 - this.lllll(x, y))) * d;\n      Il0OO += d;\n      d *= OI100;\n      OIl00 = I1lOO * (x * lO0OI + y * ts);\n      l0O1l = I1lOO * (y * lO0OI - x * ts);\n      x = OIl00;\n      y = l0O1l;\n    }\n    return l1I10 / Il0OO;\n  };\n\n  Ol0OI.prototype.periodicTurbulence2d = function(x, y, O1l11, l11l0, OI100, I1lOO, lO0OI, ts) {\n    var lII1O, OlOOO, IlI00, OI0Ol, l010l, v2, O000l, O1lI1;\n    if (l11l0 == null) {\n      l11l0 = 5;\n    }\n    if (OI100 == null) {\n      OI100 = .5;\n    }\n    if (I1lOO == null) {\n      I1lOO = 1.9;\n    }\n    if (lO0OI == null) {\n      lO0OI = this.lOllO;\n    }\n    if (ts == null) {\n      ts = this.O0OO1;\n    }\n    IlI00 = Math.floor(x / O1l11);\n    OI0Ol = Math.floor(y / O1l11);\n    lII1O = x / O1l11 - IlI00;\n    OlOOO = y / O1l11 - OI0Ol;\n    l010l = this.turbulence2d(lII1O * O1l11, OlOOO * O1l11, l11l0, OI100, I1lOO, lO0OI, ts);\n    v2 = this.turbulence2d(lII1O * O1l11 + O1l11, OlOOO * O1l11, l11l0, OI100, I1lOO, lO0OI, ts);\n    O000l = this.turbulence2d(lII1O * O1l11, OlOOO * O1l11 + O1l11, l11l0, OI100, I1lOO, lO0OI, ts);\n    O1lI1 = this.turbulence2d(lII1O * O1l11 + O1l11, OlOOO * O1l11 + O1l11, l11l0, OI100, I1lOO, lO0OI, ts);\n    return this.O00IO(this.O00IO(l010l, v2, 1 - lII1O), this.O00IO(O000l, O1lI1, 1 - lII1O), 1 - OlOOO);\n  };\n\n  Ol0OI.prototype.IOl0l = function(x, y, l11l0, OI100, I1lOO, lO0OI, ts) {\n    var IIlIO, d, i, l, Il0OO, OIl00, l0O1l, ref, l1I10, v;\n    if (l11l0 == null) {\n      l11l0 = 5;\n    }\n    if (OI100 == null) {\n      OI100 = .5;\n    }\n    if (I1lOO == null) {\n      I1lOO = 1.9;\n    }\n    if (lO0OI == null) {\n      lO0OI = this.lOllO;\n    }\n    if (ts == null) {\n      ts = this.O0OO1;\n    }\n    l1I10 = 0;\n    IIlIO = 1;\n    d = 1;\n    Il0OO = 0;\n    for (i = l = 1, ref = l11l0; l <= ref; i = l += 1) {\n      v = this.lllll(x, y) * 2;\n      if (v > 1) {\n        v = 2 - v;\n      }\n      v = Math.pow(v, 2);\n      l1I10 += IIlIO * d * v;\n      IIlIO = v;\n      Il0OO += d;\n      d *= OI100;\n      OIl00 = I1lOO * (x * lO0OI + y * ts);\n      l0O1l = I1lOO * (y * lO0OI - x * ts);\n      x = OIl00;\n      y = l0O1l;\n    }\n    return l1I10 / Il0OO;\n  };\n\n  Ol0OI.prototype.l111O = function(x, y, z, l11l0, OI100, I1lOO, lO0OI, ts) {\n    var IIlIO, d, i, l, OOOOl, Il0OO, OIl00, l0O1l, O0ll0, ref, l1I10, v;\n    if (l11l0 == null) {\n      l11l0 = 5;\n    }\n    if (OI100 == null) {\n      OI100 = .5;\n    }\n    if (I1lOO == null) {\n      I1lOO = 1.9;\n    }\n    if (lO0OI == null) {\n      lO0OI = this.lOllO;\n    }\n    if (ts == null) {\n      ts = this.O0OO1;\n    }\n    l1I10 = 0;\n    IIlIO = 1;\n    d = 1;\n    Il0OO = 0;\n    for (i = l = 1, ref = l11l0; l <= ref; i = l += 1) {\n      v = this.OIOO1(x, y, z) * 2;\n      if (v > 1) {\n        v = 2 - v;\n      }\n      v = Math.pow(v, 2);\n      l1I10 += IIlIO * d * v;\n      IIlIO = v;\n      Il0OO += d;\n      d *= OI100;\n      OIl00 = x * lO0OI + y * ts;\n      l0O1l = y * lO0OI - x * ts;\n      OOOOl = l0O1l * lO0OI + z * ts;\n      O0ll0 = z * lO0OI - l0O1l * ts;\n      x = I1lOO * OIl00;\n      y = I1lOO * OOOOl;\n      z = I1lOO * O0ll0;\n    }\n    return l1I10 / Il0OO;\n  };\n\n  Ol0OI.prototype.I0111 = function(x, y, O1l11) {\n    var lII1O, OlOOO, O1010, lIO1O, IllOl, lOlO0, lO1lO, OlIOl, d, d1, d2, lO10I, II0O0, l11Il, OIIIO, IOIl0, Ol0OO, i, j, l, m, px, IO1Il, I11O1, l1OI1, IlOOI, O1O11;\n    I11O1 = Math.floor(x);\n    IlOOI = Math.floor(y);\n    lII1O = x - I11O1;\n    OlOOO = y - IlOOI;\n    O1010 = 100;\n    lIO1O = 0;\n    IllOl = 0;\n    lOlO0 = 100;\n    lO1lO = 0;\n    OlIOl = 0;\n    for (i = l = 0; l <= 2; i = l += 1) {\n      for (j = m = 0; m <= 2; j = m += 1) {\n        l1OI1 = (I11O1 - 1 + i) % O1l11;\n        O1O11 = (IlOOI - 1 + j) % O1l11;\n        px = -1 + i + this.table[this.l01l0 + this.table[l1OI1 + this.table[this.IlIl0 + O1O11]]] * this.normalize * .8 + .1;\n        IO1Il = -1 + j + this.table[this.l01l0 + this.table[l1OI1 + this.table[this.IlIl0 + this.table[O1O11 + 1]]]] * this.normalize * .8 + .1;\n        lO10I = lII1O - px;\n        OIIIO = OlOOO - IO1Il;\n        d = lO10I * lO10I + OIIIO * OIIIO;\n        if (d < O1010) {\n          lOlO0 = O1010;\n          lO1lO = lIO1O;\n          OlIOl = IllOl;\n          O1010 = d;\n          lIO1O = px;\n          IllOl = IO1Il;\n        } else if (d < lOlO0) {\n          lOlO0 = d;\n          lO1lO = px;\n          OlIOl = IO1Il;\n        }\n      }\n    }\n    II0O0 = lII1O - lIO1O;\n    IOIl0 = OlOOO - IllOl;\n    d1 = Math.sqrt(II0O0 * II0O0 + IOIl0 * IOIl0);\n    l11Il = lII1O - lO1lO;\n    Ol0OO = OlOOO - OlIOl;\n    d2 = Math.sqrt(l11Il * l11Il + Ol0OO * Ol0OO);\n    return Math.min(d1, d2) / Math.max(d1, d2);\n  };\n\n  Ol0OI.prototype.l01lO = function(x, y, O1l11) {\n    var lII1O, OlOOO, O1010, lIO1O, IllOl, O1lI0, d, lO10I, OIIIO, i, j, l, m, px, IO1Il, seed, I11O1, l1OI1, IlOOI, O1O11;\n    I11O1 = Math.floor(x);\n    IlOOI = Math.floor(y);\n    lII1O = x - I11O1;\n    OlOOO = y - IlOOI;\n    O1010 = 100;\n    lIO1O = 0;\n    IllOl = 0;\n    O1lI0 = 0;\n    for (i = l = 0; l <= 2; i = l += 1) {\n      for (j = m = 0; m <= 2; j = m += 1) {\n        l1OI1 = (I11O1 - 1 + i) % O1l11;\n        O1O11 = (IlOOI - 1 + j) % O1l11;\n        px = -1 + i + this.table[this.l01l0 + this.table[l1OI1 + this.table[this.IlIl0 + O1O11]]] * this.normalize * .8 + .1;\n        IO1Il = -1 + j + this.table[this.l01l0 + this.table[l1OI1 + this.table[this.IlIl0 + this.table[O1O11 + 1]]]] * this.normalize * .8 + .1;\n        seed = this.table[this.l01l0 + this.table[l1OI1 + this.table[this.IlIl0 + this.table[O1O11 + 17]]]];\n        lO10I = lII1O - px;\n        OIIIO = OlOOO - IO1Il;\n        d = lO10I * lO10I + OIIIO * OIIIO;\n        if (d < O1010) {\n          O1010 = d;\n          lIO1O = px;\n          IllOl = IO1Il;\n          O1lI0 = seed;\n        }\n      }\n    }\n    return O1lI0 * this.normalize;\n  };\n\n  Ol0OI.prototype.IOl10 = function(x, y, z, O1l11) {\n    var lII1O, OlOOO, az, O1010, lIO1O, IllOl, I1II1, lOlO0, lO1lO, OlIOl, l1l00, d, d1, d2, lO10I, II0O0, l11Il, OIIIO, IOIl0, Ol0OO, IIlOO, O1IIO, IlIOO, i, j, k, l, m, n, px, IO1Il, Il1O0, I11O1, l1OI1, IlOOI, O1O11, II0ll, IlO0O;\n    if (O1l11 == null) {\n      O1l11 = 100;\n    }\n    I11O1 = Math.floor(x);\n    IlOOI = Math.floor(y);\n    II0ll = Math.floor(z);\n    lII1O = x - I11O1;\n    OlOOO = y - IlOOI;\n    az = z - II0ll;\n    O1010 = 100;\n    lIO1O = 0;\n    IllOl = 0;\n    I1II1 = 0;\n    lOlO0 = 100;\n    lO1lO = 0;\n    OlIOl = 0;\n    l1l00 = 0;\n    for (i = l = 0; l <= 2; i = l += 1) {\n      for (j = m = 0; m <= 2; j = m += 1) {\n        for (k = n = 0; n <= 2; k = n += 1) {\n          l1OI1 = ((I11O1 - 1 + i) % O1l11) & this.IOIOl;\n          O1O11 = ((IlOOI - 1 + j) % O1l11) & this.IOIOl;\n          IlO0O = ((II0ll - 1 + k) % O1l11) & this.IOIOl;\n          px = -1 + i + this.table[this.l01l0 + this.table[l1OI1 + this.table[this.IlIl0 + this.table[IlO0O + O1O11]]]] * this.normalize;\n          IO1Il = -1 + j + this.table[this.l01l0 + this.table[l1OI1 + this.table[this.IlIl0 + this.table[this.table[O1O11 + IlO0O] + 1]]]] * this.normalize;\n          Il1O0 = -1 + k + this.table[this.l01l0 + this.table[l1OI1 + this.table[this.IlIl0 + this.table[this.table[O1O11 + IlO0O] + 37]]]] * this.normalize;\n        }\n        lO10I = lII1O - px;\n        OIIIO = OlOOO - IO1Il;\n        IIlOO = az - Il1O0;\n        d = lO10I * lO10I + OIIIO * OIIIO + IIlOO * IIlOO;\n        if (d < O1010) {\n          lOlO0 = O1010;\n          lO1lO = lIO1O;\n          OlIOl = IllOl;\n          l1l00 = I1II1;\n          O1010 = d;\n          lIO1O = px;\n          IllOl = IO1Il;\n          I1II1 = Il1O0;\n        } else if (d < lOlO0) {\n          lOlO0 = d;\n          lO1lO = px;\n          OlIOl = IO1Il;\n          l1l00 = Il1O0;\n        }\n      }\n    }\n    II0O0 = lII1O - lIO1O;\n    IOIl0 = OlOOO - IllOl;\n    O1IIO = az - I1II1;\n    d1 = Math.sqrt(II0O0 * II0O0 + IOIl0 * IOIl0 + O1IIO * O1IIO);\n    l11Il = lII1O - lO1lO;\n    Ol0OO = OlOOO - OlIOl;\n    IlIOO = az - l1l00;\n    d2 = Math.sqrt(l11Il * l11Il + Ol0OO * Ol0OO + IlIOO * IlIOO);\n    return Math.min(d1, d2) / Math.max(d1, d2);\n  };\n\n  Ol0OI.Il1l0 = function(size) {\n    var i, index, l, ref, t, v;\n    t = [];\n    for (i = l = 0, ref = size - 1; 0 <= ref ? l <= ref : l >= ref; i = 0 <= ref ? ++l : --l) {\n      t[i] = i;\n    }\n    v = [];\n    while (true) {\n      if (t.length === 0) {\n        break;\n      }\n      index = Math.floor(Math.random() * t.length);\n      v.push(t.splice(index, 1)[0]);\n    }\n    return v;\n  };\n\n  return Ol0OI;\n\n})();",
     this.Nebulas = function() {
         function t(t) {
             var e, i, s, l, n, a, o, r, h, u, d, I, c, p, O, m, f, g, y, v, b, w, x;
@@ -13173,14 +13173,14 @@ input[type=range]:focus::-ms-fill-upper {
                 break;
             a += .3 * O.next()
         }
-        for (c = new ValueNoise(O.next()),
+        for (c = new Ol0OI(O.next()),
         l = 2 + 3 * O.next(),
         u = .5 + .3 * O.next(),
         s = O.next() < 0 ? function(t, e, i, s) {
             return c.turbulence2d(t, e, i, s)
         }
         : function(t, e, i, s) {
-            return c.fractalNoise2D(t, e, i, s)
+            return c.OOOlI(t, e, i, s)
         }
         ,
         b = r = 0,
@@ -13209,7 +13209,7 @@ input[type=range]:focus::-ms-fill-upper {
     }
     ,
     nebulasworker = "self.onmessage = " + workerfunk + ";",
-    nebulasworker += "var Gradient = (function() {\n  function Gradient(IlIl1) {\n    this.IlIl1 = IlIl1;\n    if (this.IlIl1 == null) {\n      this.IlIl1 = [];\n    }\n  }\n\n  Gradient.prototype.add = function(v) {\n    return this.IlIl1.push(v);\n  };\n\n  Gradient.prototype.getInt = function(x) {\n    var a, b, index, l010l, v2;\n    if (this.IlIl1.length === 0) {\n      return 0;\n    }\n    l010l = v2 = this.IlIl1[0];\n    if (x <= l010l[0]) {\n      return (l010l[1] << 16) | (l010l[2] << 8) | l010l[3];\n    }\n    index = 1;\n    while (true) {\n      if (x < v2[0] || index >= this.IlIl1.length - 1) {\n        break;\n      }\n      l010l = v2;\n      v2 = this.IlIl1[index++];\n    }\n    if (x >= v2[0]) {\n      return (v2[1] << 16) | (v2[2] << 8) | v2[3];\n    } else {\n      b = (x - l010l[0]) / (v2[0] - l010l[0]);\n      a = (v2[0] - x) / (v2[0] - l010l[0]);\n      return ((a * l010l[1] + b * v2[1]) << 16) | ((a * l010l[2] + b * v2[2]) << 8) | ((a * l010l[3] + b * v2[3]) | 0);\n    }\n  };\n\n  Gradient.prototype.get = function(x) {\n    var a, b, index, l010l, v2;\n    if (this.IlIl1.length === 0) {\n      return [0, 0, 0];\n    }\n    l010l = v2 = this.IlIl1[0];\n    if (x <= l010l[0]) {\n      return [l010l[1], l010l[2], l010l[3]];\n    }\n    index = 1;\n    while (true) {\n      if (x < v2[0] || index >= this.IlIl1.length - 1) {\n        break;\n      }\n      l010l = v2;\n      v2 = this.IlIl1[index++];\n    }\n    if (x >= v2[0]) {\n      return [v2[1], v2[2], v2[3]];\n    } else {\n      b = (x - l010l[0]) / (v2[0] - l010l[0]);\n      a = (v2[0] - x) / (v2[0] - l010l[0]);\n      return [a * l010l[1] + b * v2[1], a * l010l[2] + b * v2[2], a * l010l[3] + b * v2[3]];\n    }\n  };\n\n  return Gradient;\n\n})();\n\nvar ll0O1 = (function() {\n  function ll0O1() {}\n\n  ll0O1.OIIlI = function(h, s, v, II0II) {\n    var b, f, g, i, p, q, r, t;\n    if (II0II == null) {\n      II0II = [];\n    }\n    i = Math.floor(h * 6);\n    f = h * 6 - i;\n    p = v * (1 - s);\n    q = v * (1 - f * s);\n    t = v * (1 - (1 - f) * s);\n    switch (i % 6) {\n      case 0:\n        r = v;\n        g = t;\n        b = p;\n        break;\n      case 1:\n        r = q;\n        g = v;\n        b = p;\n        break;\n      case 2:\n        r = p;\n        g = v;\n        b = t;\n        break;\n      case 3:\n        r = p;\n        g = q;\n        b = v;\n        break;\n      case 4:\n        r = t;\n        g = p;\n        b = v;\n        break;\n      case 5:\n        r = v;\n        g = p;\n        b = q;\n    }\n    II0II[0] = (r * 255) | 0;\n    II0II[1] = (g * 255) | 0;\n    II0II[2] = (b * 255) | 0;\n    return II0II;\n  };\n\n  ll0O1.hsvToRgbHex = function(h, s, v) {\n    var b, f, g, i, p, q, r, t;\n    i = Math.floor(h * 6);\n    f = h * 6 - i;\n    p = v * (1 - s);\n    q = v * (1 - f * s);\n    t = v * (1 - (1 - f) * s);\n    switch (i % 6) {\n      case 0:\n        r = v;\n        g = t;\n        b = p;\n        break;\n      case 1:\n        r = q;\n        g = v;\n        b = p;\n        break;\n      case 2:\n        r = p;\n        g = v;\n        b = t;\n        break;\n      case 3:\n        r = p;\n        g = q;\n        b = v;\n        break;\n      case 4:\n        r = t;\n        g = p;\n        b = v;\n        break;\n      case 5:\n        r = v;\n        g = p;\n        b = q;\n    }\n    return (((r * 255) | 0) << 16) | (((g * 255) | 0) << 8) | ((b * 255) | 0);\n  };\n\n  return ll0O1;\n\n})();\n\nvar OO0OO = (function() {\n  function OO0OO(seed) {\n    this.seed = seed != null ? seed : Math.random();\n    if (this.seed < 1) {\n      this.seed *= 1 << 30;\n    }\n    this.a = 13971;\n    this.b = 12345;\n    this.size = 1 << 30;\n    this.IOIOl = this.size - 1;\n    this.Il0OO = 1 / this.size;\n    this.OOIII();\n    this.OOIII();\n    this.OOIII();\n  }\n\n  OO0OO.prototype.next = function() {\n    this.seed = (this.seed * this.a + this.b) & this.IOIOl;\n    return this.seed * this.Il0OO;\n  };\n\n  OO0OO.prototype.OO00I = function(IIIIO, pow) {\n    if (pow != null) {\n      return Math.floor(Math.pow(this.next(), pow) * IIIIO);\n    } else {\n      return Math.floor(this.next() * IIIIO);\n    }\n  };\n\n  OO0OO.prototype.OOIII = function() {\n    return this.seed = (this.seed * this.a + this.b) & this.IOIOl;\n  };\n\n  OO0OO.prototype.feed = function(number) {\n    return this.seed = (this.seed * this.a * number + this.b) & this.IOIOl;\n  };\n\n  return OO0OO;\n\n})();\n\nvar ValueNoise = (function() {\n  function ValueNoise(I0Ill) {\n    var i, l, len, ref;\n    this.seed = I0Ill;\n    this.table = [670, 243, 963, 607, 432, 29, 624, 809, 254, 752, 691, 904, 275, 984, 586, 94, 1014, 614, 252, 178, 488, 954, 55, 836, 186, 858, 719, 562, 685, 898, 167, 844, 639, 505, 85, 386, 520, 988, 561, 889, 91, 329, 900, 847, 334, 531, 168, 57, 789, 529, 259, 323, 313, 72, 153, 606, 694, 442, 547, 922, 242, 983, 965, 876, 39, 728, 383, 109, 343, 810, 815, 144, 457, 434, 221, 279, 328, 136, 674, 556, 502, 896, 582, 250, 665, 370, 926, 912, 118, 543, 365, 467, 311, 700, 15, 297, 609, 731, 476, 634, 715, 777, 62, 1007, 525, 942, 310, 627, 630, 448, 437, 822, 300, 339, 924, 583, 92, 800, 698, 312, 542, 740, 271, 778, 895, 447, 175, 957, 17, 481, 347, 283, 366, 277, 843, 966, 927, 535, 503, 234, 746, 712, 1010, 544, 671, 295, 978, 729, 997, 287, 621, 782, 160, 433, 537, 121, 413, 304, 98, 657, 498, 946, 319, 595, 191, 341, 554, 523, 274, 209, 435, 644, 947, 979, 397, 261, 681, 786, 1006, 565, 472, 180, 318, 126, 874, 693, 526, 276, 340, 808, 884, 409, 486, 962, 960, 772, 901, 690, 359, 837, 129, 363, 509, 616, 88, 382, 730, 513, 623, 999, 504, 48, 4, 384, 281, 560, 417, 99, 773, 956, 943, 496, 558, 218, 170, 471, 536, 138, 19, 266, 6, 868, 845, 16, 985, 866, 601, 445, 458, 894, 950, 349, 1017, 125, 495, 723, 446, 647, 834, 880, 272, 475, 483, 227, 357, 750, 851, 139, 406, 336, 158, 284, 482, 324, 991, 632, 587, 663, 74, 256, 541, 120, 801, 831, 46, 522, 589, 1, 571, 368, 137, 761, 885, 968, 982, 948, 785, 391, 840, 932, 829, 117, 641, 466, 367, 688, 733, 229, 735, 14, 205, 31, 316, 333, 183, 521, 795, 58, 1021, 282, 794, 939, 40, 394, 793, 1002, 763, 212, 484, 133, 260, 465, 396, 769, 518, 955, 497, 377, 145, 508, 514, 224, 196, 454, 176, 975, 865, 1005, 1023, 986, 596, 426, 893, 551, 90, 130, 873, 22, 709, 686, 436, 236, 661, 579, 764, 362, 141, 112, 970, 987, 12, 317, 369, 26, 344, 66, 803, 493, 716, 9, 637, 945, 225, 703, 78, 346, 751, 123, 1009, 1016, 27, 52, 864, 902, 921, 292, 314, 599, 799, 263, 626, 338, 953, 491, 892, 353, 692, 917, 540, 882, 677, 744, 633, 821, 327, 60, 1020, 928, 788, 360, 414, 430, 462, 824, 820, 727, 398, 342, 273, 726, 981, 84, 82, 206, 388, 720, 806, 652, 550, 238, 159, 134, 732, 897, 500, 881, 805, 814, 701, 717, 566, 7, 211, 604, 816, 56, 658, 107, 61, 374, 320, 501, 13, 642, 863, 791, 438, 348, 97, 214, 86, 305, 875, 656, 24, 364, 767, 156, 879, 590, 734, 920, 655, 577, 83, 584, 660, 38, 100, 299, 580, 990, 636, 944, 463, 766, 996, 714, 8, 515, 87, 198, 280, 444, 131, 404, 108, 278, 487, 223, 598, 410, 395, 199, 268, 989, 75, 195, 760, 916, 977, 421, 11, 1000, 813, 216, 817, 823, 164, 668, 739, 572, 30, 707, 798, 291, 564, 77, 456, 478, 68, 643, 615, 172, 841, 672, 919, 1012, 613, 385, 980, 711, 771, 682, 232, 765, 143, 620, 631, 861, 468, 622, 201, 325, 424, 189, 608, 403, 775, 646, 673, 1013, 400, 859, 838, 345, 210, 860, 65, 63, 34, 755, 161, 479, 235, 783, 460, 826, 507, 854, 839, 666, 802, 441, 114, 443, 738, 770, 929, 857, 907, 741, 935, 949, 322, 995, 217, 667, 269, 184, 650, 1018, 506, 290, 787, 459, 721, 828, 567, 222, 494, 142, 743, 405, 76, 722, 588, 147, 899, 270, 695, 597, 337, 155, 569, 679, 853, 450, 21, 517, 197, 371, 257, 380, 244, 553, 952, 381, 827, 524, 877, 702, 306, 600, 1011, 431, 781, 594, 387, 1019, 411, 533, 659, 177, 725, 930, 933, 832, 41, 2, 687, 1008, 439, 307, 891, 871, 415, 651, 308, 298, 811, 0, 194, 592, 241, 918, 18, 973, 110, 654, 967, 490, 683, 914, 128, 992, 964, 122, 230, 149, 289, 392, 416, 852, 936, 262, 102, 938, 511, 255, 510, 165, 105, 419, 958, 294, 379, 49, 699, 330, 593, 539, 710, 106, 79, 440, 200, 704, 961, 326, 321, 759, 193, 890, 44, 549, 913, 776, 909, 552, 972, 132, 429, 748, 532, 115, 888, 635, 842, 649, 747, 807, 887, 856, 784, 148, 530, 116, 157, 372, 754, 28, 581, 67, 187, 202, 818, 181, 45, 959, 146, 124, 994, 872, 675, 706, 253, 247, 625, 570, 152, 423, 185, 361, 849, 971, 546, 412, 830, 1022, 188, 850, 140, 220, 451, 219, 768, 1015, 455, 780, 976, 449, 969, 848, 293, 249, 59, 390, 512, 538, 578, 906, 819, 862, 974, 33, 911, 135, 908, 248, 401, 951, 527, 169, 676, 640, 1003, 591, 103, 37, 285, 684, 104, 163, 753, 1004, 934, 645, 470, 774, 20, 489, 228, 461, 492, 469, 998, 296, 233, 869, 605, 315, 36, 5, 425, 878, 617, 886, 23, 355, 993, 93, 473, 555, 474, 464, 937, 925, 1001, 611, 35, 812, 174, 53, 286, 680, 267, 428, 335, 883, 653, 69, 718, 585, 749, 150, 408, 393, 915, 576, 664, 629, 756, 402, 638, 602, 245, 43, 545, 213, 303, 192, 70, 453, 910, 407, 742, 111, 548, 835, 452, 575, 903, 619, 376, 154, 302, 151, 804, 867, 574, 563, 239, 648, 179, 855, 378, 618, 264, 669, 427, 354, 399, 265, 50, 796, 166, 923, 825, 697, 534, 54, 173, 870, 792, 162, 713, 246, 89, 51, 350, 705, 251, 557, 237, 240, 736, 689, 203, 519, 73, 81, 628, 288, 331, 204, 528, 480, 389, 32, 418, 573, 757, 358, 215, 226, 42, 779, 231, 171, 190, 612, 301, 762, 708, 420, 846, 208, 485, 351, 790, 737, 10, 258, 309, 797, 127, 516, 559, 499, 352, 71, 758, 25, 568, 113, 3, 610, 101, 375, 96, 603, 745, 64, 80, 477, 332, 833, 940, 373, 905, 422, 182, 356, 941, 47, 119, 662, 931, 696, 95, 724, 678, 207];\n    len = this.table.length;\n    for (i = l = 0, ref = len - 1; 0 <= ref ? l <= ref : l >= ref; i = 0 <= ref ? ++l : --l) {\n      this.table.push(this.table[i]);\n    }\n    if (this.seed < 1) {\n      this.seed *= 1 << 30;\n    }\n    this.size = 1024;\n    this.normalize = 1 / 1023;\n    this.IOIOl = 1023;\n    this.l01l0 = this.seed & this.IOIOl;\n    this.IlIl0 = (this.seed >> 10) & this.IOIOl;\n    this.lIII0 = (this.seed >> 20) & this.IOIOl;\n    this.c2d = [];\n    this.lOllO = Math.cos(.3);\n    this.O0OO1 = Math.sin(.3);\n  }\n\n  ValueNoise.prototype.smoothstepLerp = function(x, y, a) {\n    var c;\n    c = (-2 * a + 3) * a * a;\n    return x * (1 - c) + y * c;\n  };\n\n  ValueNoise.prototype.lerp = function(x, y, a) {\n    return x * (1 - a) + y * a;\n  };\n\n  ValueNoise.prototype.noise2D = function(x, y) {\n    var lII1O, OlOOO, l010l, v2, O000l, O1lI1, I11O1, IlOOI;\n    I11O1 = Math.floor(x);\n    IlOOI = Math.floor(y);\n    lII1O = x - I11O1;\n    OlOOO = y - IlOOI;\n    I11O1 = I11O1 & this.IOIOl;\n    IlOOI = IlOOI & this.IOIOl;\n    l010l = this.table[this.l01l0 + this.table[I11O1 + this.table[IlOOI + this.IlIl0]]];\n    v2 = this.table[this.l01l0 + this.table[I11O1 + 1 + this.table[IlOOI + this.IlIl0]]];\n    O000l = this.table[this.l01l0 + this.table[I11O1 + this.table[IlOOI + 1 + this.IlIl0]]];\n    O1lI1 = this.table[this.l01l0 + this.table[I11O1 + 1 + this.table[IlOOI + 1 + this.IlIl0]]];\n    return this.smoothstepLerp(this.smoothstepLerp(l010l, v2, lII1O), this.smoothstepLerp(O000l, O1lI1, lII1O), OlOOO) * this.normalize;\n  };\n\n  ValueNoise.prototype.smoothNoise3D = function(x, y, z) {\n    var lII1O, OlOOO, az, l010l, v2, O000l, O1lI1, l0l00, IOlOl, IlI1I, lI1OI, O1OO0, lI1lI, I11O1, IlOOI, II0ll;\n    I11O1 = Math.floor(x);\n    IlOOI = Math.floor(y);\n    II0ll = Math.floor(z);\n    lII1O = x - I11O1;\n    OlOOO = y - IlOOI;\n    az = z - II0ll;\n    I11O1 = I11O1 & this.IOIOl;\n    IlOOI = IlOOI & this.IOIOl;\n    II0ll = II0ll & this.IOIOl;\n    l010l = this.table[this.l01l0 + this.table[I11O1 + this.table[IlOOI + this.table[this.IlIl0 + this.table[II0ll + this.lIII0]]]]];\n    v2 = this.table[this.l01l0 + this.table[I11O1 + 1 + this.table[IlOOI + this.table[this.IlIl0 + this.table[II0ll + this.lIII0]]]]];\n    O000l = this.table[this.l01l0 + this.table[I11O1 + this.table[IlOOI + 1 + this.table[this.IlIl0 + this.table[II0ll + this.lIII0]]]]];\n    O1lI1 = this.table[this.l01l0 + this.table[I11O1 + 1 + this.table[IlOOI + 1 + this.table[this.IlIl0 + this.table[II0ll + this.lIII0]]]]];\n    l0l00 = this.table[this.l01l0 + this.table[I11O1 + this.table[IlOOI + this.table[this.IlIl0 + this.table[II0ll + 1 + this.lIII0]]]]];\n    IOlOl = this.table[this.l01l0 + this.table[I11O1 + 1 + this.table[IlOOI + this.table[this.IlIl0 + this.table[II0ll + 1 + this.lIII0]]]]];\n    IlI1I = this.table[this.l01l0 + this.table[I11O1 + this.table[IlOOI + 1 + this.table[this.IlIl0 + this.table[II0ll + 1 + this.lIII0]]]]];\n    lI1OI = this.table[this.l01l0 + this.table[I11O1 + 1 + this.table[IlOOI + 1 + this.table[this.IlIl0 + this.table[II0ll + 1 + this.lIII0]]]]];\n    O1OO0 = this.smoothstepLerp(this.smoothstepLerp(l010l, v2, lII1O), this.smoothstepLerp(O000l, O1lI1, lII1O), OlOOO);\n    lI1lI = this.smoothstepLerp(this.smoothstepLerp(l0l00, IOlOl, lII1O), this.smoothstepLerp(IlI1I, lI1OI, lII1O), OlOOO);\n    return this.smoothstepLerp(O1OO0, lI1lI, az) * this.normalize;\n  };\n\n  ValueNoise.prototype.linearNoise3D = function(x, y, z) {\n    var lII1O, OlOOO, az, l010l, v2, O000l, O1lI1, l0l00, IOlOl, IlI1I, lI1OI, O1OO0, lI1lI, I11O1, IlOOI, II0ll;\n    I11O1 = Math.floor(x);\n    IlOOI = Math.floor(y);\n    II0ll = Math.floor(z);\n    lII1O = x - I11O1;\n    OlOOO = y - IlOOI;\n    az = z - II0ll;\n    I11O1 = I11O1 & this.IOIOl;\n    IlOOI = IlOOI & this.IOIOl;\n    II0ll = II0ll & this.IOIOl;\n    l010l = this.table[this.l01l0 + this.table[I11O1 + this.table[IlOOI + this.table[this.IlIl0 + this.table[II0ll + this.lIII0]]]]];\n    v2 = this.table[this.l01l0 + this.table[I11O1 + 1 + this.table[IlOOI + this.table[this.IlIl0 + this.table[II0ll + this.lIII0]]]]];\n    O000l = this.table[this.l01l0 + this.table[I11O1 + this.table[IlOOI + 1 + this.table[this.IlIl0 + this.table[II0ll + this.lIII0]]]]];\n    O1lI1 = this.table[this.l01l0 + this.table[I11O1 + 1 + this.table[IlOOI + 1 + this.table[this.IlIl0 + this.table[II0ll + this.lIII0]]]]];\n    l0l00 = this.table[this.l01l0 + this.table[I11O1 + this.table[IlOOI + this.table[this.IlIl0 + this.table[II0ll + 1 + this.lIII0]]]]];\n    IOlOl = this.table[this.l01l0 + this.table[I11O1 + 1 + this.table[IlOOI + this.table[this.IlIl0 + this.table[II0ll + 1 + this.lIII0]]]]];\n    IlI1I = this.table[this.l01l0 + this.table[I11O1 + this.table[IlOOI + 1 + this.table[this.IlIl0 + this.table[II0ll + 1 + this.lIII0]]]]];\n    lI1OI = this.table[this.l01l0 + this.table[I11O1 + 1 + this.table[IlOOI + 1 + this.table[this.IlIl0 + this.table[II0ll + 1 + this.lIII0]]]]];\n    O1OO0 = this.lerp(this.lerp(l010l, v2, lII1O), this.lerp(O000l, O1lI1, lII1O), OlOOO);\n    lI1lI = this.lerp(this.lerp(l0l00, IOlOl, lII1O), this.lerp(IlI1I, lI1OI, lII1O), OlOOO);\n    return this.lerp(O1OO0, lI1lI, az) * this.normalize;\n  };\n\n  ValueNoise.prototype.unused = function(IlI00, OI0Ol, iz) {};\n\n  ValueNoise.prototype.fractalNoise2D = function(x, y, l11l0, OI100, I1lOO, lO0OI, ts) {\n    var d, i, l, Il0OO, OIl00, l0O1l, ref, l1I10;\n    if (l11l0 == null) {\n      l11l0 = 5;\n    }\n    if (OI100 == null) {\n      OI100 = .5;\n    }\n    if (I1lOO == null) {\n      I1lOO = 1.9;\n    }\n    if (lO0OI == null) {\n      lO0OI = this.lOllO;\n    }\n    if (ts == null) {\n      ts = this.O0OO1;\n    }\n    l1I10 = 0;\n    d = 1;\n    Il0OO = 0;\n    for (i = l = 1, ref = l11l0; l <= ref; i = l += 1) {\n      l1I10 += this.noise2D(x, y) * d;\n      Il0OO += d;\n      d *= OI100;\n      OIl00 = I1lOO * (x * lO0OI + y * ts);\n      l0O1l = I1lOO * (y * lO0OI - x * ts);\n      x = OIl00;\n      y = l0O1l;\n    }\n    return l1I10 / Il0OO;\n  };\n\n  ValueNoise.prototype.fractalNoise3D = function(x, y, z, l11l0, OI100, I1lOO, lO0OI, ts) {\n    var d, i, l, Il0OO, OIl00, l0O1l, ref, l1I10;\n    if (l11l0 == null) {\n      l11l0 = 5;\n    }\n    if (OI100 == null) {\n      OI100 = .5;\n    }\n    if (I1lOO == null) {\n      I1lOO = 1.9;\n    }\n    if (lO0OI == null) {\n      lO0OI = this.lOllO;\n    }\n    if (ts == null) {\n      ts = this.O0OO1;\n    }\n    l1I10 = 0;\n    d = 1;\n    Il0OO = 0;\n    for (i = l = 1, ref = l11l0; l <= ref; i = l += 1) {\n      l1I10 += this.smoothNoise3D(x, y, z) * d;\n      Il0OO += d;\n      d *= OI100;\n      OIl00 = I1lOO * (x * lO0OI + y * ts);\n      l0O1l = I1lOO * (y * lO0OI - x * ts);\n      x = OIl00;\n      y = l0O1l;\n      z = I1lOO * z;\n    }\n    return l1I10 / Il0OO;\n  };\n\n  ValueNoise.prototype.periodicFractalNoise2D = function(x, y, O1l11, l11l0, OI100, I1lOO, lO0OI, ts) {\n    var lII1O, OlOOO, IlI00, OI0Ol, l010l, v2, O000l, O1lI1;\n    if (l11l0 == null) {\n      l11l0 = 5;\n    }\n    if (OI100 == null) {\n      OI100 = .5;\n    }\n    if (I1lOO == null) {\n      I1lOO = 1.9;\n    }\n    if (lO0OI == null) {\n      lO0OI = this.lOllO;\n    }\n    if (ts == null) {\n      ts = this.O0OO1;\n    }\n    IlI00 = Math.floor(x / O1l11);\n    OI0Ol = Math.floor(y / O1l11);\n    lII1O = x / O1l11 - IlI00;\n    OlOOO = y / O1l11 - OI0Ol;\n    l010l = this.fractalNoise2D(lII1O * O1l11, OlOOO * O1l11, l11l0, OI100, I1lOO, lO0OI, ts);\n    v2 = this.fractalNoise2D(lII1O * O1l11 + O1l11, OlOOO * O1l11, l11l0, OI100, I1lOO, lO0OI, ts);\n    O000l = this.fractalNoise2D(lII1O * O1l11, OlOOO * O1l11 + O1l11, l11l0, OI100, I1lOO, lO0OI, ts);\n    O1lI1 = this.fractalNoise2D(lII1O * O1l11 + O1l11, OlOOO * O1l11 + O1l11, l11l0, OI100, I1lOO, lO0OI, ts);\n    return this.smoothstepLerp(this.smoothstepLerp(l010l, v2, 1 - lII1O), this.smoothstepLerp(O000l, O1lI1, 1 - lII1O), 1 - OlOOO);\n  };\n\n  ValueNoise.prototype.turbulence2d = function(x, y, l11l0, OI100, I1lOO, lO0OI, ts) {\n    var d, i, l, Il0OO, OIl00, l0O1l, ref, l1I10;\n    if (l11l0 == null) {\n      l11l0 = 5;\n    }\n    if (OI100 == null) {\n      OI100 = .5;\n    }\n    if (I1lOO == null) {\n      I1lOO = 1.9;\n    }\n    if (lO0OI == null) {\n      lO0OI = this.lOllO;\n    }\n    if (ts == null) {\n      ts = this.O0OO1;\n    }\n    l1I10 = 0;\n    d = 1;\n    Il0OO = 0;\n    for (i = l = 1, ref = l11l0; l <= ref; i = l += 1) {\n      l1I10 += 2 * (.5 - Math.abs(.5 - this.noise2D(x, y))) * d;\n      Il0OO += d;\n      d *= OI100;\n      OIl00 = I1lOO * (x * lO0OI + y * ts);\n      l0O1l = I1lOO * (y * lO0OI - x * ts);\n      x = OIl00;\n      y = l0O1l;\n    }\n    return l1I10 / Il0OO;\n  };\n\n  ValueNoise.prototype.periodicTurbulence2d = function(x, y, O1l11, l11l0, OI100, I1lOO, lO0OI, ts) {\n    var lII1O, OlOOO, IlI00, OI0Ol, l010l, v2, O000l, O1lI1;\n    if (l11l0 == null) {\n      l11l0 = 5;\n    }\n    if (OI100 == null) {\n      OI100 = .5;\n    }\n    if (I1lOO == null) {\n      I1lOO = 1.9;\n    }\n    if (lO0OI == null) {\n      lO0OI = this.lOllO;\n    }\n    if (ts == null) {\n      ts = this.O0OO1;\n    }\n    IlI00 = Math.floor(x / O1l11);\n    OI0Ol = Math.floor(y / O1l11);\n    lII1O = x / O1l11 - IlI00;\n    OlOOO = y / O1l11 - OI0Ol;\n    l010l = this.turbulence2d(lII1O * O1l11, OlOOO * O1l11, l11l0, OI100, I1lOO, lO0OI, ts);\n    v2 = this.turbulence2d(lII1O * O1l11 + O1l11, OlOOO * O1l11, l11l0, OI100, I1lOO, lO0OI, ts);\n    O000l = this.turbulence2d(lII1O * O1l11, OlOOO * O1l11 + O1l11, l11l0, OI100, I1lOO, lO0OI, ts);\n    O1lI1 = this.turbulence2d(lII1O * O1l11 + O1l11, OlOOO * O1l11 + O1l11, l11l0, OI100, I1lOO, lO0OI, ts);\n    return this.smoothstepLerp(this.smoothstepLerp(l010l, v2, 1 - lII1O), this.smoothstepLerp(O000l, O1lI1, 1 - lII1O), 1 - OlOOO);\n  };\n\n  ValueNoise.prototype.IOl0l = function(x, y, l11l0, OI100, I1lOO, lO0OI, ts) {\n    var IIlIO, d, i, l, Il0OO, OIl00, l0O1l, ref, l1I10, v;\n    if (l11l0 == null) {\n      l11l0 = 5;\n    }\n    if (OI100 == null) {\n      OI100 = .5;\n    }\n    if (I1lOO == null) {\n      I1lOO = 1.9;\n    }\n    if (lO0OI == null) {\n      lO0OI = this.lOllO;\n    }\n    if (ts == null) {\n      ts = this.O0OO1;\n    }\n    l1I10 = 0;\n    IIlIO = 1;\n    d = 1;\n    Il0OO = 0;\n    for (i = l = 1, ref = l11l0; l <= ref; i = l += 1) {\n      v = this.noise2D(x, y) * 2;\n      if (v > 1) {\n        v = 2 - v;\n      }\n      v = Math.pow(v, 2);\n      l1I10 += IIlIO * d * v;\n      IIlIO = v;\n      Il0OO += d;\n      d *= OI100;\n      OIl00 = I1lOO * (x * lO0OI + y * ts);\n      l0O1l = I1lOO * (y * lO0OI - x * ts);\n      x = OIl00;\n      y = l0O1l;\n    }\n    return l1I10 / Il0OO;\n  };\n\n  ValueNoise.prototype.l111O = function(x, y, z, l11l0, OI100, I1lOO, lO0OI, ts) {\n    var IIlIO, d, i, l, OOOOl, Il0OO, OIl00, l0O1l, O0ll0, ref, l1I10, v;\n    if (l11l0 == null) {\n      l11l0 = 5;\n    }\n    if (OI100 == null) {\n      OI100 = .5;\n    }\n    if (I1lOO == null) {\n      I1lOO = 1.9;\n    }\n    if (lO0OI == null) {\n      lO0OI = this.lOllO;\n    }\n    if (ts == null) {\n      ts = this.O0OO1;\n    }\n    l1I10 = 0;\n    IIlIO = 1;\n    d = 1;\n    Il0OO = 0;\n    for (i = l = 1, ref = l11l0; l <= ref; i = l += 1) {\n      v = this.smoothNoise3D(x, y, z) * 2;\n      if (v > 1) {\n        v = 2 - v;\n      }\n      v = Math.pow(v, 2);\n      l1I10 += IIlIO * d * v;\n      IIlIO = v;\n      Il0OO += d;\n      d *= OI100;\n      OIl00 = x * lO0OI + y * ts;\n      l0O1l = y * lO0OI - x * ts;\n      OOOOl = l0O1l * lO0OI + z * ts;\n      O0ll0 = z * lO0OI - l0O1l * ts;\n      x = I1lOO * OIl00;\n      y = I1lOO * OOOOl;\n      z = I1lOO * O0ll0;\n    }\n    return l1I10 / Il0OO;\n  };\n\n  ValueNoise.prototype.I0111 = function(x, y, O1l11) {\n    var lII1O, OlOOO, O1010, lIO1O, IllOl, lOlO0, lO1lO, OlIOl, d, d1, d2, lO10I, II0O0, l11Il, OIIIO, IOIl0, Ol0OO, i, j, l, m, px, IO1Il, I11O1, l1OI1, IlOOI, O1O11;\n    I11O1 = Math.floor(x);\n    IlOOI = Math.floor(y);\n    lII1O = x - I11O1;\n    OlOOO = y - IlOOI;\n    O1010 = 100;\n    lIO1O = 0;\n    IllOl = 0;\n    lOlO0 = 100;\n    lO1lO = 0;\n    OlIOl = 0;\n    for (i = l = 0; l <= 2; i = l += 1) {\n      for (j = m = 0; m <= 2; j = m += 1) {\n        l1OI1 = (I11O1 - 1 + i) % O1l11;\n        O1O11 = (IlOOI - 1 + j) % O1l11;\n        px = -1 + i + this.table[this.l01l0 + this.table[l1OI1 + this.table[this.IlIl0 + O1O11]]] * this.normalize * .8 + .1;\n        IO1Il = -1 + j + this.table[this.l01l0 + this.table[l1OI1 + this.table[this.IlIl0 + this.table[O1O11 + 1]]]] * this.normalize * .8 + .1;\n        lO10I = lII1O - px;\n        OIIIO = OlOOO - IO1Il;\n        d = lO10I * lO10I + OIIIO * OIIIO;\n        if (d < O1010) {\n          lOlO0 = O1010;\n          lO1lO = lIO1O;\n          OlIOl = IllOl;\n          O1010 = d;\n          lIO1O = px;\n          IllOl = IO1Il;\n        } else if (d < lOlO0) {\n          lOlO0 = d;\n          lO1lO = px;\n          OlIOl = IO1Il;\n        }\n      }\n    }\n    II0O0 = lII1O - lIO1O;\n    IOIl0 = OlOOO - IllOl;\n    d1 = Math.sqrt(II0O0 * II0O0 + IOIl0 * IOIl0);\n    l11Il = lII1O - lO1lO;\n    Ol0OO = OlOOO - OlIOl;\n    d2 = Math.sqrt(l11Il * l11Il + Ol0OO * Ol0OO);\n    return Math.min(d1, d2) / Math.max(d1, d2);\n  };\n\n  ValueNoise.prototype.l01lO = function(x, y, O1l11) {\n    var lII1O, OlOOO, O1010, lIO1O, IllOl, O1lI0, d, lO10I, OIIIO, i, j, l, m, px, IO1Il, seed, I11O1, l1OI1, IlOOI, O1O11;\n    I11O1 = Math.floor(x);\n    IlOOI = Math.floor(y);\n    lII1O = x - I11O1;\n    OlOOO = y - IlOOI;\n    O1010 = 100;\n    lIO1O = 0;\n    IllOl = 0;\n    O1lI0 = 0;\n    for (i = l = 0; l <= 2; i = l += 1) {\n      for (j = m = 0; m <= 2; j = m += 1) {\n        l1OI1 = (I11O1 - 1 + i) % O1l11;\n        O1O11 = (IlOOI - 1 + j) % O1l11;\n        px = -1 + i + this.table[this.l01l0 + this.table[l1OI1 + this.table[this.IlIl0 + O1O11]]] * this.normalize * .8 + .1;\n        IO1Il = -1 + j + this.table[this.l01l0 + this.table[l1OI1 + this.table[this.IlIl0 + this.table[O1O11 + 1]]]] * this.normalize * .8 + .1;\n        seed = this.table[this.l01l0 + this.table[l1OI1 + this.table[this.IlIl0 + this.table[O1O11 + 17]]]];\n        lO10I = lII1O - px;\n        OIIIO = OlOOO - IO1Il;\n        d = lO10I * lO10I + OIIIO * OIIIO;\n        if (d < O1010) {\n          O1010 = d;\n          lIO1O = px;\n          IllOl = IO1Il;\n          O1lI0 = seed;\n        }\n      }\n    }\n    return O1lI0 * this.normalize;\n  };\n\n  ValueNoise.prototype.IOl10 = function(x, y, z, O1l11) {\n    var lII1O, OlOOO, az, O1010, lIO1O, IllOl, I1II1, lOlO0, lO1lO, OlIOl, l1l00, d, d1, d2, lO10I, II0O0, l11Il, OIIIO, IOIl0, Ol0OO, IIlOO, O1IIO, IlIOO, i, j, k, l, m, n, px, IO1Il, Il1O0, I11O1, l1OI1, IlOOI, O1O11, II0ll, IlO0O;\n    if (O1l11 == null) {\n      O1l11 = 100;\n    }\n    I11O1 = Math.floor(x);\n    IlOOI = Math.floor(y);\n    II0ll = Math.floor(z);\n    lII1O = x - I11O1;\n    OlOOO = y - IlOOI;\n    az = z - II0ll;\n    O1010 = 100;\n    lIO1O = 0;\n    IllOl = 0;\n    I1II1 = 0;\n    lOlO0 = 100;\n    lO1lO = 0;\n    OlIOl = 0;\n    l1l00 = 0;\n    for (i = l = 0; l <= 2; i = l += 1) {\n      for (j = m = 0; m <= 2; j = m += 1) {\n        for (k = n = 0; n <= 2; k = n += 1) {\n          l1OI1 = ((I11O1 - 1 + i) % O1l11) & this.IOIOl;\n          O1O11 = ((IlOOI - 1 + j) % O1l11) & this.IOIOl;\n          IlO0O = ((II0ll - 1 + k) % O1l11) & this.IOIOl;\n          px = -1 + i + this.table[this.l01l0 + this.table[l1OI1 + this.table[this.IlIl0 + this.table[IlO0O + O1O11]]]] * this.normalize;\n          IO1Il = -1 + j + this.table[this.l01l0 + this.table[l1OI1 + this.table[this.IlIl0 + this.table[this.table[O1O11 + IlO0O] + 1]]]] * this.normalize;\n          Il1O0 = -1 + k + this.table[this.l01l0 + this.table[l1OI1 + this.table[this.IlIl0 + this.table[this.table[O1O11 + IlO0O] + 37]]]] * this.normalize;\n        }\n        lO10I = lII1O - px;\n        OIIIO = OlOOO - IO1Il;\n        IIlOO = az - Il1O0;\n        d = lO10I * lO10I + OIIIO * OIIIO + IIlOO * IIlOO;\n        if (d < O1010) {\n          lOlO0 = O1010;\n          lO1lO = lIO1O;\n          OlIOl = IllOl;\n          l1l00 = I1II1;\n          O1010 = d;\n          lIO1O = px;\n          IllOl = IO1Il;\n          I1II1 = Il1O0;\n        } else if (d < lOlO0) {\n          lOlO0 = d;\n          lO1lO = px;\n          OlIOl = IO1Il;\n          l1l00 = Il1O0;\n        }\n      }\n    }\n    II0O0 = lII1O - lIO1O;\n    IOIl0 = OlOOO - IllOl;\n    O1IIO = az - I1II1;\n    d1 = Math.sqrt(II0O0 * II0O0 + IOIl0 * IOIl0 + O1IIO * O1IIO);\n    l11Il = lII1O - lO1lO;\n    Ol0OO = OlOOO - OlIOl;\n    IlIOO = az - l1l00;\n    d2 = Math.sqrt(l11Il * l11Il + Ol0OO * Ol0OO + IlIOO * IlIOO);\n    return Math.min(d1, d2) / Math.max(d1, d2);\n  };\n\n  ValueNoise.Il1l0 = function(size) {\n    var i, index, l, ref, t, v;\n    t = [];\n    for (i = l = 0, ref = size - 1; 0 <= ref ? l <= ref : l >= ref; i = 0 <= ref ? ++l : --l) {\n      t[i] = i;\n    }\n    v = [];\n    while (true) {\n      if (t.length === 0) {\n        break;\n      }\n      index = Math.floor(Math.random() * t.length);\n      v.push(t.splice(index, 1)[0]);\n    }\n    return v;\n  };\n\n  return ValueNoise;\n\n})();",
+    nebulasworker += "var Gradient = (function() {\n  function Gradient(IlIl1) {\n    this.IlIl1 = IlIl1;\n    if (this.IlIl1 == null) {\n      this.IlIl1 = [];\n    }\n  }\n\n  Gradient.prototype.add = function(v) {\n    return this.IlIl1.push(v);\n  };\n\n  Gradient.prototype.getInt = function(x) {\n    var a, b, index, l010l, v2;\n    if (this.IlIl1.length === 0) {\n      return 0;\n    }\n    l010l = v2 = this.IlIl1[0];\n    if (x <= l010l[0]) {\n      return (l010l[1] << 16) | (l010l[2] << 8) | l010l[3];\n    }\n    index = 1;\n    while (true) {\n      if (x < v2[0] || index >= this.IlIl1.length - 1) {\n        break;\n      }\n      l010l = v2;\n      v2 = this.IlIl1[index++];\n    }\n    if (x >= v2[0]) {\n      return (v2[1] << 16) | (v2[2] << 8) | v2[3];\n    } else {\n      b = (x - l010l[0]) / (v2[0] - l010l[0]);\n      a = (v2[0] - x) / (v2[0] - l010l[0]);\n      return ((a * l010l[1] + b * v2[1]) << 16) | ((a * l010l[2] + b * v2[2]) << 8) | ((a * l010l[3] + b * v2[3]) | 0);\n    }\n  };\n\n  Gradient.prototype.get = function(x) {\n    var a, b, index, l010l, v2;\n    if (this.IlIl1.length === 0) {\n      return [0, 0, 0];\n    }\n    l010l = v2 = this.IlIl1[0];\n    if (x <= l010l[0]) {\n      return [l010l[1], l010l[2], l010l[3]];\n    }\n    index = 1;\n    while (true) {\n      if (x < v2[0] || index >= this.IlIl1.length - 1) {\n        break;\n      }\n      l010l = v2;\n      v2 = this.IlIl1[index++];\n    }\n    if (x >= v2[0]) {\n      return [v2[1], v2[2], v2[3]];\n    } else {\n      b = (x - l010l[0]) / (v2[0] - l010l[0]);\n      a = (v2[0] - x) / (v2[0] - l010l[0]);\n      return [a * l010l[1] + b * v2[1], a * l010l[2] + b * v2[2], a * l010l[3] + b * v2[3]];\n    }\n  };\n\n  return Gradient;\n\n})();\n\nvar ll0O1 = (function() {\n  function ll0O1() {}\n\n  ll0O1.OIIlI = function(h, s, v, II0II) {\n    var b, f, g, i, p, q, r, t;\n    if (II0II == null) {\n      II0II = [];\n    }\n    i = Math.floor(h * 6);\n    f = h * 6 - i;\n    p = v * (1 - s);\n    q = v * (1 - f * s);\n    t = v * (1 - (1 - f) * s);\n    switch (i % 6) {\n      case 0:\n        r = v;\n        g = t;\n        b = p;\n        break;\n      case 1:\n        r = q;\n        g = v;\n        b = p;\n        break;\n      case 2:\n        r = p;\n        g = v;\n        b = t;\n        break;\n      case 3:\n        r = p;\n        g = q;\n        b = v;\n        break;\n      case 4:\n        r = t;\n        g = p;\n        b = v;\n        break;\n      case 5:\n        r = v;\n        g = p;\n        b = q;\n    }\n    II0II[0] = (r * 255) | 0;\n    II0II[1] = (g * 255) | 0;\n    II0II[2] = (b * 255) | 0;\n    return II0II;\n  };\n\n  ll0O1.hsvToRgbHex = function(h, s, v) {\n    var b, f, g, i, p, q, r, t;\n    i = Math.floor(h * 6);\n    f = h * 6 - i;\n    p = v * (1 - s);\n    q = v * (1 - f * s);\n    t = v * (1 - (1 - f) * s);\n    switch (i % 6) {\n      case 0:\n        r = v;\n        g = t;\n        b = p;\n        break;\n      case 1:\n        r = q;\n        g = v;\n        b = p;\n        break;\n      case 2:\n        r = p;\n        g = v;\n        b = t;\n        break;\n      case 3:\n        r = p;\n        g = q;\n        b = v;\n        break;\n      case 4:\n        r = t;\n        g = p;\n        b = v;\n        break;\n      case 5:\n        r = v;\n        g = p;\n        b = q;\n    }\n    return (((r * 255) | 0) << 16) | (((g * 255) | 0) << 8) | ((b * 255) | 0);\n  };\n\n  return ll0O1;\n\n})();\n\nvar OO0OO = (function() {\n  function OO0OO(seed) {\n    this.seed = seed != null ? seed : Math.random();\n    if (this.seed < 1) {\n      this.seed *= 1 << 30;\n    }\n    this.a = 13971;\n    this.b = 12345;\n    this.size = 1 << 30;\n    this.IOIOl = this.size - 1;\n    this.Il0OO = 1 / this.size;\n    this.OOIII();\n    this.OOIII();\n    this.OOIII();\n  }\n\n  OO0OO.prototype.next = function() {\n    this.seed = (this.seed * this.a + this.b) & this.IOIOl;\n    return this.seed * this.Il0OO;\n  };\n\n  OO0OO.prototype.OO00I = function(IIIIO, pow) {\n    if (pow != null) {\n      return Math.floor(Math.pow(this.next(), pow) * IIIIO);\n    } else {\n      return Math.floor(this.next() * IIIIO);\n    }\n  };\n\n  OO0OO.prototype.OOIII = function() {\n    return this.seed = (this.seed * this.a + this.b) & this.IOIOl;\n  };\n\n  OO0OO.prototype.feed = function(number) {\n    return this.seed = (this.seed * this.a * number + this.b) & this.IOIOl;\n  };\n\n  return OO0OO;\n\n})();\n\nvar Ol0OI = (function() {\n  function Ol0OI(I0Ill) {\n    var i, l, len, ref;\n    this.seed = I0Ill;\n    this.table = [670, 243, 963, 607, 432, 29, 624, 809, 254, 752, 691, 904, 275, 984, 586, 94, 1014, 614, 252, 178, 488, 954, 55, 836, 186, 858, 719, 562, 685, 898, 167, 844, 639, 505, 85, 386, 520, 988, 561, 889, 91, 329, 900, 847, 334, 531, 168, 57, 789, 529, 259, 323, 313, 72, 153, 606, 694, 442, 547, 922, 242, 983, 965, 876, 39, 728, 383, 109, 343, 810, 815, 144, 457, 434, 221, 279, 328, 136, 674, 556, 502, 896, 582, 250, 665, 370, 926, 912, 118, 543, 365, 467, 311, 700, 15, 297, 609, 731, 476, 634, 715, 777, 62, 1007, 525, 942, 310, 627, 630, 448, 437, 822, 300, 339, 924, 583, 92, 800, 698, 312, 542, 740, 271, 778, 895, 447, 175, 957, 17, 481, 347, 283, 366, 277, 843, 966, 927, 535, 503, 234, 746, 712, 1010, 544, 671, 295, 978, 729, 997, 287, 621, 782, 160, 433, 537, 121, 413, 304, 98, 657, 498, 946, 319, 595, 191, 341, 554, 523, 274, 209, 435, 644, 947, 979, 397, 261, 681, 786, 1006, 565, 472, 180, 318, 126, 874, 693, 526, 276, 340, 808, 884, 409, 486, 962, 960, 772, 901, 690, 359, 837, 129, 363, 509, 616, 88, 382, 730, 513, 623, 999, 504, 48, 4, 384, 281, 560, 417, 99, 773, 956, 943, 496, 558, 218, 170, 471, 536, 138, 19, 266, 6, 868, 845, 16, 985, 866, 601, 445, 458, 894, 950, 349, 1017, 125, 495, 723, 446, 647, 834, 880, 272, 475, 483, 227, 357, 750, 851, 139, 406, 336, 158, 284, 482, 324, 991, 632, 587, 663, 74, 256, 541, 120, 801, 831, 46, 522, 589, 1, 571, 368, 137, 761, 885, 968, 982, 948, 785, 391, 840, 932, 829, 117, 641, 466, 367, 688, 733, 229, 735, 14, 205, 31, 316, 333, 183, 521, 795, 58, 1021, 282, 794, 939, 40, 394, 793, 1002, 763, 212, 484, 133, 260, 465, 396, 769, 518, 955, 497, 377, 145, 508, 514, 224, 196, 454, 176, 975, 865, 1005, 1023, 986, 596, 426, 893, 551, 90, 130, 873, 22, 709, 686, 436, 236, 661, 579, 764, 362, 141, 112, 970, 987, 12, 317, 369, 26, 344, 66, 803, 493, 716, 9, 637, 945, 225, 703, 78, 346, 751, 123, 1009, 1016, 27, 52, 864, 902, 921, 292, 314, 599, 799, 263, 626, 338, 953, 491, 892, 353, 692, 917, 540, 882, 677, 744, 633, 821, 327, 60, 1020, 928, 788, 360, 414, 430, 462, 824, 820, 727, 398, 342, 273, 726, 981, 84, 82, 206, 388, 720, 806, 652, 550, 238, 159, 134, 732, 897, 500, 881, 805, 814, 701, 717, 566, 7, 211, 604, 816, 56, 658, 107, 61, 374, 320, 501, 13, 642, 863, 791, 438, 348, 97, 214, 86, 305, 875, 656, 24, 364, 767, 156, 879, 590, 734, 920, 655, 577, 83, 584, 660, 38, 100, 299, 580, 990, 636, 944, 463, 766, 996, 714, 8, 515, 87, 198, 280, 444, 131, 404, 108, 278, 487, 223, 598, 410, 395, 199, 268, 989, 75, 195, 760, 916, 977, 421, 11, 1000, 813, 216, 817, 823, 164, 668, 739, 572, 30, 707, 798, 291, 564, 77, 456, 478, 68, 643, 615, 172, 841, 672, 919, 1012, 613, 385, 980, 711, 771, 682, 232, 765, 143, 620, 631, 861, 468, 622, 201, 325, 424, 189, 608, 403, 775, 646, 673, 1013, 400, 859, 838, 345, 210, 860, 65, 63, 34, 755, 161, 479, 235, 783, 460, 826, 507, 854, 839, 666, 802, 441, 114, 443, 738, 770, 929, 857, 907, 741, 935, 949, 322, 995, 217, 667, 269, 184, 650, 1018, 506, 290, 787, 459, 721, 828, 567, 222, 494, 142, 743, 405, 76, 722, 588, 147, 899, 270, 695, 597, 337, 155, 569, 679, 853, 450, 21, 517, 197, 371, 257, 380, 244, 553, 952, 381, 827, 524, 877, 702, 306, 600, 1011, 431, 781, 594, 387, 1019, 411, 533, 659, 177, 725, 930, 933, 832, 41, 2, 687, 1008, 439, 307, 891, 871, 415, 651, 308, 298, 811, 0, 194, 592, 241, 918, 18, 973, 110, 654, 967, 490, 683, 914, 128, 992, 964, 122, 230, 149, 289, 392, 416, 852, 936, 262, 102, 938, 511, 255, 510, 165, 105, 419, 958, 294, 379, 49, 699, 330, 593, 539, 710, 106, 79, 440, 200, 704, 961, 326, 321, 759, 193, 890, 44, 549, 913, 776, 909, 552, 972, 132, 429, 748, 532, 115, 888, 635, 842, 649, 747, 807, 887, 856, 784, 148, 530, 116, 157, 372, 754, 28, 581, 67, 187, 202, 818, 181, 45, 959, 146, 124, 994, 872, 675, 706, 253, 247, 625, 570, 152, 423, 185, 361, 849, 971, 546, 412, 830, 1022, 188, 850, 140, 220, 451, 219, 768, 1015, 455, 780, 976, 449, 969, 848, 293, 249, 59, 390, 512, 538, 578, 906, 819, 862, 974, 33, 911, 135, 908, 248, 401, 951, 527, 169, 676, 640, 1003, 591, 103, 37, 285, 684, 104, 163, 753, 1004, 934, 645, 470, 774, 20, 489, 228, 461, 492, 469, 998, 296, 233, 869, 605, 315, 36, 5, 425, 878, 617, 886, 23, 355, 993, 93, 473, 555, 474, 464, 937, 925, 1001, 611, 35, 812, 174, 53, 286, 680, 267, 428, 335, 883, 653, 69, 718, 585, 749, 150, 408, 393, 915, 576, 664, 629, 756, 402, 638, 602, 245, 43, 545, 213, 303, 192, 70, 453, 910, 407, 742, 111, 548, 835, 452, 575, 903, 619, 376, 154, 302, 151, 804, 867, 574, 563, 239, 648, 179, 855, 378, 618, 264, 669, 427, 354, 399, 265, 50, 796, 166, 923, 825, 697, 534, 54, 173, 870, 792, 162, 713, 246, 89, 51, 350, 705, 251, 557, 237, 240, 736, 689, 203, 519, 73, 81, 628, 288, 331, 204, 528, 480, 389, 32, 418, 573, 757, 358, 215, 226, 42, 779, 231, 171, 190, 612, 301, 762, 708, 420, 846, 208, 485, 351, 790, 737, 10, 258, 309, 797, 127, 516, 559, 499, 352, 71, 758, 25, 568, 113, 3, 610, 101, 375, 96, 603, 745, 64, 80, 477, 332, 833, 940, 373, 905, 422, 182, 356, 941, 47, 119, 662, 931, 696, 95, 724, 678, 207];\n    len = this.table.length;\n    for (i = l = 0, ref = len - 1; 0 <= ref ? l <= ref : l >= ref; i = 0 <= ref ? ++l : --l) {\n      this.table.push(this.table[i]);\n    }\n    if (this.seed < 1) {\n      this.seed *= 1 << 30;\n    }\n    this.size = 1024;\n    this.normalize = 1 / 1023;\n    this.IOIOl = 1023;\n    this.l01l0 = this.seed & this.IOIOl;\n    this.IlIl0 = (this.seed >> 10) & this.IOIOl;\n    this.lIII0 = (this.seed >> 20) & this.IOIOl;\n    this.c2d = [];\n    this.lOllO = Math.cos(.3);\n    this.O0OO1 = Math.sin(.3);\n  }\n\n  Ol0OI.prototype.O00IO = function(x, y, a) {\n    var c;\n    c = (-2 * a + 3) * a * a;\n    return x * (1 - c) + y * c;\n  };\n\n  Ol0OI.prototype.I1OlI = function(x, y, a) {\n    return x * (1 - a) + y * a;\n  };\n\n  Ol0OI.prototype.lllll = function(x, y) {\n    var lII1O, OlOOO, l010l, v2, O000l, O1lI1, I11O1, IlOOI;\n    I11O1 = Math.floor(x);\n    IlOOI = Math.floor(y);\n    lII1O = x - I11O1;\n    OlOOO = y - IlOOI;\n    I11O1 = I11O1 & this.IOIOl;\n    IlOOI = IlOOI & this.IOIOl;\n    l010l = this.table[this.l01l0 + this.table[I11O1 + this.table[IlOOI + this.IlIl0]]];\n    v2 = this.table[this.l01l0 + this.table[I11O1 + 1 + this.table[IlOOI + this.IlIl0]]];\n    O000l = this.table[this.l01l0 + this.table[I11O1 + this.table[IlOOI + 1 + this.IlIl0]]];\n    O1lI1 = this.table[this.l01l0 + this.table[I11O1 + 1 + this.table[IlOOI + 1 + this.IlIl0]]];\n    return this.O00IO(this.O00IO(l010l, v2, lII1O), this.O00IO(O000l, O1lI1, lII1O), OlOOO) * this.normalize;\n  };\n\n  Ol0OI.prototype.OIOO1 = function(x, y, z) {\n    var lII1O, OlOOO, az, l010l, v2, O000l, O1lI1, l0l00, IOlOl, IlI1I, lI1OI, O1OO0, lI1lI, I11O1, IlOOI, II0ll;\n    I11O1 = Math.floor(x);\n    IlOOI = Math.floor(y);\n    II0ll = Math.floor(z);\n    lII1O = x - I11O1;\n    OlOOO = y - IlOOI;\n    az = z - II0ll;\n    I11O1 = I11O1 & this.IOIOl;\n    IlOOI = IlOOI & this.IOIOl;\n    II0ll = II0ll & this.IOIOl;\n    l010l = this.table[this.l01l0 + this.table[I11O1 + this.table[IlOOI + this.table[this.IlIl0 + this.table[II0ll + this.lIII0]]]]];\n    v2 = this.table[this.l01l0 + this.table[I11O1 + 1 + this.table[IlOOI + this.table[this.IlIl0 + this.table[II0ll + this.lIII0]]]]];\n    O000l = this.table[this.l01l0 + this.table[I11O1 + this.table[IlOOI + 1 + this.table[this.IlIl0 + this.table[II0ll + this.lIII0]]]]];\n    O1lI1 = this.table[this.l01l0 + this.table[I11O1 + 1 + this.table[IlOOI + 1 + this.table[this.IlIl0 + this.table[II0ll + this.lIII0]]]]];\n    l0l00 = this.table[this.l01l0 + this.table[I11O1 + this.table[IlOOI + this.table[this.IlIl0 + this.table[II0ll + 1 + this.lIII0]]]]];\n    IOlOl = this.table[this.l01l0 + this.table[I11O1 + 1 + this.table[IlOOI + this.table[this.IlIl0 + this.table[II0ll + 1 + this.lIII0]]]]];\n    IlI1I = this.table[this.l01l0 + this.table[I11O1 + this.table[IlOOI + 1 + this.table[this.IlIl0 + this.table[II0ll + 1 + this.lIII0]]]]];\n    lI1OI = this.table[this.l01l0 + this.table[I11O1 + 1 + this.table[IlOOI + 1 + this.table[this.IlIl0 + this.table[II0ll + 1 + this.lIII0]]]]];\n    O1OO0 = this.O00IO(this.O00IO(l010l, v2, lII1O), this.O00IO(O000l, O1lI1, lII1O), OlOOO);\n    lI1lI = this.O00IO(this.O00IO(l0l00, IOlOl, lII1O), this.O00IO(IlI1I, lI1OI, lII1O), OlOOO);\n    return this.O00IO(O1OO0, lI1lI, az) * this.normalize;\n  };\n\n  Ol0OI.prototype.IIIl0 = function(x, y, z) {\n    var lII1O, OlOOO, az, l010l, v2, O000l, O1lI1, l0l00, IOlOl, IlI1I, lI1OI, O1OO0, lI1lI, I11O1, IlOOI, II0ll;\n    I11O1 = Math.floor(x);\n    IlOOI = Math.floor(y);\n    II0ll = Math.floor(z);\n    lII1O = x - I11O1;\n    OlOOO = y - IlOOI;\n    az = z - II0ll;\n    I11O1 = I11O1 & this.IOIOl;\n    IlOOI = IlOOI & this.IOIOl;\n    II0ll = II0ll & this.IOIOl;\n    l010l = this.table[this.l01l0 + this.table[I11O1 + this.table[IlOOI + this.table[this.IlIl0 + this.table[II0ll + this.lIII0]]]]];\n    v2 = this.table[this.l01l0 + this.table[I11O1 + 1 + this.table[IlOOI + this.table[this.IlIl0 + this.table[II0ll + this.lIII0]]]]];\n    O000l = this.table[this.l01l0 + this.table[I11O1 + this.table[IlOOI + 1 + this.table[this.IlIl0 + this.table[II0ll + this.lIII0]]]]];\n    O1lI1 = this.table[this.l01l0 + this.table[I11O1 + 1 + this.table[IlOOI + 1 + this.table[this.IlIl0 + this.table[II0ll + this.lIII0]]]]];\n    l0l00 = this.table[this.l01l0 + this.table[I11O1 + this.table[IlOOI + this.table[this.IlIl0 + this.table[II0ll + 1 + this.lIII0]]]]];\n    IOlOl = this.table[this.l01l0 + this.table[I11O1 + 1 + this.table[IlOOI + this.table[this.IlIl0 + this.table[II0ll + 1 + this.lIII0]]]]];\n    IlI1I = this.table[this.l01l0 + this.table[I11O1 + this.table[IlOOI + 1 + this.table[this.IlIl0 + this.table[II0ll + 1 + this.lIII0]]]]];\n    lI1OI = this.table[this.l01l0 + this.table[I11O1 + 1 + this.table[IlOOI + 1 + this.table[this.IlIl0 + this.table[II0ll + 1 + this.lIII0]]]]];\n    O1OO0 = this.I1OlI(this.I1OlI(l010l, v2, lII1O), this.I1OlI(O000l, O1lI1, lII1O), OlOOO);\n    lI1lI = this.I1OlI(this.I1OlI(l0l00, IOlOl, lII1O), this.I1OlI(IlI1I, lI1OI, lII1O), OlOOO);\n    return this.I1OlI(O1OO0, lI1lI, az) * this.normalize;\n  };\n\n  Ol0OI.prototype.l10l0 = function(IlI00, OI0Ol, iz) {};\n\n  Ol0OI.prototype.OOOlI = function(x, y, l11l0, OI100, I1lOO, lO0OI, ts) {\n    var d, i, l, Il0OO, OIl00, l0O1l, ref, l1I10;\n    if (l11l0 == null) {\n      l11l0 = 5;\n    }\n    if (OI100 == null) {\n      OI100 = .5;\n    }\n    if (I1lOO == null) {\n      I1lOO = 1.9;\n    }\n    if (lO0OI == null) {\n      lO0OI = this.lOllO;\n    }\n    if (ts == null) {\n      ts = this.O0OO1;\n    }\n    l1I10 = 0;\n    d = 1;\n    Il0OO = 0;\n    for (i = l = 1, ref = l11l0; l <= ref; i = l += 1) {\n      l1I10 += this.lllll(x, y) * d;\n      Il0OO += d;\n      d *= OI100;\n      OIl00 = I1lOO * (x * lO0OI + y * ts);\n      l0O1l = I1lOO * (y * lO0OI - x * ts);\n      x = OIl00;\n      y = l0O1l;\n    }\n    return l1I10 / Il0OO;\n  };\n\n  Ol0OI.prototype.O0IIO = function(x, y, z, l11l0, OI100, I1lOO, lO0OI, ts) {\n    var d, i, l, Il0OO, OIl00, l0O1l, ref, l1I10;\n    if (l11l0 == null) {\n      l11l0 = 5;\n    }\n    if (OI100 == null) {\n      OI100 = .5;\n    }\n    if (I1lOO == null) {\n      I1lOO = 1.9;\n    }\n    if (lO0OI == null) {\n      lO0OI = this.lOllO;\n    }\n    if (ts == null) {\n      ts = this.O0OO1;\n    }\n    l1I10 = 0;\n    d = 1;\n    Il0OO = 0;\n    for (i = l = 1, ref = l11l0; l <= ref; i = l += 1) {\n      l1I10 += this.OIOO1(x, y, z) * d;\n      Il0OO += d;\n      d *= OI100;\n      OIl00 = I1lOO * (x * lO0OI + y * ts);\n      l0O1l = I1lOO * (y * lO0OI - x * ts);\n      x = OIl00;\n      y = l0O1l;\n      z = I1lOO * z;\n    }\n    return l1I10 / Il0OO;\n  };\n\n  Ol0OI.prototype.OIl01 = function(x, y, O1l11, l11l0, OI100, I1lOO, lO0OI, ts) {\n    var lII1O, OlOOO, IlI00, OI0Ol, l010l, v2, O000l, O1lI1;\n    if (l11l0 == null) {\n      l11l0 = 5;\n    }\n    if (OI100 == null) {\n      OI100 = .5;\n    }\n    if (I1lOO == null) {\n      I1lOO = 1.9;\n    }\n    if (lO0OI == null) {\n      lO0OI = this.lOllO;\n    }\n    if (ts == null) {\n      ts = this.O0OO1;\n    }\n    IlI00 = Math.floor(x / O1l11);\n    OI0Ol = Math.floor(y / O1l11);\n    lII1O = x / O1l11 - IlI00;\n    OlOOO = y / O1l11 - OI0Ol;\n    l010l = this.OOOlI(lII1O * O1l11, OlOOO * O1l11, l11l0, OI100, I1lOO, lO0OI, ts);\n    v2 = this.OOOlI(lII1O * O1l11 + O1l11, OlOOO * O1l11, l11l0, OI100, I1lOO, lO0OI, ts);\n    O000l = this.OOOlI(lII1O * O1l11, OlOOO * O1l11 + O1l11, l11l0, OI100, I1lOO, lO0OI, ts);\n    O1lI1 = this.OOOlI(lII1O * O1l11 + O1l11, OlOOO * O1l11 + O1l11, l11l0, OI100, I1lOO, lO0OI, ts);\n    return this.O00IO(this.O00IO(l010l, v2, 1 - lII1O), this.O00IO(O000l, O1lI1, 1 - lII1O), 1 - OlOOO);\n  };\n\n  Ol0OI.prototype.turbulence2d = function(x, y, l11l0, OI100, I1lOO, lO0OI, ts) {\n    var d, i, l, Il0OO, OIl00, l0O1l, ref, l1I10;\n    if (l11l0 == null) {\n      l11l0 = 5;\n    }\n    if (OI100 == null) {\n      OI100 = .5;\n    }\n    if (I1lOO == null) {\n      I1lOO = 1.9;\n    }\n    if (lO0OI == null) {\n      lO0OI = this.lOllO;\n    }\n    if (ts == null) {\n      ts = this.O0OO1;\n    }\n    l1I10 = 0;\n    d = 1;\n    Il0OO = 0;\n    for (i = l = 1, ref = l11l0; l <= ref; i = l += 1) {\n      l1I10 += 2 * (.5 - Math.abs(.5 - this.lllll(x, y))) * d;\n      Il0OO += d;\n      d *= OI100;\n      OIl00 = I1lOO * (x * lO0OI + y * ts);\n      l0O1l = I1lOO * (y * lO0OI - x * ts);\n      x = OIl00;\n      y = l0O1l;\n    }\n    return l1I10 / Il0OO;\n  };\n\n  Ol0OI.prototype.periodicTurbulence2d = function(x, y, O1l11, l11l0, OI100, I1lOO, lO0OI, ts) {\n    var lII1O, OlOOO, IlI00, OI0Ol, l010l, v2, O000l, O1lI1;\n    if (l11l0 == null) {\n      l11l0 = 5;\n    }\n    if (OI100 == null) {\n      OI100 = .5;\n    }\n    if (I1lOO == null) {\n      I1lOO = 1.9;\n    }\n    if (lO0OI == null) {\n      lO0OI = this.lOllO;\n    }\n    if (ts == null) {\n      ts = this.O0OO1;\n    }\n    IlI00 = Math.floor(x / O1l11);\n    OI0Ol = Math.floor(y / O1l11);\n    lII1O = x / O1l11 - IlI00;\n    OlOOO = y / O1l11 - OI0Ol;\n    l010l = this.turbulence2d(lII1O * O1l11, OlOOO * O1l11, l11l0, OI100, I1lOO, lO0OI, ts);\n    v2 = this.turbulence2d(lII1O * O1l11 + O1l11, OlOOO * O1l11, l11l0, OI100, I1lOO, lO0OI, ts);\n    O000l = this.turbulence2d(lII1O * O1l11, OlOOO * O1l11 + O1l11, l11l0, OI100, I1lOO, lO0OI, ts);\n    O1lI1 = this.turbulence2d(lII1O * O1l11 + O1l11, OlOOO * O1l11 + O1l11, l11l0, OI100, I1lOO, lO0OI, ts);\n    return this.O00IO(this.O00IO(l010l, v2, 1 - lII1O), this.O00IO(O000l, O1lI1, 1 - lII1O), 1 - OlOOO);\n  };\n\n  Ol0OI.prototype.IOl0l = function(x, y, l11l0, OI100, I1lOO, lO0OI, ts) {\n    var IIlIO, d, i, l, Il0OO, OIl00, l0O1l, ref, l1I10, v;\n    if (l11l0 == null) {\n      l11l0 = 5;\n    }\n    if (OI100 == null) {\n      OI100 = .5;\n    }\n    if (I1lOO == null) {\n      I1lOO = 1.9;\n    }\n    if (lO0OI == null) {\n      lO0OI = this.lOllO;\n    }\n    if (ts == null) {\n      ts = this.O0OO1;\n    }\n    l1I10 = 0;\n    IIlIO = 1;\n    d = 1;\n    Il0OO = 0;\n    for (i = l = 1, ref = l11l0; l <= ref; i = l += 1) {\n      v = this.lllll(x, y) * 2;\n      if (v > 1) {\n        v = 2 - v;\n      }\n      v = Math.pow(v, 2);\n      l1I10 += IIlIO * d * v;\n      IIlIO = v;\n      Il0OO += d;\n      d *= OI100;\n      OIl00 = I1lOO * (x * lO0OI + y * ts);\n      l0O1l = I1lOO * (y * lO0OI - x * ts);\n      x = OIl00;\n      y = l0O1l;\n    }\n    return l1I10 / Il0OO;\n  };\n\n  Ol0OI.prototype.l111O = function(x, y, z, l11l0, OI100, I1lOO, lO0OI, ts) {\n    var IIlIO, d, i, l, OOOOl, Il0OO, OIl00, l0O1l, O0ll0, ref, l1I10, v;\n    if (l11l0 == null) {\n      l11l0 = 5;\n    }\n    if (OI100 == null) {\n      OI100 = .5;\n    }\n    if (I1lOO == null) {\n      I1lOO = 1.9;\n    }\n    if (lO0OI == null) {\n      lO0OI = this.lOllO;\n    }\n    if (ts == null) {\n      ts = this.O0OO1;\n    }\n    l1I10 = 0;\n    IIlIO = 1;\n    d = 1;\n    Il0OO = 0;\n    for (i = l = 1, ref = l11l0; l <= ref; i = l += 1) {\n      v = this.OIOO1(x, y, z) * 2;\n      if (v > 1) {\n        v = 2 - v;\n      }\n      v = Math.pow(v, 2);\n      l1I10 += IIlIO * d * v;\n      IIlIO = v;\n      Il0OO += d;\n      d *= OI100;\n      OIl00 = x * lO0OI + y * ts;\n      l0O1l = y * lO0OI - x * ts;\n      OOOOl = l0O1l * lO0OI + z * ts;\n      O0ll0 = z * lO0OI - l0O1l * ts;\n      x = I1lOO * OIl00;\n      y = I1lOO * OOOOl;\n      z = I1lOO * O0ll0;\n    }\n    return l1I10 / Il0OO;\n  };\n\n  Ol0OI.prototype.I0111 = function(x, y, O1l11) {\n    var lII1O, OlOOO, O1010, lIO1O, IllOl, lOlO0, lO1lO, OlIOl, d, d1, d2, lO10I, II0O0, l11Il, OIIIO, IOIl0, Ol0OO, i, j, l, m, px, IO1Il, I11O1, l1OI1, IlOOI, O1O11;\n    I11O1 = Math.floor(x);\n    IlOOI = Math.floor(y);\n    lII1O = x - I11O1;\n    OlOOO = y - IlOOI;\n    O1010 = 100;\n    lIO1O = 0;\n    IllOl = 0;\n    lOlO0 = 100;\n    lO1lO = 0;\n    OlIOl = 0;\n    for (i = l = 0; l <= 2; i = l += 1) {\n      for (j = m = 0; m <= 2; j = m += 1) {\n        l1OI1 = (I11O1 - 1 + i) % O1l11;\n        O1O11 = (IlOOI - 1 + j) % O1l11;\n        px = -1 + i + this.table[this.l01l0 + this.table[l1OI1 + this.table[this.IlIl0 + O1O11]]] * this.normalize * .8 + .1;\n        IO1Il = -1 + j + this.table[this.l01l0 + this.table[l1OI1 + this.table[this.IlIl0 + this.table[O1O11 + 1]]]] * this.normalize * .8 + .1;\n        lO10I = lII1O - px;\n        OIIIO = OlOOO - IO1Il;\n        d = lO10I * lO10I + OIIIO * OIIIO;\n        if (d < O1010) {\n          lOlO0 = O1010;\n          lO1lO = lIO1O;\n          OlIOl = IllOl;\n          O1010 = d;\n          lIO1O = px;\n          IllOl = IO1Il;\n        } else if (d < lOlO0) {\n          lOlO0 = d;\n          lO1lO = px;\n          OlIOl = IO1Il;\n        }\n      }\n    }\n    II0O0 = lII1O - lIO1O;\n    IOIl0 = OlOOO - IllOl;\n    d1 = Math.sqrt(II0O0 * II0O0 + IOIl0 * IOIl0);\n    l11Il = lII1O - lO1lO;\n    Ol0OO = OlOOO - OlIOl;\n    d2 = Math.sqrt(l11Il * l11Il + Ol0OO * Ol0OO);\n    return Math.min(d1, d2) / Math.max(d1, d2);\n  };\n\n  Ol0OI.prototype.l01lO = function(x, y, O1l11) {\n    var lII1O, OlOOO, O1010, lIO1O, IllOl, O1lI0, d, lO10I, OIIIO, i, j, l, m, px, IO1Il, seed, I11O1, l1OI1, IlOOI, O1O11;\n    I11O1 = Math.floor(x);\n    IlOOI = Math.floor(y);\n    lII1O = x - I11O1;\n    OlOOO = y - IlOOI;\n    O1010 = 100;\n    lIO1O = 0;\n    IllOl = 0;\n    O1lI0 = 0;\n    for (i = l = 0; l <= 2; i = l += 1) {\n      for (j = m = 0; m <= 2; j = m += 1) {\n        l1OI1 = (I11O1 - 1 + i) % O1l11;\n        O1O11 = (IlOOI - 1 + j) % O1l11;\n        px = -1 + i + this.table[this.l01l0 + this.table[l1OI1 + this.table[this.IlIl0 + O1O11]]] * this.normalize * .8 + .1;\n        IO1Il = -1 + j + this.table[this.l01l0 + this.table[l1OI1 + this.table[this.IlIl0 + this.table[O1O11 + 1]]]] * this.normalize * .8 + .1;\n        seed = this.table[this.l01l0 + this.table[l1OI1 + this.table[this.IlIl0 + this.table[O1O11 + 17]]]];\n        lO10I = lII1O - px;\n        OIIIO = OlOOO - IO1Il;\n        d = lO10I * lO10I + OIIIO * OIIIO;\n        if (d < O1010) {\n          O1010 = d;\n          lIO1O = px;\n          IllOl = IO1Il;\n          O1lI0 = seed;\n        }\n      }\n    }\n    return O1lI0 * this.normalize;\n  };\n\n  Ol0OI.prototype.IOl10 = function(x, y, z, O1l11) {\n    var lII1O, OlOOO, az, O1010, lIO1O, IllOl, I1II1, lOlO0, lO1lO, OlIOl, l1l00, d, d1, d2, lO10I, II0O0, l11Il, OIIIO, IOIl0, Ol0OO, IIlOO, O1IIO, IlIOO, i, j, k, l, m, n, px, IO1Il, Il1O0, I11O1, l1OI1, IlOOI, O1O11, II0ll, IlO0O;\n    if (O1l11 == null) {\n      O1l11 = 100;\n    }\n    I11O1 = Math.floor(x);\n    IlOOI = Math.floor(y);\n    II0ll = Math.floor(z);\n    lII1O = x - I11O1;\n    OlOOO = y - IlOOI;\n    az = z - II0ll;\n    O1010 = 100;\n    lIO1O = 0;\n    IllOl = 0;\n    I1II1 = 0;\n    lOlO0 = 100;\n    lO1lO = 0;\n    OlIOl = 0;\n    l1l00 = 0;\n    for (i = l = 0; l <= 2; i = l += 1) {\n      for (j = m = 0; m <= 2; j = m += 1) {\n        for (k = n = 0; n <= 2; k = n += 1) {\n          l1OI1 = ((I11O1 - 1 + i) % O1l11) & this.IOIOl;\n          O1O11 = ((IlOOI - 1 + j) % O1l11) & this.IOIOl;\n          IlO0O = ((II0ll - 1 + k) % O1l11) & this.IOIOl;\n          px = -1 + i + this.table[this.l01l0 + this.table[l1OI1 + this.table[this.IlIl0 + this.table[IlO0O + O1O11]]]] * this.normalize;\n          IO1Il = -1 + j + this.table[this.l01l0 + this.table[l1OI1 + this.table[this.IlIl0 + this.table[this.table[O1O11 + IlO0O] + 1]]]] * this.normalize;\n          Il1O0 = -1 + k + this.table[this.l01l0 + this.table[l1OI1 + this.table[this.IlIl0 + this.table[this.table[O1O11 + IlO0O] + 37]]]] * this.normalize;\n        }\n        lO10I = lII1O - px;\n        OIIIO = OlOOO - IO1Il;\n        IIlOO = az - Il1O0;\n        d = lO10I * lO10I + OIIIO * OIIIO + IIlOO * IIlOO;\n        if (d < O1010) {\n          lOlO0 = O1010;\n          lO1lO = lIO1O;\n          OlIOl = IllOl;\n          l1l00 = I1II1;\n          O1010 = d;\n          lIO1O = px;\n          IllOl = IO1Il;\n          I1II1 = Il1O0;\n        } else if (d < lOlO0) {\n          lOlO0 = d;\n          lO1lO = px;\n          OlIOl = IO1Il;\n          l1l00 = Il1O0;\n        }\n      }\n    }\n    II0O0 = lII1O - lIO1O;\n    IOIl0 = OlOOO - IllOl;\n    O1IIO = az - I1II1;\n    d1 = Math.sqrt(II0O0 * II0O0 + IOIl0 * IOIl0 + O1IIO * O1IIO);\n    l11Il = lII1O - lO1lO;\n    Ol0OO = OlOOO - OlIOl;\n    IlIOO = az - l1l00;\n    d2 = Math.sqrt(l11Il * l11Il + Ol0OO * Ol0OO + IlIOO * IlIOO);\n    return Math.min(d1, d2) / Math.max(d1, d2);\n  };\n\n  Ol0OI.Il1l0 = function(size) {\n    var i, index, l, ref, t, v;\n    t = [];\n    for (i = l = 0, ref = size - 1; 0 <= ref ? l <= ref : l >= ref; i = 0 <= ref ? ++l : --l) {\n      t[i] = i;\n    }\n    v = [];\n    while (true) {\n      if (t.length === 0) {\n        break;\n      }\n      index = Math.floor(Math.random() * t.length);\n      v.push(t.splice(index, 1)[0]);\n    }\n    return v;\n  };\n\n  return Ol0OI;\n\n})();",
     this.lIOII = new THREE.MeshLambertMaterial({
         color: 0xffffff,
         vertexColors: THREE.VertexColors
@@ -13219,10 +13219,10 @@ input[type=range]:focus::-ms-fill-upper {
             var e, i, s, l, n, a, o, r, h, u, d, I, c, p, O, m, f, g, y, v, b, w, x, k, E, _, z, M, T, S, R, A, P, H, D, C, j, G, L, B, F, V, N, q, U;
             for (this.game = t,
             this.I00II = new THREE.IcosahedronGeometry(1,3),
-            z = new ValueNoise,
-            k = new ValueNoise(100),
-            E = new ValueNoise(200),
-            _ = new ValueNoise(300),
+            z = new Ol0OI,
+            k = new Ol0OI(100),
+            E = new Ol0OI(200),
+            _ = new Ol0OI(300),
             o = this.I00II.vertices[0].x - this.I00II.vertices[1].x,
             r = this.I00II.vertices[0].y - this.I00II.vertices[1].y,
             h = this.I00II.vertices[0].z - this.I00II.vertices[1].z,
@@ -13232,9 +13232,9 @@ input[type=range]:focus::-ms-fill-upper {
             d = 0,
             O = A.length; d < O; d++)
                 B = A[d],
-                N = k.fractalNoise3D(B.x * V, B.y * V, B.z * V) - .5,
-                q = E.fractalNoise3D(B.x * V, B.y * V, B.z * V) - .5,
-                U = _.fractalNoise3D(B.x * V, B.y * V, B.z * V) - .5,
+                N = k.O0IIO(B.x * V, B.y * V, B.z * V) - .5,
+                q = E.O0IIO(B.x * V, B.y * V, B.z * V) - .5,
+                U = _.O0IIO(B.x * V, B.y * V, B.z * V) - .5,
                 B.x += N * F,
                 B.y += q * F,
                 B.z += U * F,
@@ -13246,8 +13246,8 @@ input[type=range]:focus::-ms-fill-upper {
             I = 0,
             m = P.length; I < m; I++)
                 B = P[I],
-                S = .5 * Math.pow(z.fractalNoise3D(3 * B.x, 3 * B.y, 3 * B.z, 3), 2),
-                S -= .25 * Math.pow(z.fractalNoise3D(4 * B.x + 10, 4 * B.y, 4 * B.z, 3), 4),
+                S = .5 * Math.pow(z.O0IIO(3 * B.x, 3 * B.y, 3 * B.z, 3), 2),
+                S -= .25 * Math.pow(z.O0IIO(4 * B.x + 10, 4 * B.y, 4 * B.z, 3), 4),
                 B.x *= 1 - S,
                 B.y *= 1 - S,
                 B.z *= 1 - S;
@@ -13329,13 +13329,13 @@ input[type=range]:focus::-ms-fill-upper {
             n = ll0O1.hsvToRgbHex(t, .1 + .2 * Math.pow(v.next(), 2), .8),
             l = ll0O1.hsvToRgbHex(t, .1 + .2 * Math.pow(v.next(), 2), .6),
             a = ll0O1.hsvToRgbHex(t, .1 + .2 * Math.pow(v.next(), 2), .4),
-            y = new ValueNoise(e.next()),
+            y = new Ol0OI(e.next()),
             c = .5 + 1.5 * e.next(),
             p = .5 + 1.5 * e.next(),
             O = .5 + 1.5 * e.next(),
             I = function(t) {
                 var e;
-                return e = y.fractalNoise3D(t.x * c, t.y * p, t.z * O, 3),
+                return e = y.O0IIO(t.x * c, t.y * p, t.z * O, 3),
                 e < .3 ? s : e < .5 ? l : e < .6 ? n : a
             }
             ,
@@ -14489,8 +14489,8 @@ input[type=range]:focus::-ms-fill-upper {
         I1OI0: "UF10l"
     },
     module.exports = l001I,
-    ValueNoise = class ValueNoise {
-        constructor(t) {
+    Ol0OI = function() {
+        function t(t) {
             var e, i, s, l;
             for (this.seed = t,
             this.table = [670, 243, 963, 607, 432, 29, 624, 809, 254, 752, 691, 904, 275, 984, 586, 94, 1014, 614, 252, 178, 488, 954, 55, 836, 186, 858, 719, 562, 685, 898, 167, 844, 639, 505, 85, 386, 520, 988, 561, 889, 91, 329, 900, 847, 334, 531, 168, 57, 789, 529, 259, 323, 313, 72, 153, 606, 694, 442, 547, 922, 242, 983, 965, 876, 39, 728, 383, 109, 343, 810, 815, 144, 457, 434, 221, 279, 328, 136, 674, 556, 502, 896, 582, 250, 665, 370, 926, 912, 118, 543, 365, 467, 311, 700, 15, 297, 609, 731, 476, 634, 715, 777, 62, 1007, 525, 942, 310, 627, 630, 448, 437, 822, 300, 339, 924, 583, 92, 800, 698, 312, 542, 740, 271, 778, 895, 447, 175, 957, 17, 481, 347, 283, 366, 277, 843, 966, 927, 535, 503, 234, 746, 712, 1010, 544, 671, 295, 978, 729, 997, 287, 621, 782, 160, 433, 537, 121, 413, 304, 98, 657, 498, 946, 319, 595, 191, 341, 554, 523, 274, 209, 435, 644, 947, 979, 397, 261, 681, 786, 1006, 565, 472, 180, 318, 126, 874, 693, 526, 276, 340, 808, 884, 409, 486, 962, 960, 772, 901, 690, 359, 837, 129, 363, 509, 616, 88, 382, 730, 513, 623, 999, 504, 48, 4, 384, 281, 560, 417, 99, 773, 956, 943, 496, 558, 218, 170, 471, 536, 138, 19, 266, 6, 868, 845, 16, 985, 866, 601, 445, 458, 894, 950, 349, 1017, 125, 495, 723, 446, 647, 834, 880, 272, 475, 483, 227, 357, 750, 851, 139, 406, 336, 158, 284, 482, 324, 991, 632, 587, 663, 74, 256, 541, 120, 801, 831, 46, 522, 589, 1, 571, 368, 137, 761, 885, 968, 982, 948, 785, 391, 840, 932, 829, 117, 641, 466, 367, 688, 733, 229, 735, 14, 205, 31, 316, 333, 183, 521, 795, 58, 1021, 282, 794, 939, 40, 394, 793, 1002, 763, 212, 484, 133, 260, 465, 396, 769, 518, 955, 497, 377, 145, 508, 514, 224, 196, 454, 176, 975, 865, 1005, 1023, 986, 596, 426, 893, 551, 90, 130, 873, 22, 709, 686, 436, 236, 661, 579, 764, 362, 141, 112, 970, 987, 12, 317, 369, 26, 344, 66, 803, 493, 716, 9, 637, 945, 225, 703, 78, 346, 751, 123, 1009, 1016, 27, 52, 864, 902, 921, 292, 314, 599, 799, 263, 626, 338, 953, 491, 892, 353, 692, 917, 540, 882, 677, 744, 633, 821, 327, 60, 1020, 928, 788, 360, 414, 430, 462, 824, 820, 727, 398, 342, 273, 726, 981, 84, 82, 206, 388, 720, 806, 652, 550, 238, 159, 134, 732, 897, 500, 881, 805, 814, 701, 717, 566, 7, 211, 604, 816, 56, 658, 107, 61, 374, 320, 501, 13, 642, 863, 791, 438, 348, 97, 214, 86, 305, 875, 656, 24, 364, 767, 156, 879, 590, 734, 920, 655, 577, 83, 584, 660, 38, 100, 299, 580, 990, 636, 944, 463, 766, 996, 714, 8, 515, 87, 198, 280, 444, 131, 404, 108, 278, 487, 223, 598, 410, 395, 199, 268, 989, 75, 195, 760, 916, 977, 421, 11, 1e3, 813, 216, 817, 823, 164, 668, 739, 572, 30, 707, 798, 291, 564, 77, 456, 478, 68, 643, 615, 172, 841, 672, 919, 1012, 613, 385, 980, 711, 771, 682, 232, 765, 143, 620, 631, 861, 468, 622, 201, 325, 424, 189, 608, 403, 775, 646, 673, 1013, 400, 859, 838, 345, 210, 860, 65, 63, 34, 755, 161, 479, 235, 783, 460, 826, 507, 854, 839, 666, 802, 441, 114, 443, 738, 770, 929, 857, 907, 741, 935, 949, 322, 995, 217, 667, 269, 184, 650, 1018, 506, 290, 787, 459, 721, 828, 567, 222, 494, 142, 743, 405, 76, 722, 588, 147, 899, 270, 695, 597, 337, 155, 569, 679, 853, 450, 21, 517, 197, 371, 257, 380, 244, 553, 952, 381, 827, 524, 877, 702, 306, 600, 1011, 431, 781, 594, 387, 1019, 411, 533, 659, 177, 725, 930, 933, 832, 41, 2, 687, 1008, 439, 307, 891, 871, 415, 651, 308, 298, 811, 0, 194, 592, 241, 918, 18, 973, 110, 654, 967, 490, 683, 914, 128, 992, 964, 122, 230, 149, 289, 392, 416, 852, 936, 262, 102, 938, 511, 255, 510, 165, 105, 419, 958, 294, 379, 49, 699, 330, 593, 539, 710, 106, 79, 440, 200, 704, 961, 326, 321, 759, 193, 890, 44, 549, 913, 776, 909, 552, 972, 132, 429, 748, 532, 115, 888, 635, 842, 649, 747, 807, 887, 856, 784, 148, 530, 116, 157, 372, 754, 28, 581, 67, 187, 202, 818, 181, 45, 959, 146, 124, 994, 872, 675, 706, 253, 247, 625, 570, 152, 423, 185, 361, 849, 971, 546, 412, 830, 1022, 188, 850, 140, 220, 451, 219, 768, 1015, 455, 780, 976, 449, 969, 848, 293, 249, 59, 390, 512, 538, 578, 906, 819, 862, 974, 33, 911, 135, 908, 248, 401, 951, 527, 169, 676, 640, 1003, 591, 103, 37, 285, 684, 104, 163, 753, 1004, 934, 645, 470, 774, 20, 489, 228, 461, 492, 469, 998, 296, 233, 869, 605, 315, 36, 5, 425, 878, 617, 886, 23, 355, 993, 93, 473, 555, 474, 464, 937, 925, 1001, 611, 35, 812, 174, 53, 286, 680, 267, 428, 335, 883, 653, 69, 718, 585, 749, 150, 408, 393, 915, 576, 664, 629, 756, 402, 638, 602, 245, 43, 545, 213, 303, 192, 70, 453, 910, 407, 742, 111, 548, 835, 452, 575, 903, 619, 376, 154, 302, 151, 804, 867, 574, 563, 239, 648, 179, 855, 378, 618, 264, 669, 427, 354, 399, 265, 50, 796, 166, 923, 825, 697, 534, 54, 173, 870, 792, 162, 713, 246, 89, 51, 350, 705, 251, 557, 237, 240, 736, 689, 203, 519, 73, 81, 628, 288, 331, 204, 528, 480, 389, 32, 418, 573, 757, 358, 215, 226, 42, 779, 231, 171, 190, 612, 301, 762, 708, 420, 846, 208, 485, 351, 790, 737, 10, 258, 309, 797, 127, 516, 559, 499, 352, 71, 758, 25, 568, 113, 3, 610, 101, 375, 96, 603, 745, 64, 80, 477, 332, 833, 940, 373, 905, 422, 182, 356, 941, 47, 119, 662, 931, 696, 95, 724, 678, 207],
@@ -14498,40 +14498,38 @@ input[type=range]:focus::-ms-fill-upper {
             e = i = 0,
             l = s - 1; 0 <= l ? i <= l : i >= l; e = 0 <= l ? ++i : --i)
                 this.table.push(this.table[e]);
-
-            this.seed < 1 && (this.seed *= 1 << 30);
-            this.size = 1024;
-            this.normalize = 1 / 1023;
-            this.IOIOl = 1023;
-            this.l01l0 = this.seed & this.IOIOl;
-            this.IlIl0 = this.seed >> 10 & this.IOIOl;
-            this.lIII0 = this.seed >> 20 & this.IOIOl;
-            this.c2d = [];
-            this.lOllO = Math.cos(.3);
-            this.O0OO1 = Math.sin(.3);
+            this.seed < 1 && (this.seed *= 1 << 30),
+            this.size = 1024,
+            this.normalize = 1 / 1023,
+            this.IOIOl = 1023,
+            this.l01l0 = this.seed & this.IOIOl,
+            this.IlIl0 = this.seed >> 10 & this.IOIOl,
+            this.lIII0 = this.seed >> 20 & this.IOIOl,
+            this.c2d = [],
+            this.lOllO = Math.cos(.3),
+            this.O0OO1 = Math.sin(.3)
         }
-
-        smoothstepLerp(t, e, i) {
+        return t.prototype.O00IO = function(t, e, i) {
             var s;
             return s = (-2 * i + 3) * i * i,
-            t * (1 - s) + e * s;
+            t * (1 - s) + e * s
         }
-
-        lerp(t, e, i) {
-            return t * (1 - i) + e * i;
+        ,
+        t.prototype.I1OlI = function(t, e, i) {
+            return t * (1 - i) + e * i
         }
-
-        noise1d(t) {
+        ,
+        t.prototype.noise1d = function(t) {
             var e, i, s, l;
             return l = Math.floor(t),
             e = t - l,
             l &= this.IOIOl,
             i = this.table[this.l01l0 + this.table[l]],
             s = this.table[this.l01l0 + this.table[l + 1]],
-            this.smoothstepLerp(i, s, e) * this.normalize;
+            this.O00IO(i, s, e) * this.normalize
         }
-
-        noise2D(t, e) {
+        ,
+        t.prototype.lllll = function(t, e) {
             var i, s, l, n, a, o, r, h;
             return r = Math.floor(t),
             h = Math.floor(e),
@@ -14543,10 +14541,10 @@ input[type=range]:focus::-ms-fill-upper {
             n = this.table[this.l01l0 + this.table[r + 1 + this.table[h + this.IlIl0]]],
             a = this.table[this.l01l0 + this.table[r + this.table[h + 1 + this.IlIl0]]],
             o = this.table[this.l01l0 + this.table[r + 1 + this.table[h + 1 + this.IlIl0]]],
-            this.smoothstepLerp(this.smoothstepLerp(l, n, i), this.smoothstepLerp(a, o, i), s) * this.normalize;
+            this.O00IO(this.O00IO(l, n, i), this.O00IO(a, o, i), s) * this.normalize
         }
-
-        smoothNoise3D(t, e, i) {
+        ,
+        t.prototype.OIOO1 = function(t, e, i) {
             var s, l, n, a, o, r, h, u, d, I, c, p, O, m, f, g;
             return m = Math.floor(t),
             f = Math.floor(e),
@@ -14565,12 +14563,12 @@ input[type=range]:focus::-ms-fill-upper {
             d = this.table[this.l01l0 + this.table[m + 1 + this.table[f + this.table[this.IlIl0 + this.table[g + 1 + this.lIII0]]]]],
             I = this.table[this.l01l0 + this.table[m + this.table[f + 1 + this.table[this.IlIl0 + this.table[g + 1 + this.lIII0]]]]],
             c = this.table[this.l01l0 + this.table[m + 1 + this.table[f + 1 + this.table[this.IlIl0 + this.table[g + 1 + this.lIII0]]]]],
-            p = this.smoothstepLerp(this.smoothstepLerp(a, o, s), this.smoothstepLerp(r, h, s), l),
-            O = this.smoothstepLerp(this.smoothstepLerp(u, d, s), this.smoothstepLerp(I, c, s), l),
-            this.smoothstepLerp(p, O, n) * this.normalize;
+            p = this.O00IO(this.O00IO(a, o, s), this.O00IO(r, h, s), l),
+            O = this.O00IO(this.O00IO(u, d, s), this.O00IO(I, c, s), l),
+            this.O00IO(p, O, n) * this.normalize
         }
-
-        linearNoise3D(t, e, i) {
+        ,
+        t.prototype.IIIl0 = function(t, e, i) {
             var s, l, n, a, o, r, h, u, d, I, c, p, O, m, f, g;
             return m = Math.floor(t),
             f = Math.floor(e),
@@ -14589,14 +14587,14 @@ input[type=range]:focus::-ms-fill-upper {
             d = this.table[this.l01l0 + this.table[m + 1 + this.table[f + this.table[this.IlIl0 + this.table[g + 1 + this.lIII0]]]]],
             I = this.table[this.l01l0 + this.table[m + this.table[f + 1 + this.table[this.IlIl0 + this.table[g + 1 + this.lIII0]]]]],
             c = this.table[this.l01l0 + this.table[m + 1 + this.table[f + 1 + this.table[this.IlIl0 + this.table[g + 1 + this.lIII0]]]]],
-            p = this.lerp(this.lerp(a, o, s), this.lerp(r, h, s), l),
-            O = this.lerp(this.lerp(u, d, s), this.lerp(I, c, s), l),
-            this.lerp(p, O, n) * this.normalize;
+            p = this.I1OlI(this.I1OlI(a, o, s), this.I1OlI(r, h, s), l),
+            O = this.I1OlI(this.I1OlI(u, d, s), this.I1OlI(I, c, s), l),
+            this.I1OlI(p, O, n) * this.normalize
         }
-
-        unused(t, e, i) {}
-
-        basic1d(t, e, i, s) {
+        ,
+        t.prototype.l10l0 = function(t, e, i) {}
+        ,
+        t.prototype.basic1d = function(t, e, i, s) {
             var l, n, a, o, r;
             for (null == e && (e = 5),
             null == i && (i = .5),
@@ -14610,11 +14608,10 @@ input[type=range]:focus::-ms-fill-upper {
                 a += l,
                 l *= i,
                 t *= s;
-
-            return r / a;
+            return r / a
         }
-
-        fractalNoise2D(t, e, i, s, l, n, a) {
+        ,
+        t.prototype.OOOlI = function(t, e, i, s, l, n, a) {
             var o, r, h, u, d, I, c;
             for (null == i && (i = 5),
             null == s && (s = .5),
@@ -14626,18 +14623,17 @@ input[type=range]:focus::-ms-fill-upper {
             h = 0,
             r = 1,
             I = i; r <= I; r += 1)
-                c += this.noise2D(t, e) * o,
+                c += this.lllll(t, e) * o,
                 h += o,
                 o *= s,
                 u = l * (t * n + e * a),
                 d = l * (e * n - t * a),
                 t = u,
                 e = d;
-
-            return c / h;
+            return c / h
         }
-
-        fractalNoise3D(t, e, i, s, l, n, a, o) {
+        ,
+        t.prototype.O0IIO = function(t, e, i, s, l, n, a, o) {
             var r, h, u, d, I, c, p;
             for (null == s && (s = 5),
             null == l && (l = .5),
@@ -14649,7 +14645,7 @@ input[type=range]:focus::-ms-fill-upper {
             u = 0,
             h = 1,
             c = s; h <= c; h += 1)
-                p += this.smoothNoise3D(t, e, i) * r,
+                p += this.OIOO1(t, e, i) * r,
                 u += r,
                 r *= l,
                 d = n * (t * a + e * o),
@@ -14657,11 +14653,10 @@ input[type=range]:focus::-ms-fill-upper {
                 t = d,
                 e = I,
                 i *= n;
-
-            return p / u;
+            return p / u
         }
-
-        periodicBasic1d(t, e, i, s, l) {
+        ,
+        t.prototype.periodicBasic1d = function(t, e, i, s, l) {
             var n, a, o, r;
             return null == i && (i = 5),
             null == s && (s = .5),
@@ -14670,10 +14665,10 @@ input[type=range]:focus::-ms-fill-upper {
             n = t / e - a,
             o = this.basic1d(n * e, i, s, l),
             r = this.basic1d(n * e + e, i, s, l),
-            this.smoothstepLerp(o, r, 1 - n);
+            this.O00IO(o, r, 1 - n)
         }
-
-        periodicFractalNoise2D(t, e, i, s, l, n, a, o) {
+        ,
+        t.prototype.OIl01 = function(t, e, i, s, l, n, a, o) {
             var r, h, u, d, I, c, p, O;
             return null == s && (s = 5),
             null == l && (l = .5),
@@ -14684,14 +14679,14 @@ input[type=range]:focus::-ms-fill-upper {
             d = Math.floor(e / i),
             r = t / i - u,
             h = e / i - d,
-            I = this.fractalNoise2D(r * i, h * i, s, l, n, a, o),
-            c = this.fractalNoise2D(r * i + i, h * i, s, l, n, a, o),
-            p = this.fractalNoise2D(r * i, h * i + i, s, l, n, a, o),
-            O = this.fractalNoise2D(r * i + i, h * i + i, s, l, n, a, o),
-            this.smoothstepLerp(this.smoothstepLerp(I, c, 1 - r), this.smoothstepLerp(p, O, 1 - r), 1 - h);
+            I = this.OOOlI(r * i, h * i, s, l, n, a, o),
+            c = this.OOOlI(r * i + i, h * i, s, l, n, a, o),
+            p = this.OOOlI(r * i, h * i + i, s, l, n, a, o),
+            O = this.OOOlI(r * i + i, h * i + i, s, l, n, a, o),
+            this.O00IO(this.O00IO(I, c, 1 - r), this.O00IO(p, O, 1 - r), 1 - h)
         }
-
-        turbulence2d(t, e, i, s, l, n, a) {
+        ,
+        t.prototype.turbulence2d = function(t, e, i, s, l, n, a) {
             var o, r, h, u, d, I, c;
             for (null == i && (i = 5),
             null == s && (s = .5),
@@ -14703,18 +14698,17 @@ input[type=range]:focus::-ms-fill-upper {
             h = 0,
             r = 1,
             I = i; r <= I; r += 1)
-                c += 2 * (.5 - Math.abs(.5 - this.noise2D(t, e))) * o,
+                c += 2 * (.5 - Math.abs(.5 - this.lllll(t, e))) * o,
                 h += o,
                 o *= s,
                 u = l * (t * n + e * a),
                 d = l * (e * n - t * a),
                 t = u,
                 e = d;
-
-            return c / h;
+            return c / h
         }
-
-        turbulence3d(t, e, i, s, l, n, a, o) {
+        ,
+        t.prototype.turbulence3d = function(t, e, i, s, l, n, a, o) {
             var r, h, u, d, I, c, p, O;
             for (null == s && (s = 5),
             null == l && (l = .5),
@@ -14726,7 +14720,7 @@ input[type=range]:focus::-ms-fill-upper {
             u = 0,
             h = 1,
             p = s; h <= p; h += 1)
-                O += 2 * (.5 - Math.abs(.5 - this.noise2D(t, e, i))) * r,
+                O += 2 * (.5 - Math.abs(.5 - this.lllll(t, e, i))) * r,
                 u += r,
                 r *= l,
                 d = n * (t * a + e * o),
@@ -14735,11 +14729,10 @@ input[type=range]:focus::-ms-fill-upper {
                 t = d,
                 e = I,
                 i = c;
-
-            return O / u;
+            return O / u
         }
-
-        periodicTurbulence2d(t, e, i, s, l, n, a, o) {
+        ,
+        t.prototype.periodicTurbulence2d = function(t, e, i, s, l, n, a, o) {
             var r, h, u, d, I, c, p, O;
             return null == s && (s = 5),
             null == l && (l = .5),
@@ -14754,10 +14747,10 @@ input[type=range]:focus::-ms-fill-upper {
             c = this.turbulence2d(r * i + i, h * i, s, l, n, a, o),
             p = this.turbulence2d(r * i, h * i + i, s, l, n, a, o),
             O = this.turbulence2d(r * i + i, h * i + i, s, l, n, a, o),
-            this.smoothstepLerp(this.smoothstepLerp(I, c, 1 - r), this.smoothstepLerp(p, O, 1 - r), 1 - h);
+            this.O00IO(this.O00IO(I, c, 1 - r), this.O00IO(p, O, 1 - r), 1 - h)
         }
-
-        IOl0l(t, e, i, s, l, n, a) {
+        ,
+        t.prototype.IOl0l = function(t, e, i, s, l, n, a) {
             var o, r, h, u, d, I, c, p, O;
             for (null == i && (i = 5),
             null == s && (s = .5),
@@ -14770,7 +14763,7 @@ input[type=range]:focus::-ms-fill-upper {
             u = 0,
             h = 1,
             c = i; h <= c; h += 1)
-                O = 2 * this.noise2D(t, e),
+                O = 2 * this.lllll(t, e),
                 O > 1 && (O = 2 - O),
                 O = Math.pow(O, 2),
                 p += o * r * O,
@@ -14781,11 +14774,10 @@ input[type=range]:focus::-ms-fill-upper {
                 I = l * (e * n - t * a),
                 t = d,
                 e = I;
-
-            return p / u;
+            return p / u
         }
-
-        l111O(t, e, i, s, l, n, a, o) {
+        ,
+        t.prototype.l111O = function(t, e, i, s, l, n, a, o) {
             var r, h, u, d, I, c, p, O, m, f, g;
             for (null == s && (s = 5),
             null == l && (l = .5),
@@ -14798,7 +14790,7 @@ input[type=range]:focus::-ms-fill-upper {
             I = 0,
             u = 1,
             m = s; u <= m; u += 1)
-                g = 2 * this.smoothNoise3D(t, e, i),
+                g = 2 * this.OIOO1(t, e, i),
                 g > 1 && (g = 2 - g),
                 g = Math.pow(g, 2),
                 f += r * h * g,
@@ -14812,11 +14804,10 @@ input[type=range]:focus::-ms-fill-upper {
                 t = n * c,
                 e = n * d,
                 i = n * O;
-
-            return f / I;
+            return f / I
         }
-
-        I0111(t, e, i) {
+        ,
+        t.prototype.I0111 = function(t, e, i) {
             var s, l, n, a, o, r, h, u, d, I, c, p, O, m, f, g, y, v, b, w, x, k, E, _, z, M, T;
             for (_ = Math.floor(t),
             M = Math.floor(e),
@@ -14845,17 +14836,16 @@ input[type=range]:focus::-ms-fill-upper {
                     o = E) : d < r && (r = d,
                     h = k,
                     u = E);
-
             return O = s - a,
             g = l - o,
             I = Math.sqrt(O * O + g * g),
             m = s - h,
             y = l - u,
             c = Math.sqrt(m * m + y * y),
-            Math.min(I, c) / Math.max(I, c);
+            Math.min(I, c) / Math.max(I, c)
         }
-
-        l01lO(t, e, i) {
+        ,
+        t.prototype.l01lO = function(t, e, i) {
             var s, l, n, a, o, r, h, u, d, I, c, p, O, m, f, g, y, v;
             for (f = Math.floor(t),
             y = Math.floor(e),
@@ -14878,11 +14868,10 @@ input[type=range]:focus::-ms-fill-upper {
                     p,
                     O,
                     a = m);
-
-            return a * this.normalize;
+            return a * this.normalize
         }
-
-        IOl10(t, e, i, s) {
+        ,
+        t.prototype.IOl10 = function(t, e, i, s) {
             var l, n, a, o, r, h, u, d, I, c, p, O, m, f, g, y, v, b, w, x, k, E, _, z, M, T, S, R, A, P, H, D, C, j, G, L, B, F;
             for (null == s && (s = 100),
             C = Math.floor(t),
@@ -14908,7 +14897,6 @@ input[type=range]:focus::-ms-fill-upper {
                         P = -1 + z + this.table[this.l01l0 + this.table[j + this.table[this.IlIl0 + this.table[F + L]]]] * this.normalize,
                         H = -1 + M + this.table[this.l01l0 + this.table[j + this.table[this.IlIl0 + this.table[this.table[L + F] + 1]]]] * this.normalize,
                         D = -1 + T + this.table[this.l01l0 + this.table[j + this.table[this.IlIl0 + this.table[this.table[L + F] + 37]]]] * this.normalize;
-
                     g = l - P,
                     b = n - H,
                     k = a - D,
@@ -14923,9 +14911,8 @@ input[type=range]:focus::-ms-fill-upper {
                     u = D) : O < d && (d = O,
                     I = P,
                     c = H,
-                    p = D);
+                    p = D)
                 }
-
             return y = l - r,
             w = n - h,
             E = a - u,
@@ -14934,30 +14921,29 @@ input[type=range]:focus::-ms-fill-upper {
             x = n - c,
             _ = a - p,
             f = Math.sqrt(v * v + x * x + _ * _),
-            Math.min(m, f) / Math.max(m, f);
+            Math.min(m, f) / Math.max(m, f)
         }
-
-        static Il1l0(t) {
+        ,
+        t.Il1l0 = function(t) {
             var e, i, s, l, n, a;
             for (n = [],
             e = s = 0,
             l = t - 1; 0 <= l ? s <= l : s >= l; e = 0 <= l ? ++s : --s)
                 n[e] = e;
-
             for (a = []; ; ) {
                 if (0 === n.length)
                     break;
-
-                i = Math.floor(Math.random() * n.length);
-                a.push(n.splice(i, 1)[0]);
+                i = Math.floor(Math.random() * n.length),
+                a.push(n.splice(i, 1)[0])
             }
-
-            return a;
+            return a
         }
-    },
-    module.exports = ValueNoise,
+        ,
+        t
+    }(),
+    module.exports = Ol0OI,
     OO0OO = require("./random.js", OO0OO),
-    ValueNoise = require("./valuenoise.js", ValueNoise),
+    Ol0OI = require("./valuenoise.js", Ol0OI),
     this.Ill11 = function() {
         function t(t, e, i) {
             var s, l, n, a, o, r;
@@ -14980,7 +14966,7 @@ input[type=range]:focus::-ms-fill-upper {
             this.fy = this.O1l11 / this.size,
             this.fx = (2 + 8 * this.random.next()) / (2 * this.size),
             this.fy = (2 + 8 * this.random.next()) / (2 * this.size),
-            this.I1lOI = new ValueNoise(this.random.next()),
+            this.I1lOI = new Ol0OI(this.random.next()),
             this.I1111 = 2 * this.size,
             this.buffer = [],
             this.custom_map = null,
@@ -15021,7 +15007,7 @@ input[type=range]:focus::-ms-fill-upper {
             a = Math.sqrt((t * t + e * e) / (this.size * this.size)),
             r = 1,
             s = a > 1 ? .5 : .5 * Math.pow(a, this.OIIO1),
-            s = s * this.I1O00 + (1 - this.I1O00) * (this.I1lOI.periodicFractalNoise2D((t + this.size) * this.fx, (e + this.size) * this.fy, this.O1l11, 3) - .5),
+            s = s * this.I1O00 + (1 - this.I1O00) * (this.I1lOI.OIl01((t + this.size) * this.fx, (e + this.size) * this.fy, this.O1l11, 3) - .5),
             s = Math.max(4 / this.I1111, s),
             null != this.mode && (s *= this.mode.asteroidsDensityModifier(2 * t / this.I1111, 2 * e / this.I1111),
             null != this.mode.options.custom_map) ? (i.size = .5 * this.getCustomMap(t, e),
@@ -18328,7 +18314,7 @@ input[type=range]:focus::-ms-fill-upper {
             return i
         }
         ,
-        t.prototype.smoothstepLerp = function(t, e) {
+        t.prototype.O00IO = function(t, e) {
             var i;
             return "number" == typeof t ? t : (i = e / this.type.level,
             t[0] * (1 - i) + t[1] * i)
@@ -18369,28 +18355,28 @@ input[type=range]:focus::-ms-fill-upper {
         ,
         t.prototype.updateParameters = function() {
             var t, e, i, s, l;
-            for (this.shield_capacity = this.smoothstepLerp(this.type.specs.shield.capacity, this.levels[0]),
-            this.shield_reload = this.smoothstepLerp(this.type.specs.shield.reload, this.levels[1]),
-            this.generator_capacity = this.smoothstepLerp(this.type.specs.generator.capacity, this.levels[2]),
-            this.generator_reload = this.smoothstepLerp(this.type.specs.generator.reload, this.levels[3]),
+            for (this.shield_capacity = this.O00IO(this.type.specs.shield.capacity, this.levels[0]),
+            this.shield_reload = this.O00IO(this.type.specs.shield.reload, this.levels[1]),
+            this.generator_capacity = this.O00IO(this.type.specs.generator.capacity, this.levels[2]),
+            this.generator_reload = this.O00IO(this.type.specs.generator.reload, this.levels[3]),
             l = this.lasers,
             t = 0,
             i = l.length; t < i; t++)
                 e = l[t],
-                e.damage = this.smoothstepLerp(e.type.damage, this.levels[4]),
-                e.speed = this.smoothstepLerp(e.type.speed, this.levels[5]);
-            if (this.speed = .004 * this.smoothstepLerp(this.type.specs.ship.speed, this.levels[6]),
-            s = this.smoothstepLerp(this.type.specs.ship.acceleration, this.levels[7]),
+                e.damage = this.O00IO(e.type.damage, this.levels[4]),
+                e.speed = this.O00IO(e.type.speed, this.levels[5]);
+            if (this.speed = .004 * this.O00IO(this.type.specs.ship.speed, this.levels[6]),
+            s = this.O00IO(this.type.specs.ship.acceleration, this.levels[7]),
             this.OO110 = Math.exp(Math.log(.5) / (3e3 / s)),
-            this.IIll1 = .15 * this.smoothstepLerp(this.type.specs.ship.rotation, this.levels[7]) / 100,
+            this.IIll1 = .15 * this.O00IO(this.type.specs.ship.rotation, this.levels[7]) / 100,
             this.crystals_capacity = this.type.level * this.type.level * 20,
             null != this.type.specs.ship.dash)
-                return this.dash_speed = .004 * this.smoothstepLerp(this.type.specs.ship.dash.speed, this.levels[5]),
-                this.dash_burst_speed = .004 * this.smoothstepLerp(this.type.specs.ship.dash.burst_speed, this.levels[4]),
-                s = this.smoothstepLerp(this.type.specs.ship.dash.acceleration, this.levels[4]),
+                return this.dash_speed = .004 * this.O00IO(this.type.specs.ship.dash.speed, this.levels[5]),
+                this.dash_burst_speed = .004 * this.O00IO(this.type.specs.ship.dash.burst_speed, this.levels[4]),
+                s = this.O00IO(this.type.specs.ship.dash.acceleration, this.levels[4]),
                 this.dash_inertia = Math.exp(Math.log(.5) / (3e3 / s)),
-                this.dash_initial_energy = this.smoothstepLerp(this.type.specs.ship.dash.initial_energy, this.levels[4]),
-                this.dash_energy = this.smoothstepLerp(this.type.specs.ship.dash.energy, this.levels[5])
+                this.dash_initial_energy = this.O00IO(this.type.specs.ship.dash.initial_energy, this.levels[4]),
+                this.dash_energy = this.O00IO(this.type.specs.ship.dash.energy, this.levels[5])
         }
         ,
         t
@@ -18489,13 +18475,13 @@ input[type=range]:focus::-ms-fill-upper {
             var e, i, s, l, n, a;
             for (this.id = t,
             this.geometry = new THREE.IcosahedronGeometry(1,0),
-            s = new ValueNoise(this.id),
+            s = new Ol0OI(this.id),
             new OO0OO(this.id),
             n = this.geometry.vertices,
             e = 0,
             i = n.length; e < i; e++)
                 a = n[e],
-                l = Math.pow(s.fractalNoise3D(a.x, a.y, a.z, 2), 2),
+                l = Math.pow(s.O0IIO(a.x, a.y, a.z, 2), 2),
                 a.x *= 1 + l,
                 a.y *= 1 + l,
                 a.z *= 1 + l;
@@ -19459,7 +19445,7 @@ input[type=range]:focus::-ms-fill-upper {
             this.options.O0IOI && "undefined" != typeof II1ll && null !== II1ll && (this.O0IOI = new II1ll(Math.floor(360 * this.hue))),
             this.O00Il = 0,
             this.lIOOl = 0,
-            this.I1lOI = new ValueNoise
+            this.I1lOI = new Ol0OI
         }
         return t.prototype.dispose = function() {
             if (this.geometry.dispose(),
@@ -24928,7 +24914,7 @@ input[type=range]:focus::-ms-fill-upper {
                     l = new OIOlO(t,"OOIlI"),
                     l.lllI1 = 40,
                     i.llllO = .999,
-                    e = new ValueNoise(0),
+                    e = new Ol0OI(0),
                     t.IlO1I = new Sound(t,1,function(t) {
                         var i, s;
                         return i = 1 - Math.pow(t, 4),
@@ -25017,7 +25003,7 @@ input[type=range]:focus::-ms-fill-upper {
             this.ll1O0.add(function(t) {
                 return function() {
                     var e;
-                    return e = new ValueNoise,
+                    return e = new Ol0OI,
                     t.rocket_woom = new Sound(t,1,function(t) {
                         var i;
                         return i = 2 * (e.periodicBasic1d(1e3 * t, 1e3) - .5),
@@ -29015,7 +29001,7 @@ input[type=range]:focus::-ms-fill-upper {
         i.prototype.drawRadarInfo = function(t) {
             var e, i, s, l, n, a, o, r, h, u, d, I, c, p, O, m, f, g, y, v, b, w, x, k, E, _, z, M;
             if (y = new OO0OO(this.options.map_id || 0),
-            O = new ValueNoise(this.options.map_id || 0),
+            O = new Ol0OI(this.options.map_id || 0),
             M = [],
             M.push({
                 x: 1,
@@ -29045,8 +29031,8 @@ input[type=range]:focus::-ms-fill-upper {
                         u = g = 0; g <= 39; u = g += 1)
                             k = Math.cos(u / 40 * (180 * THREE.Math.DEG2RAD) * 2),
                             _ = Math.sin(u / 40 * (180 * THREE.Math.DEG2RAD) * 2),
-                            e = O.fractalNoise2D(k + 100 * r, _, 3),
-                            i = O.fractalNoise2D(k + 100 * r, _ + 50, 3),
+                            e = O.OOOlI(k + 100 * r, _, 3),
+                            i = O.OOOlI(k + 100 * r, _ + 50, 3),
                             k *= .2 + 1.6 * e,
                             _ *= .2 + 1.6 * i,
                             t.lineTo(x + k * w + 2 * s, _ * w - E + 2 * l);
@@ -29070,7 +29056,7 @@ input[type=range]:focus::-ms-fill-upper {
         i.prototype.createWeaponZones = function() {
             var t, e, i, s, l, n, a, o, r, h, u, d;
             if (o = new OO0OO(this.options.map_id || 0),
-            new ValueNoise(this.options.map_id || 0),
+            new Ol0OI(this.options.map_id || 0),
             d = [],
             d.push({
                 x: 1,
@@ -33364,7 +33350,709 @@ input[type=range]:focus::-ms-fill-upper {
         ,
         t
     }(),
+    this.IIO00 = function() {
+        function e(t, e, i, s, l) {
+            var n, a, o;
+            this.game = t,
+            this.address = e,
+            this.hue = s,
+            null == l && (l = false),
+            this.status_sent_count = 0,
+            this.accepted = false,
+            this.socket = WSS.create(this.address),
+            this.socket.onmessage = function(t) {
+                return function(e) {
+                    var i;
+                    if ("string" != typeof (e = e.data))
+                        return null != e.arrayBuffer ? e.arrayBuffer().then(function(e) {
+                            return t.IIOIl(e)
+                        }) : (i = new FileReader,
+                        i.onload = function(e) {
+                            return t.IIOIl(e.target.result)
+                        }
+                        ,
+                        i.readAsArrayBuffer(e));
+                    if ("pong" === e)
+                        return t.pong();
+                    if (e = JSON.parse(e),
+                    e.name)
+                        switch (e.name) {
+                        case "welcome":
+                            return t.l0011(e.data);
+                        case "cannot_join":
+                            return t.cannotJoin();
+                        case "entered":
+                            return t.entered(e.data);
+                        case "player_name":
+                            return t.lII0O(e);
+                        case "ecp_verified":
+                            return t.ECPVerified(e);
+                        case "modemsg":
+                            return t.modeMsg(e);
+                        case "error":
+                            return t.error(e)
+                        }
+                }
+            }(this),
+            a = this.socket,
+            this.socket.onclose = function(t) {
+                return function() {
+                    return t.OIO11()
+                }
+            }(this),
+            this.game.O1Ol1.Il1O1 ? (n = null,
+            o = this.game.O1Ol1.steam_client_id) : (o = null,
+            n = this.game.I0OlO.key),
+            this.socket.I11IO = function() {
+                return this.close()
+            }
+            ,
+            this.socket.onopen = function(t) {
+                return function() {
+                    var e;
+                    console.log(t.game.weapons);
+                    //t.game.weapons = 1000
+                    if (t.socket.send(JSON.stringify({
+                        name: l001I.lOOI1,
+                        data: {
+                            mode: t.game.mode_id,
+                            mod_id: t.game.mode.mod_id,
+                            spectate: t.game.mode.spectate,
+                            spectate_ship: t.game.mode.spectate_ship,
+                            player_name: (new Ol00I).IOI01(t.game.player_name),
+                            hue: t.hue,
+                            preferred: null != t.game.preferred && t.game.preferred,
+                            bonus: i,
+                            ecp_key: n,
+                            steamid: o,
+                            ecp_custom: t.game.I0OlO.custom,
+                            create: true,
+                            client_ship_id: t.game.getClientShipID(),
+                            client_tr: t.game.IIIIl()
+                        }
+                    })),
+                    t.game.I0OlO.l1ll0() && null != t.game.I0OlO.key && t.game.I0OlO.key.length > 5)
+                        try {
+                            if (e = localStorage.getItem("I0OlO game"),
+                            null == e && (e = "0"),
+                            e = parseInt(e),
+                            Date.now() > e + 72e5)
+                                return t.game.sendGAEvent("ecp", t.game.I0OlO.key.substring(0, 5)),
+                                localStorage.setItem("I0OlO game", Date.now())
+                        } catch (t) {
+                            t
+                        }
+                }
 
+            }(this),
+            window.O00O0 = function(t) {
+                return function() {
+                    return a.I11IO()
+                }
+            }(),
+            this.alive_ships = 0,
+            this.ping_count = 0,
+            this.ping_total = 0,
+            this.ping_value = 0
+        }
+        return e.prototype.ECPVerified = function(t) {
+            var e, i, s;
+            if (i = t.data.key,
+            s = t.data.valid,
+            e = t.data.custom,
+            this.game.I0OlO.I0lII(i, s, e),
+            s)
+                return this.game.scene.ship.finish = this.game.I0OlO.custom.finish
+        }
+        ,
+        e.prototype.cannotJoin = function() {
+            return this.game.cannotJoin()
+        }
+        ,
+        e.prototype.l0011 = function(t) {
+            var e;
+            return t.version > l001I.lO1IO ? void this.game.O1Ol1.reloadGame() : (null != t.mode && (this.game.setMode(t.mode.id, t.mode),
+            this.game.mode.setOptions(t.mode)),
+            e = new OO0OO(t.seed),
+            t.system_hue = 120 + e.OO00I(240),
+            this.accepted = !0,
+            null != t.size && this.game.setSize(t.size),
+            this.game.l0011(t),
+            this.join_time = Date.now())
+        }
+        ,
+        e.prototype.enter = function(t) {
+            return null == t && (t = {}),
+            t.spectate = this.game.mode.spectate,
+            this.socket.send(JSON.stringify({
+                name: "enter",
+                data: t
+            }))
+        }
+        ,
+        e.prototype.entered = function(t) {
+            return this.game.player.status.id = t.shipid,
+            this.game.entered(t)
+        }
+        ,
+        e.prototype.ping = function() {
+            return this.cancel_ping || (this.ping_time = Date.now(),
+            this.socket.send("ping")),
+            this.cancel_ping = false
+        }
+        ,
+        e.prototype.pong = function() {
+            var t;
+            return t = Date.now() - this.ping_time,
+            this.measuredPing(t)
+        }
+        ,
+        e.prototype.measuredPing = function(t) {
+            if (!(t >= 1e3))
+                return t = Math.max(0, t - 8),
+                Math.abs(t - this.ping_value) > 20 ? this.ping_value = t : this.ping_value = .9 * this.ping_value + .1 * t,
+                this.game.ping = Math.round(this.ping_value),
+                this.ping_count++,
+                this.ping_total += t,
+                60 === this.ping_count ? (this.ping_total / 60 < 80 && null != this.game.region && localStorage.setItem("region", this.game.region),
+                this.game.sendGAEvent("ping_evt", 50 * Math.ceil(this.ping_total / 600 / 5) + "ms")) : void 0
+        }
+        ,
+        e.prototype.respawn = function(t) {
+            return this.respawn_callback = t,
+            this.socket.send(JSON.stringify({
+                name: "respawn"
+            }))
+        }
+        ,
+        e.prototype.say = function(t) {
+            return this.socket.send(JSON.stringify({
+                name: "say",
+                data: t
+            }))
+        }
+        ,
+        e.prototype.O1Il0 = function(t) {
+            var e, i, s, l, n;
+            return n = new DataView(t),
+            l = n.getUint32(4, !0),
+            this.game.scene.world.IlIIl(l),
+            n.getUint8(1) !== this.game.player.status.id ? this.game.scene.world.lOIlI(n) : (this.statusPingCheck(n),
+            i = n.getUint8(2),
+            e = (1 & i) > 0,
+            e && (this.game.player.status.killed = false),
+            this.game.player.status.alive && !e && setTimeout(function(t) {
+                return function() {
+                    if (!t.game.player.status.killed && !t.game.mode.ignoreKills())
+                        return t.killed(0, 0)
+                }
+            }(this), 1e3),
+            this.game.scene.world.O10lI(this.game.player, n),
+            null != this.respawn_callback && e ? (this.game.player.lI1I0(),
+            s = this.respawn_callback,
+            this.respawn_callback = null,
+            s()) : void 0)
+        }
+        ,
+        e.prototype.laser = function(t) {
+            return this.game.scene.world.laser(t)
+        }
+        ,
+        e.prototype.OIO11 = function() {
+            return this.accepted ? this.game.OIO11() : this.game.refused()
+        }
+        ,
+        e.prototype.killed = function(e, i) {
+            var s, l;
+            if (!this.game.player.status.killed && (this.game.player.status.killed = !0,
+            this.game.player.status.deaths++,
+            this.game.player.status.alive = false,
+            this.game.scene.IlOO0.explode(this.game.player.status.x, this.game.player.status.y, null, Math.max(5, this.game.player.type.radius)),
+            this.game.l0I0l.l00OO(this.game.player.status.x, this.game.player.status.y, 4, .25),
+            this.game.scene.shakeCamera(this.game.player.status.x, this.game.player.status.y, 20),
+            l = this.game.names.get(e),
+            l.length > 0 && this.game.message(t("%s killed you!").replace("%s", l), "#FF8"),
+            this.game.mode.killed(e, 0 !== i, i),
+            e > 0 && null != (s = this.game.scene.world.O1II0[e])))
+                return this.game.sendGAEvent("kill", s.I0OI1.type.name + " kills " + this.game.player.type.name),
+                this.game.takeScreenshot("killed", Date.now() + 200, 2 * this.game.player.type.level + 2 * s.I0OI1.type.level)
+        }
+        ,
+        e.prototype.IIOIl = function(e) {
+            var i, s, l, n, a, o, r, h, u, d, I, c, p, O, m, f, g, y, v, b, w, x, k, E, _, z, M, T, S, R, A, P, H, D, C, j, G, L, B, F, V, N, q, U, K, W, Y, J, Z, X, Q, $, tt, et, it, st, lt, nt, at, ot, rt, ht, ut, dt, It, ct;
+            switch (ut = new DataView(e),
+            r = ut.getUint8(0)) {
+            case 0:
+                this.O1Il0(e);
+                break;
+            case 71:
+                X = ut.getUint32(1, !0),
+                this.game.scene.world.survival_start = X,
+                this.game.scene.world.survival = !0;
+                break;
+            case 100:
+                this.laser(ut);
+                break;
+            case 101:
+                g = ut.getUint16(2, !0),
+                dt = ut.getFloat32(4, !0),
+                It = ut.getFloat32(8, !0),
+                U = ut.getUint8(12),
+                k = this.game.scene.world.IO1l0(g, dt, It),
+                l = null != k ? k.angle : null,
+                I = null != k ? k.damage : 1,
+                q = this.game.scene.world.O1II0[U],
+                null != q ? null != k && 6 === k.type ? (q.shipmodel.bumpShield(),
+                this.game.l0I0l.shield(dt, It)) : q.I0OI1.status.shield > I ? (q.shipmodel.O00Il = 1,
+                this.game.l0I0l.shield(dt, It)) : (this.game.scene.IlOO0.explode(dt, It, l, I / 10),
+                this.game.l0I0l.l00OO(dt, It)) : U === this.game.player.status.id && (null != k && 6 === k.type ? (this.game.scene.ship.bumpShield(),
+                this.game.l0I0l.shield(dt, It)) : this.game.scene.player.status.shield > I ? (this.game.scene.ship.O00Il = 1,
+                this.game.l0I0l.shield(dt, It)) : (this.game.scene.IlOO0.explode(dt, It, l, I / 10),
+                this.game.l0I0l.l00OO(dt, It),
+                this.game.scene.shakeCamera(dt, It, I / 20)));
+                break;
+            case 103:
+                g = ut.getUint16(2, !0),
+                dt = ut.getFloat32(4, !0),
+                It = ut.getFloat32(8, !0),
+                k = this.game.scene.world.IO1l0(g, dt, It),
+                l = null != k ? k.angle : 0,
+                Q = null != k ? k.damage : 10,
+                Q = Math.pow(Q / 10, .5),
+                this.game.scene.IlOO0.explode(dt, It, l, Q),
+                this.game.l0I0l.l00OO(dt, It, Q);
+                break;
+            case 102:
+                dt = ut.getFloat32(2, !0),
+                It = ut.getFloat32(6, !0),
+                Q = ut.getUint8(1) / 60,
+                this.game.scene.IlOO0.explode(dt, It, null, 3 * Q),
+                this.game.l0I0l.I01O0(dt, It, Math.pow(Math.min(1, 3 * Q), 1.5));
+                break;
+            case 110:
+                if (dt = ut.getInt8(2),
+                It = ut.getInt8(3),
+                B = ut.getUint32(4, !0),
+                U = ut.getUint8(8),
+                H = ut.getUint8(9),
+                F = ut.getUint32(10, !0),
+                null == (n = this.game.scene.lIlIl.I1I0l.O1I1I(dt, It)) || !n.on)
+                    return;
+                U === this.game.player.status.id && (this.game.player.status.score = F,
+                this.game.display.screen.O00I1.figures.bonus(H, 10 * n.x, 10 * n.y)),
+                this.game.scene.IlOO0.explode(10 * n.x, 10 * n.y, null, 10 * n.size),
+                this.game.l0I0l.l00OO(10 * n.x, 10 * n.y, 4, .25),
+                this.game.scene.shakeCamera(10 * n.x, 10 * n.y, 5 * n.size),
+                n.respawn = B;
+                break;
+            case 111:
+                this.game.scene.world.asteroidStatus(ut);
+                break;
+            case 112:
+                g = ut.getUint16(2, !0),
+                this.game.scene.world.asteroidExplosion(g);
+                break;
+            case 120:
+                for (W = ut.getUint8(1),
+                Y = ut.getUint32(1, !0),
+                y = 5; ; ) {
+                    if (y >= ut.byteLength)
+                        break;
+                    H = ut.getUint8(y),
+                    g = ut.getUint16(y + 1, !0),
+                    dt = ut.getFloat32(y + 3, !0),
+                    It = ut.getFloat32(y + 7, !0),
+                    $ = ut.getFloat32(y + 11, !0),
+                    tt = ut.getFloat32(y + 15, !0),
+                    this.game.scene.IOl1I.add(dt, It, $, tt, H, Y, g),
+                    y += 19
+                }
+                break;
+            case 121:
+                U = ut.getUint8(1),
+                d = ut.getUint16(2, !0),
+                this.game.scene.IOl1I.eat(d, U);
+                break;
+            case 130:
+                g = ut.getUint16(2, !0),
+                dt = ut.getFloat32(4, !0),
+                It = ut.getFloat32(8, !0),
+                Z = ut.getUint8(12),
+                M = ut.getUint8(13),
+                m = 0 !== ut.getUint8(14),
+                V = ut.getUint16(15, !0),
+                N = ut.getUint16(17, !0),
+                k = this.game.scene.world.IO1l0(g, dt, It, m),
+                l = null != k ? k.angle : null,
+                I = null != k ? k.damage : 1,
+                J = this.game.scene.world.stations[Z],
+                null != J && null != k && (null != (z = J.modules[M]) && 6 === k.type || !m) && (J.setModuleShield(z, V, N),
+                6 === k.type ? (z.bumpShield(),
+                this.game.l0I0l.shield(dt, It)) : z.shield > .1 ? (z.O00Il = 1,
+                this.game.l0I0l.shield(dt, It)) : (this.game.scene.IlOO0.explode(dt, It, l, I / 10),
+                this.game.l0I0l.l00OO(dt, It)));
+                break;
+            case 141:
+                s = ut.getUint8(1),
+                dt = ut.getFloat32(2, !0),
+                It = ut.getFloat32(6, !0),
+                null != this.game.display.screen.O00I1.figures && this.game.display.screen.O00I1.figures.bonus(s, dt, It, 16744576, 11),
+                this.game.l0I0l.collect(dt, It, s);
+                break;
+            case 147:
+                g = ut.getUint8(1),
+                s = ut.getUint32(2, !0),
+                g === this.game.scene.player.status.id ? (this.game.message(t("You contributed %d gems to your team!").replace("%d", s)),
+                this.game.player.status.contribution += s) : null != (S = this.game.names.get(g)) && S.length > 0 && this.game.message(t("%s contributed %d gems to your team!").replace("%d", s).replace("%s", S));
+                break;
+            case 155:
+                lt = ut.getUint8(1),
+                T = ut.getUint8(2),
+                dt = ut.getFloat32(3, !0),
+                It = ut.getFloat32(7, !0),
+                J = this.game.scene.world.stations[lt],
+                z = J.modules[T],
+                z.alive = false,
+                this.game.l0I0l.l00OO(dt, It, 4, .25),
+                this.game.scene.shakeCamera(dt, It, 20),
+                this.game.scene.IlOO0.explode(dt, It, null, 7);
+                break;
+            case 150:
+                U = ut.getUint8(1),
+                U === this.game.player.status.id && this.game.player.status.alive ? (w = ut.getUint8(2),
+                D = ut.getUint8(12),
+                this.killed(w, D),
+                this.game.scene.world.showRipPlate(this.game.player)) : (q = this.game.scene.world.O1II0[U],
+                this.game.killers[U] = false,
+                null != q && (q.I0OI1.status.alive = false,
+                w = ut.getUint8(2),
+                H = ut.getUint32(4, !0),
+                w === this.game.player.status.id && (this.game.player.status.kills++,
+                S = this.game.names.get(U),
+                S.length > 0 && (this.game.message(t("You killed %s!").replace("%s", S), "#F88"),
+                0 != (2147483648 & ut.getUint32(8, !0)) && setTimeout(function(e) {
+                    return function() {
+                        return e.game.message(t("Revenge kill bonus +%s points").replace("%s", Math.round(H / 2)))
+                    }
+                }(this), 500)),
+                this.game.player.status.score = 2147483647 & ut.getUint32(8, !0),
+                setTimeout(function(t) {
+                    return function() {
+                        return t.game.display.screen.O00I1.figures.bonus(H, q.I0OI1.status.x, q.I0OI1.status.y, 0xffffff, 10, 2)
+                    }
+                }(this), 1e3),
+                this.game.takeScreenshot("frag", Date.now() + 200, this.game.player.type.level + q.I0OI1.type.level)),
+                this.game.scene.world.isShipVisible(U) && (this.game.scene.world.showRipPlate(q.I0OI1),
+                this.game.scene.IlOO0.explode(q.I0OI1.status.x, q.I0OI1.status.y, null, Math.max(5, q.I0OI1.type.radius)),
+                this.game.l0I0l.l00OO(q.I0OI1.status.x, q.I0OI1.status.y, 4, .25),
+                this.game.scene.shakeCamera(q.I0OI1.status.x, q.I0OI1.status.y, 10))));
+                break;
+            case 175:
+                this.game.weapons.read(ut);
+                break;
+            case 180:
+                U = ut.getUint16(1, !0),
+                _ = ut.getUint8(3),
+                a = ut.getUint8(4),
+                c = ut.getUint8(5),
+                it = ut.getUint16(6, !0),
+                st = ut.getUint8(8),
+                et = null,
+                0 === st ? null != this.game.scene.world.O1II0[it] ? et = this.game.scene.world.O1II0[it].I0OI1.status : it === this.game.player.status.id && (et = this.game.player.status) : 1 === st && (et = this.game.scene.world.findAlien(it)),
+                U === this.game.player.status.id ? (this.game.player.pods.setMiningNum(_),
+                this.game.player.pods.setAttackNum(a),
+                this.game.player.pods.setDefenceNum(c),
+                this.game.player.pods.target = et) : null != (q = this.game.scene.world.O1II0[U]) && (q.I0OI1.pods.setMiningNum(_),
+                q.I0OI1.pods.setAttackNum(a),
+                q.I0OI1.pods.setDefenceNum(c),
+                q.I0OI1.pods.target = et);
+                break;
+            case 181:
+                g = ut.getUint16(2, !0),
+                dt = ut.getFloat32(4, !0),
+                It = ut.getFloat32(8, !0),
+                ct = ut.getFloat32(12, !0),
+                P = ut.getUint8(16),
+                A = ut.getUint8(17),
+                k = this.game.scene.world.IO1l0(g, dt, It, 42 === P),
+                l = null != k ? k.angle : null,
+                I = null != k ? k.damage : 1,
+                42 === P ? this.game.l0I0l.shield(dt, It) : (this.game.scene.IlOO0.explode(dt, It, l, 1, ct),
+                this.game.l0I0l.l00OO(dt, It));
+                break;
+            case 182:
+                g = ut.getUint16(2, !0),
+                dt = ut.getFloat32(4, !0),
+                It = ut.getFloat32(8, !0),
+                U = ut.getUint16(12, !0),
+                P = ut.getUint8(14),
+                A = ut.getUint8(15),
+                ct = ut.getFloat32(16, !0),
+                k = this.game.scene.world.IO1l0(g, dt, It),
+                l = null != k ? k.angle : null,
+                I = null != k ? k.damage : 1,
+                U === this.game.player.status.id ? O = this.game.player : null != this.game.scene.world.O1II0[U] && (O = this.game.scene.world.O1II0[U].I0OI1),
+                null != O && (this.game.scene.IlOO0.explode(dt, It, l, 2, ct),
+                this.game.l0I0l.l00OO(dt, It, 2, .5),
+                O.pods.remove(P, A),
+                this.game.scene.shakeCamera(dt, It, .5));
+                break;
+            case 184:
+                rt = ut.getUint8(1),
+                Y = ut.getUint32(2, !0),
+                g = ut.getUint16(6, !0),
+                dt = ut.getFloat32(8, !0),
+                It = ut.getFloat32(12, !0),
+                $ = ut.getFloat32(16, !0),
+                tt = ut.getFloat32(20, !0),
+                this.game.scene.collectibles.add(dt, It, $, tt, Y, g, rt);
+                break;
+            case 183:
+                U = ut.getUint8(1),
+                h = ut.getUint16(2, !0),
+                this.game.scene.collectibles.eat(h, U);
+                break;
+            case 185:
+                this.game.scene.world.projectileStatus(ut);
+                break;
+            case 186:
+                g = ut.getUint16(2, !0),
+                dt = ut.getFloat32(4, !0),
+                It = ut.getFloat32(8, !0),
+                k = this.game.scene.world.IO1l0(g, dt, It),
+                l = null != k ? k.angle : null,
+                I = null != k ? k.damage : 1,
+                this.game.scene.IlOO0.explode(dt, It, l, 1, 0),
+                this.game.l0I0l.l00OO(dt, It);
+                break;
+            case 187:
+                ht = ut.getUint8(1),
+                g = ut.getUint16(2, !0),
+                this.game.scene.world.projectileExplosion(ht, g);
+                break;
+            case 190:
+                I = ut.getUint16(1, !0),
+                dt = ut.getFloat32(3, !0),
+                It = ut.getFloat32(7, !0),
+                l = ut.getFloat32(11, !0),
+                this.game.scene.IlOO0.explode(dt, It, l, I / 10),
+                this.game.l0I0l.l00OO(dt, It),
+                this.game.scene.shakeCamera(dt, It, I / 20);
+                break;
+            case 200:
+            case 201:
+                for (this.alive_ships = 0,
+                u = ut.getUint8(1),
+                f = v = 0,
+                C = u - 1; v <= C; f = v += 1)
+                    this.alive_ships += 1 & ut.getUint8(2 + 8 * f + 3);
+                null != this.game.display && null != this.game.display.screen.O00I1.l1l1O && this.game.display.screen.O00I1.l1l1O.IlIIO(ut, this.game.player.status.id),
+                this.game.mode.updateScore(ut),
+                this.game.scene.world.survival = 201 === r,
+                this.game.scene.world.survival && null == this.game.scene.world.survival_start && (this.game.scene.world.survival_start = this.game.scene.world.worldTime),
+                this.game.scene.world.survival && 1 === this.alive_ships && !this.game.gameover && (this.game.gameover = !0,
+                setTimeout(function(t) {
+                    return function() {
+                        return t.game.mode.killed(0, !0, 1)
+                    }
+                }(this), 5e3));
+                break;
+            case 205:
+                this.game.mode.updateStations(ut);
+                break;
+            case 206:
+                null != this.game.mode.updateWave ? this.game.mode.updateWave(ut) : this.game.mode.updateRadarObjects(ut);
+                break;
+            case 207:
+                null != this.game.mode.updateRadar && this.game.mode.updateRadar(ut);
+                break;
+            case 210:
+                for (ot = ut.getUint32(1, !0),
+                R = (ut.byteLength - 5) / 3,
+                f = b = 0,
+                j = R - 1; b <= j; f = b += 1)
+                    dt = ut.getInt8(5 + 3 * f),
+                    It = ut.getInt8(6 + 3 * f),
+                    at = ut.getUint8(7 + 3 * f) + ot,
+                    null != (n = this.game.scene.lIlIl.I1I0l.O1I1I(dt, It)) && (n.respawn = at);
+                break;
+            case 220:
+                this.game.scene.world.alienStatus(ut);
+                break;
+            case 221:
+                g = ut.getUint16(2, !0),
+                dt = ut.getFloat32(4, !0),
+                It = ut.getFloat32(8, !0),
+                k = this.game.scene.world.IO1l0(g, dt, It),
+                l = null != k ? k.angle : null,
+                I = null != k ? k.damage : 1,
+                this.game.scene.IlOO0.explode(dt, It, l, 1, 0),
+                this.game.l0I0l.l00OO(dt, It);
+                break;
+            case 222:
+                g = ut.getUint16(2, !0),
+                K = ut.getUint16(4, !0),
+                o = ut.getUint16(6, !0),
+                K !== this.game.scene.player.status.id ? o = 0 : this.game.mode.count_alien_kills && this.game.scene.player.status.kills++,
+                this.game.scene.world.alienExplosion(g, o);
+                break;
+            case 240:
+                for (U = ut.getUint8(1),
+                nt = "",
+                f = x = 2,
+                G = ut.byteLength - 1; x <= G; f = x += 1)
+                    nt += String.fromCharCode(ut.getUint8(f));
+                U === this.game.player.status.id ? this.game.scene.say(nt) : this.game.scene.world.shipSays(U, nt);
+                break;
+            case 250:
+                this.game.system_players = ut.getUint8(1),
+                this.game.total_players = ut.getUint32(2, !0);
+                break;
+            case 255:
+                for (y = 1; y < ut.byteLength; ) {
+                    for (W = ut.getUint8(y++),
+                    i = new ArrayBuffer(W),
+                    p = new DataView(i),
+                    f = E = 0,
+                    L = W - 1; 0 <= L ? E <= L : E >= L; f = 0 <= L ? ++E : --E)
+                        p.setUint8(f, ut.getUint8(y++));
+                    this.IIOIl(i)
+                }
+            }
+        }
+        ,
+        e.prototype.lI1I0 = function(t) {
+            if (this.socket.send(t),
+            this.status_sent_count++,
+            (t &= 20991) !== this.last_status_sent && (this.last_status_sent = t,
+            !this.use_status_ping))
+                return this.use_status_ping = !0,
+                this.ping_status = t,
+                this.status_ping_time = Date.now()
+        }
+        ,
+        e.prototype.statusPingCheck = function(t) {
+            var e, i, s, l, n;
+            if (this.use_status_ping) {
+                if (e = t.getUint16(12, !0),
+                i = 0 != (16384 & t.getUint16(14, !0)),
+                n = 0 != (2 & t.getUint8(2)),
+                s = e,
+                i && (s += 16384),
+                n && (s += 4096),
+                l = Date.now() - this.status_ping_time,
+                s === this.ping_status)
+                    return this.measuredPing(l),
+                    this.use_status_ping = false;
+                if (l > 1e3)
+                    return this.use_status_ping = false
+            }
+        }
+        ,
+        e.prototype.llOl0 = function(t) {
+            return this.socket.send(JSON.stringify({
+                name: "get_name",
+                data: {
+                    id: t
+                }
+            }))
+        }
+        ,
+        e.prototype.lII0O = function(t) {
+            return this.game.names.set(t.data.id, t.data.player_name, t.data)
+        }
+        ,
+        e.prototype.pushType = function(t) {
+            return this.socket.send(JSON.stringify({
+                name: "ship_type",
+                data: t
+            }))
+        }
+        ,
+        e.prototype.upgradeSpec = function(t) {
+            return this.socket.send(JSON.stringify({
+                name: "upgrade_spec",
+                data: t
+            }))
+        }
+        ,
+        e.prototype.l0IlI = function(t) {
+            return this.socket.send(JSON.stringify({
+                name: l001I.I1OI0,
+                data: t
+            }))
+        }
+        ,
+        e.prototype.buyLife = function() {
+            return this.socket.send(JSON.stringify({
+                name: "buy_life"
+            }))
+        }
+        ,
+        e.prototype.modeMsg = function(t) {
+            return this.game.mode.messageReceived(t.data)
+        }
+        ,
+        e.prototype.sendModeMessage = function(t) {
+            return this.socket.send(JSON.stringify({
+                name: "modemsg",
+                data: t
+            }))
+        }
+        ,
+        e.prototype.startTransfer = function(t, e) {
+            return this.socket.send(JSON.stringify({
+                name: "start_transfer"
+            }))
+        }
+        ,
+        e.prototype.endTransfer = function(t, e) {
+            return this.socket.send(JSON.stringify({
+                name: "end_transfer"
+            }))
+        }
+        ,
+        e.prototype.l0OOO = function(t) {
+            return this.socket.send(JSON.stringify({
+                name: l001I.I0000,
+                data: {
+                    type: t
+                }
+            }))
+        }
+        ,
+        e.prototype.removeWeapon = function(t) {
+            return this.socket.send(JSON.stringify({
+                name: "remove_weapon",
+                data: {
+                    index: t
+                }
+            }))
+        }
+        ,
+        e.prototype.Ol0O1 = function(t, e) {
+            return this.socket.send(JSON.stringify({
+                name: l001I.lO01l,
+                data: {
+                    index: t,
+                    type: e
+                }
+            }))
+        }
+        ,
+        e.prototype.toggleHealing = function(t, e) {
+            return this.socket.send(JSON.stringify({
+                name: "toggle_healing"
+            }))
+        }
+        ,
+        e.prototype.error = function(e) {
+            return null != e.id && "SteamAppOwnerShip" === e.id ? (this.game.gameover = !0,
+            void this.game.O1Ol1.showError(t("Server returned that you do not own this Steam application"))) : this.game.O1Ol1.showError(t(e.data))
+        }
+        ,
+        e
+    }(),
     this.IOll0 = function() {
         function t(t) {
             this.O0Il0 = t,
@@ -43980,7 +44668,7 @@ input[type=range]:focus::-ms-fill-upper {
             this.OO0O0(),
             this.cx = 0,
             this.cy = 0,
-            this.I1lOI = new ValueNoise(1123)
+            this.I1lOI = new Ol0OI(1123)
         }
         return t.prototype.OO0O0 = function() {
             var t, e, i, s, l, n, a, o, r, h, u, d, I, c, p, O, m, f, g, y, v, b;
@@ -43991,20 +44679,20 @@ input[type=range]:focus::-ms-fill-upper {
             t.height = 64,
             e = t.getContext("2d"),
             i = e.getImageData(0, 0, t.width, t.height),
-            O = new ValueNoise(100),
-            h = new ValueNoise(200),
-            u = new ValueNoise(300),
-            d = new ValueNoise(400),
+            O = new Ol0OI(100),
+            h = new Ol0OI(200),
+            u = new Ol0OI(300),
+            d = new Ol0OI(400),
             l = a = 0,
             m = t.width - 1; 0 <= m ? a <= m : a >= m; l = 0 <= m ? ++a : --a)
                 for (n = o = 0,
                 f = t.height - 1; 0 <= f ? o <= f : o >= f; n = 0 <= f ? ++o : --o)
                     v = l / t.width * 16,
                     b = n / t.height * 16,
-                    r = 255 * O.periodicFractalNoise2D(v, b, 4, 2),
-                    I = 255 * h.periodicFractalNoise2D(v, b, 4, 2),
-                    c = 255 * u.periodicFractalNoise2D(v, b, 4, 2),
-                    p = 255 * d.periodicFractalNoise2D(v, b, 4, 2),
+                    r = 255 * O.OIl01(v, b, 4, 2),
+                    I = 255 * h.OIl01(v, b, 4, 2),
+                    c = 255 * u.OIl01(v, b, 4, 2),
+                    p = 255 * d.OIl01(v, b, 4, 2),
                     i.data[4 * l + n * t.width * 4] = r,
                     i.data[4 * l + n * t.width * 4 + 1] = I,
                     i.data[4 * l + n * t.width * 4 + 2] = c,
@@ -44084,10 +44772,10 @@ input[type=range]:focus::-ms-fill-upper {
             var e, i, s, l, n, a, o, r, h, u, d, I, c, p, O, m, f, g, y, v, b, w, x, k, E, _, z, M, T, S, R, A, P, H, D, C, j, G, L, B, F, V, N, q, U, K, W, Y, J, Z, X, Q, $;
             for (this.game = t,
             this.I00II = new THREE.IcosahedronGeometry(1,3),
-            R = new ValueNoise,
-            M = new ValueNoise(100),
-            T = new ValueNoise(200),
-            S = new ValueNoise(300),
+            R = new Ol0OI,
+            M = new Ol0OI(100),
+            T = new Ol0OI(200),
+            S = new Ol0OI(300),
             r = this.I00II.vertices[0].x - this.I00II.vertices[1].x,
             h = this.I00II.vertices[0].y - this.I00II.vertices[1].y,
             u = this.I00II.vertices[0].z - this.I00II.vertices[1].z,
@@ -44098,9 +44786,9 @@ input[type=range]:focus::-ms-fill-upper {
             c = 0,
             f = G.length; c < f; c++)
                 Y = G[c],
-                X = M.fractalNoise3D(Y.x * Z, Y.y * Z, Y.z * Z) - .3,
-                Q = T.fractalNoise3D(Y.x * Z, Y.y * Z, Y.z * Z) - .3,
-                $ = S.fractalNoise3D(Y.x * Z, Y.y * Z, Y.z * Z) - .3,
+                X = M.O0IIO(Y.x * Z, Y.y * Z, Y.z * Z) - .3,
+                Q = T.O0IIO(Y.x * Z, Y.y * Z, Y.z * Z) - .3,
+                $ = S.O0IIO(Y.x * Z, Y.y * Z, Y.z * Z) - .3,
                 Y.x += X * J,
                 Y.y += Q * J,
                 Y.z += $ * J,
@@ -50629,7 +51317,7 @@ input[type=range]:focus::-ms-fill-upper {
                     fr: "Votre ECP vous permet également de personnaliser votre vaisseau et votre badge. Vous brillerez en changeant le métal de votre vaisseau et le style de vos lasers !",
                     es: "El ECP también te permite personalizar la nave e insignia: ¡brillarás con los materiales especiales para tu nave (titanio, aleación, carbono...), estilos de lásers e iconos de insignia!",
                     ja: "ECPで、あなたの船とゲーム内のバッジをカスタマイズできます：例:特別な船の材料（チタン、合金、カーボン…）、レーザーのスタイルと特別なバッジアイコン",
-                    de: "Dein Elite-Ausweis ermöglicht es dir auch, dein Schiff zu gestalten: Material, Laser-Stile und Abzeichen sind für die Elite frei veränderbar!",
+                    de: "Dein Elite-Ausweis ermöglicht es dir auch, dein Schiff zu gestalten: Material, Laser-Stile und Abzeichen sind für die Elite frei veränderbar!",
                     pt: "Seu ECP também permite que você personalize sua nave e emblema do jogo: você vai brilhar com o seu material de nave especial (titânio, liga, carbono ...), estilos de lasers e ícones de emblema!",
                     ru: "Ваш пропуск Капитана также позволяет настроить ваш корабль и игровой значок: вы будете сиять с вашим специальным материалом корабля (титан, сплав, углерод...), стилем лазеров и значками!",
                     hu: "Az EKJ-d lehetővé teszi, hogy személyre szabd a hajódat és a jelvényedet: a hajód ragyogni fog különleges anyagoktól (titánium, ötvözet, szén...), lézerstílusoktól és jelvényikonoktól.",
@@ -52113,7 +52801,7 @@ input[type=range]:focus::-ms-fill-upper {
                     fr: "Rejoindre ma partie",
                     es: "Únete a mi partida personalizada",
                     ja: "カスタムゲームに参加",
-                    de: "Meinem eigenem Spiel beitreten",
+                    de: "Meinem eigenem Spiel beitreten",
                     pt: "Entre em meu Jogo Personalizado",
                     ru: "Зайти в свою игру",
                     hu: "Belépés a saját játékomba",
